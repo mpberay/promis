@@ -1,0 +1,215 @@
+CRITICAL - 2022-11-24 00:24:39 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\BaseController.php on line 52.
+ 1 APPPATH\Controllers\BaseController.php(52): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to access array offset on value of type null', 'APPPATH\\Controllers\\BaseController.php', 52, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(866): App\Controllers\BaseController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(448): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-11-24 00:24:56 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\BaseController.php on line 52.
+ 1 APPPATH\Controllers\BaseController.php(52): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to access array offset on value of type null', 'APPPATH\\Controllers\\BaseController.php', 52, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(866): App\Controllers\BaseController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(448): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-11-24 00:25:00 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\BaseController.php on line 52.
+ 1 APPPATH\Controllers\BaseController.php(52): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to access array offset on value of type null', 'APPPATH\\Controllers\\BaseController.php', 52, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(866): App\Controllers\BaseController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(448): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-11-24 00:25:02 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\BaseController.php on line 52.
+ 1 APPPATH\Controllers\BaseController.php(52): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to access array offset on value of type null', 'APPPATH\\Controllers\\BaseController.php', 52, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(866): App\Controllers\BaseController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(448): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-11-24 00:25:53 --> Class 'App\Controllers\authentications\DateTime' not found
+in APPPATH\Controllers\authentications\AuthenticationController.php on line 78.
+ 1 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\authentications\AuthenticationController->IsssoLogin()
+ 2 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\authentications\AuthenticationController))
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-11-24 00:26:20 --> Undefined property: App\Controllers\DashboardController::$firstname
+in APPPATH\Controllers\BaseController.php on line 67.
+ 1 APPPATH\Controllers\BaseController.php(67): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined property: App\\Controllers\\DashboardController::$firstname', 'APPPATH\\Controllers\\BaseController.php', 67, [...])
+ 2 APPPATH\Controllers\DashboardController.php(20): App\Controllers\BaseController->render('DashboardView', [...])
+ 3 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\DashboardController->index()
+ 4 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 5 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-11-24 00:26:36 --> Undefined property: App\Controllers\DashboardController::$firstname
+in APPPATH\Controllers\BaseController.php on line 67.
+ 1 APPPATH\Controllers\BaseController.php(67): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined property: App\\Controllers\\DashboardController::$firstname', 'APPPATH\\Controllers\\BaseController.php', 67, [...])
+ 2 APPPATH\Controllers\DashboardController.php(20): App\Controllers\BaseController->render('DashboardView', [...])
+ 3 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\DashboardController->index()
+ 4 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 5 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-11-24 00:26:41 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\BaseController.php on line 52.
+ 1 APPPATH\Controllers\BaseController.php(52): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to access array offset on value of type null', 'APPPATH\\Controllers\\BaseController.php', 52, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(866): App\Controllers\BaseController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(448): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-11-24 00:26:42 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\BaseController.php on line 52.
+ 1 APPPATH\Controllers\BaseController.php(52): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to access array offset on value of type null', 'APPPATH\\Controllers\\BaseController.php', 52, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(866): App\Controllers\BaseController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(448): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-11-24 00:26:43 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\BaseController.php on line 52.
+ 1 APPPATH\Controllers\BaseController.php(52): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to access array offset on value of type null', 'APPPATH\\Controllers\\BaseController.php', 52, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(866): App\Controllers\BaseController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(448): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-11-24 00:26:43 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\BaseController.php on line 52.
+ 1 APPPATH\Controllers\BaseController.php(52): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to access array offset on value of type null', 'APPPATH\\Controllers\\BaseController.php', 52, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(866): App\Controllers\BaseController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(448): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-11-24 00:26:43 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\BaseController.php on line 52.
+ 1 APPPATH\Controllers\BaseController.php(52): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to access array offset on value of type null', 'APPPATH\\Controllers\\BaseController.php', 52, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(866): App\Controllers\BaseController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(448): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-11-24 00:26:43 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\BaseController.php on line 52.
+ 1 APPPATH\Controllers\BaseController.php(52): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to access array offset on value of type null', 'APPPATH\\Controllers\\BaseController.php', 52, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(866): App\Controllers\BaseController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(448): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-11-24 00:26:43 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\BaseController.php on line 52.
+ 1 APPPATH\Controllers\BaseController.php(52): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to access array offset on value of type null', 'APPPATH\\Controllers\\BaseController.php', 52, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(866): App\Controllers\BaseController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(448): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-11-24 00:26:43 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\BaseController.php on line 52.
+ 1 APPPATH\Controllers\BaseController.php(52): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to access array offset on value of type null', 'APPPATH\\Controllers\\BaseController.php', 52, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(866): App\Controllers\BaseController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(448): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-11-24 00:26:44 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\BaseController.php on line 52.
+ 1 APPPATH\Controllers\BaseController.php(52): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to access array offset on value of type null', 'APPPATH\\Controllers\\BaseController.php', 52, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(866): App\Controllers\BaseController->__construct()
+ 3 SYSTEMPATH\CodeIgniter.php(448): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-11-24 00:27:06 --> Undefined property: App\Controllers\DashboardController::$firstname
+in APPPATH\Controllers\BaseController.php on line 67.
+ 1 APPPATH\Controllers\BaseController.php(67): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined property: App\\Controllers\\DashboardController::$firstname', 'APPPATH\\Controllers\\BaseController.php', 67, [...])
+ 2 APPPATH\Controllers\DashboardController.php(20): App\Controllers\BaseController->render('DashboardView', [...])
+ 3 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\DashboardController->index()
+ 4 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 5 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-11-24 00:27:29 --> Undefined variable: firstname
+in APPPATH\Views\includes\navbar.php on line 29.
+ 1 APPPATH\Views\includes\navbar.php(29): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: firstname', 'APPPATH\\Views\\includes\\navbar.php', 29, [])
+ 2 APPPATH\Views\includes\header.php(50): include('APPPATH\\Views\\includes\\navbar.php')
+ 3 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\includes\\header.php')
+ 4 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1142): CodeIgniter\View\View->render('includes/header', [], true)
+ 6 APPPATH\Controllers\BaseController.php(68): view('includes/header')
+ 7 APPPATH\Controllers\DashboardController.php(20): App\Controllers\BaseController->render('DashboardView', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\DashboardController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+10 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-11-24 00:27:35 --> Undefined property: App\Controllers\DashboardController::$firstname
+in APPPATH\Controllers\BaseController.php on line 67.
+ 1 APPPATH\Controllers\BaseController.php(67): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined property: App\\Controllers\\DashboardController::$firstname', 'APPPATH\\Controllers\\BaseController.php', 67, [...])
+ 2 APPPATH\Controllers\DashboardController.php(20): App\Controllers\BaseController->render('DashboardView', [...])
+ 3 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\DashboardController->index()
+ 4 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 5 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-11-24 00:28:04 --> Undefined property: App\Controllers\DashboardController::$firstname
+in APPPATH\Controllers\BaseController.php on line 67.
+ 1 APPPATH\Controllers\BaseController.php(67): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined property: App\\Controllers\\DashboardController::$firstname', 'APPPATH\\Controllers\\BaseController.php', 67, [...])
+ 2 APPPATH\Controllers\DashboardController.php(20): App\Controllers\BaseController->render('DashboardView', [...])
+ 3 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\DashboardController->index()
+ 4 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 5 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-11-24 00:28:08 --> Undefined property: App\Controllers\DashboardController::$firstname
+in APPPATH\Controllers\BaseController.php on line 67.
+ 1 APPPATH\Controllers\BaseController.php(67): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined property: App\\Controllers\\DashboardController::$firstname', 'APPPATH\\Controllers\\BaseController.php', 67, [...])
+ 2 APPPATH\Controllers\DashboardController.php(20): App\Controllers\BaseController->render('DashboardView', [...])
+ 3 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\DashboardController->index()
+ 4 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 5 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-11-24 00:28:23 --> Undefined variable: firstname
+in APPPATH\Views\includes\navbar.php on line 29.
+ 1 APPPATH\Views\includes\navbar.php(29): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: firstname', 'APPPATH\\Views\\includes\\navbar.php', 29, [])
+ 2 APPPATH\Views\includes\header.php(50): include('APPPATH\\Views\\includes\\navbar.php')
+ 3 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\includes\\header.php')
+ 4 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1142): CodeIgniter\View\View->render('includes/header', [], true)
+ 6 APPPATH\Controllers\BaseController.php(68): view('includes/header')
+ 7 APPPATH\Controllers\DashboardController.php(20): App\Controllers\BaseController->render('DashboardView', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\DashboardController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+10 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-11-24 00:33:07 --> Class 'App\Controllers\authentications\DateTime' not found
+in APPPATH\Controllers\authentications\AuthenticationController.php on line 78.
+ 1 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\authentications\AuthenticationController->IsssoLogin()
+ 2 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\authentications\AuthenticationController))
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-11-24 00:33:52 --> Class 'App\Controllers\authentications\DateTime' not found
+in APPPATH\Controllers\authentications\AuthenticationController.php on line 78.
+ 1 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\authentications\AuthenticationController->IsssoLogin()
+ 2 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\authentications\AuthenticationController))
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-11-24 00:43:37 --> Undefined variable: insert_data
+in APPPATH\Controllers\authentications\AuthenticationController.php on line 89.
+ 1 APPPATH\Controllers\authentications\AuthenticationController.php(89): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: insert_data', 'APPPATH\\Controllers\\authentications\\AuthenticationController.php', 89, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\authentications\AuthenticationController->IsssoLogin()
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\authentications\AuthenticationController))
+ 4 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
