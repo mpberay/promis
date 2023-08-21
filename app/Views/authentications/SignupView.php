@@ -53,7 +53,7 @@
                 <form class="theme-form" method="POST" action="javascript:void(0)" id="frmRegistration">
                   <?= csrf_field(); ?>
                   <div class="form-group">
-                    <input class="form-control" type="text" required="" name="firstname" value="<?= set_value('firstname'); ?>" placeholder="First Name">
+                    <input class="form-control" type="text" required="" name="firstname" value="<?= set_value('firstname'); ?>" placeholder="First Name1">
                   </div>
                   <div class="form-group">
                     <input class="form-control" type="text" required="" name="middlename" value="<?= set_value('middlename'); ?>" placeholder="Middle Name">
