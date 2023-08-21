@@ -17,6 +17,8 @@ class DashboardController extends BaseController
 
         //$data['user_info'] = $userInfo;
         $data['id_num'] = date('m-d-Y').'-'.uniqid();
+        $data['UserInfo'] = $this->sessionUserInfo;
+        //print_r($this->sessionUserInfo);
         $this->render('DashboardView', $data);
 
     }

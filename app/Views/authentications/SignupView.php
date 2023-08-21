@@ -41,9 +41,7 @@
         </div>
         <div class="col-xl-5 p-0"> 
           <div class="login-card">
-            <div>
-              <div><a class="logo" href="index.html"><img class="img-fluid for-light" src="<?php echo base_url(); ?>/vendors/images/logo/logo-navbar.png" alt="looginpage"><img class="img-fluid for-dark" src="<?php echo base_url(); ?>/vendors/cuba/assets/images/logo/logo_dark.png" alt="looginpage"></a></div>
-              <div class="login-main"> 
+            <div><div class="login-main"> 
                 <h4>Create your account</h4>
                 <p>Enter your personal details to create account</p>
                 <?php 
@@ -52,36 +50,41 @@
                   <?php }else if(!empty(session()->getFlashdata('failed'))){?>
                     <div class="alert alert-danger"><?= session()->getFlashdata('failed') ?></div>
                 <?php } ?>
-                <form class="theme-form" method="POST" action="<?= base_url('/=78888]]/newaccount'); ?>">
+                <form class="theme-form" method="POST" action="javascript:void(0)" id="frmRegistration">
                   <?= csrf_field(); ?>
                   <div class="form-group">
-                    <label class="col-form-label pt-0">Your Name</label>
-                    <div class="row g-2">
-                      <div class="col-6">
-                        <input class="form-control" type="text" required="" name="firstname" value="<?= set_value('firstname'); ?>" placeholder="First name">
-                      </div>
-                      <div class="col-6">
-                        <input class="form-control" type="text" required="" name="lastname" value="<?= set_value('lastname'); ?>" placeholder="Last name">
-                      </div>
-                    </div>
+                    <input class="form-control" type="text" required="" name="firstname" value="<?= set_value('firstname'); ?>" placeholder="First Name">
                   </div>
                   <div class="form-group">
-                    <label class="col-form-label">Email Address</label>
-                    <input class="form-control" type="email" required="" name="email"value="<?= set_value('email'); ?>"  placeholder="Test@gmail.com">
+                    <input class="form-control" type="text" required="" name="middlename" value="<?= set_value('middlename'); ?>" placeholder="Middle Name">
                   </div>
                   <div class="form-group">
-                    <label class="col-form-label">Password</label>
+                    <input class="form-control" type="text" required="" name="lastname" value="<?= set_value('lastname'); ?>" placeholder="Last Name">
+                  </div>
+                  <div class="form-group">
+                    <input class="form-control" type="email" required="" name="email" value="<?= set_value('email'); ?>"  placeholder="Official Email Address (@dswd.gov.ph)">
+                  </div>
+                  <div class="form-group">
+                    <label class="col-form-label">User Account</label>
+                    <input class="form-control" type="text" required="" name="username" value="<?= set_value('email'); ?>"  placeholder="Username">
+                  </div>
+                  <div class="form-group">
                     <div class="form-input position-relative">
-                      <input class="form-control" type="password" name="password" required="" value="<?= set_value('password'); ?>" placeholder="*********">
+                      <input class="form-control" type="password" name="password" required="" value="<?= set_value('password'); ?>" placeholder="Password">
+                      <div class="show-hide">
+                        <span class="show" onclick="registerShowPassword();" id="registerSpanPassword"></span>
+                      </div>
                       <span class="text-danger text-sm">
                         <?= isset($validation) ? display_form_errors($validation, 'password') : ''; ?>
                       </span>
                     </div>
                   </div>
                   <div class="form-group">
-                    <label class="col-form-label">Confirm Password</label>
                     <div class="form-input position-relative">
-                      <input class="form-control" type="password" name="confirm_password" required="" value="<?= set_value('confirm_password'); ?>" placeholder="*********">
+                      <input class="form-control" type="password" name="confirm_password" required="" value="<?= set_value('confirm_password'); ?>" placeholder="Confirm Password">
+                      <div class="show-hide">
+                        <span class="show" onclick="confirmShowPassword();" id="confirmSpanPassword"></span>
+                      </div>
                       <span class="text-danger text-sm">
                         <?= isset($validation) ? display_form_errors($validation, 'confirm_password') : ''; ?>
                       </span>
@@ -92,14 +95,8 @@
                       <input id="checkbox1" type="checkbox">
                       <label class="text-muted" for="checkbox1">Agree with<a class="ms-2" href="#">Privacy Policy</a></label>
                     </div>
-                    <button class="btn btn-primary btn-block w-100" type="submit">Create Account</button>
-                    <p class="mt-4 mb-0 text-center">Already have an account?<a class="ms-2" href="<?= base_url('/=7911]]/signin')?>">Sign in</a></p>
-                  </div>
-                  <h6 class="text-muted mt-4 or">Back to</h6>
-                  <div class="social mt-4">
-                    <div class="btn-showcase">
-                      <a class="btn btn-light w-100" href="<?= base_url('/')?>" target="_blank"><i class="txt-linkedin" data-feather="linkedin"></i> Landing Page </a>
-                    </div>
+                    <button class="btn btn-primary btn-block w-100" type="submit">Save</button>
+                    <p class="mt-4 mb-0 text-center">Already have an account?<a class="ms-2" href="<?= base_url('/')?>">Sign in</a></p>
                   </div>
                 </form>
               </div>
@@ -123,6 +120,10 @@
       <script src="<?php echo base_url(); ?>/vendors/cuba/assets/js/script.js"></script>
       <!-- login js-->
       <!-- Plugin used-->
+      <script src="<?= base_url(); ?>/js/authentication/auth.js"></script>
+      <script>
+        var baseUrl = '<?= base_url(); ?>';
+      </script>
     </div>
   </body>
 </html>

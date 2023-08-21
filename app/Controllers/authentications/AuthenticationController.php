@@ -1,25 +1,20 @@
 <?php
-
 namespace App\Controllers\authentications;
-
 use  App\Controllers;
 use  App\Libraries\Hash;
 use CodeIgniter\Controller;
 use CodeIgniter\I18n\Time;
 use \App\Models\Authentications\AuthModel;
-//use App\Controllers\BaseController;
-// use CodeIgniter\HTTP\CLIRequest;
-// use CodeIgniter\HTTP\IncomingRequest;
-// use CodeIgniter\HTTP\RequestInterface;
-// use CodeIgniter\HTTP\ResponseInterface;
-// use Psr\Log\LoggerInterface;
 
 class AuthenticationController extends Controller
 {
-    private $facebook=NULL;
-	private $fb_helper=NULL;
-
+    private $facebook = NULL;
+	private $fb_helper = NULL;
+    private $hostname = NULL;
+    private $dateNow = NULL;
+    private $ipAddress = NULL;
     public function __construct(){
+        helper('date');
 		require_once APPPATH. 'Libraries/vendor/autoload.php';
 		$this->facebook =  new \Facebook\Facebook([
 			'app_id'  => 'APP ID',
@@ -28,10 +23,16 @@ class AuthenticationController extends Controller
 		]);
 		$this->fb_helper = $this->facebook->getRedirectLoginHelper();
 
+        //libraries
         helper(['url','form']);
+        $this->hostname = gethostname();
+        $this->dateNow = date('Y-m-d H:i:s', now());
+        $request = service('request');
+        $this->ipAddress = $request->getIPAddress();
+        
 	}
-    public function index()
-    {
+    public function index(){
+        $authModel = new AuthModel();
         // if (! is_file(APPPATH . 'Views/pages/' . $page . '.php')) {
         //     // Whoops, we don't have a page for that!
         //     throw new \CodeIgniter\Exceptions\PageNotFoundException($page);
@@ -40,8 +41,23 @@ class AuthenticationController extends Controller
             return view('Authentications/LoginView');
         }else{
             return redirect()->to(base_url('/dashboard'));
-        }
-        
+        }  
+        // $authModel = new AuthModel();
+        // //$authModel->setTable('auth_user');
+        // //$userInfo = $authModel->getLogin(['username' => 'asd']);
+        // //echo $userInfo[0]['password_hash'];
+        // //print_r($userInfo);
+
+        // $sessionData = [
+        //     'id' => uniqid(),
+        //     'username' => "asdasdasasd"
+        // ];
+        // //$authModel->setTable('tbl_user_session');
+        // $authModel->insertSession($sessionData);
+        // $request = service('request');
+        // $ipAddress = $request->getIPAddress();
+
+        // echo "IP Address: $ipAddress";
     }
     public function RegisterView(){
         if(!session()->get('LoginUserInfo')){
@@ -55,56 +71,16 @@ class AuthenticationController extends Controller
     public function IsssoView(){
         return view('Authentications/IsssoView');
     }
-    public function IsssoLogin(){
-        $issso_data = $this->request->getVar('user_info');
-        $emp_id = $issso_data['employeeid'];
-
-        $LoginModel = new AuthModel();
-        //check is exist
-        $userInfo = $LoginModel->where('employee_id',$emp_id)->first();
-
-        if($userInfo){
-            
-            $status = "1";
-        }else{  
-            $id = $issso_data['employeeid'].'-'. uniqid();
-            $userinfo_data = [
-                'id' => $id,
-                'employee_id' => $issso_data['employeeid'],
-                'username' => $issso_data['preferred_username'],
-                'password_hash' =>Hash::encrypt($issso_data['employeeid']),
-                'firstname' => $issso_data['given_name'],
-                'lastname' => $issso_data['family_name'],
-                'email' => $issso_data['email'],
-            ];
-            $query = $LoginModel->insert($userinfo_data);
-            $status = "2";
-        }
-
-        session()->set('LoginUserInfo',$emp_id);
-        $output = array(
-            "status" => $status,
-        );
-
-        echo json_encode($output);
-    }
-
-
-
+   
 
     public function LoginUser(){
+        $authModelLogin = new AuthModel();
         $data_validated = $this->validate([
             'password' => [
                 'rules' => 'required|min_length[5]|max_length[20]',
-                // 'errors' => [
-                //     'required' => 'Your Password is required',
-                //     'min_length' => 'Password has minimum of five characters',
-                //     'max_length' => 'Password has maximum of five characters'
-                // ]
             ],
         ]);
-        
-        $email = $this->request->getPost('email');
+        $username = $this->request->getPost('username');
         $password = $this->request->getPost('password');
 
         $secret='6Leo8AkjAAAAAGgJmjBzXJTjkMa_0_nm3_AOjxyM';
@@ -130,13 +106,11 @@ class AuthenticationController extends Controller
                     'msg' => "Password has minimum of five characters and maximum of 20 characters, ",
                 ];
             }else{
-                $LoginModel = new AuthModel();
-                $userInfo = $LoginModel->where('email',$email)->first();
-    
+                //$authModel->setTable('auth_user');
+                $userInfo = $authModelLogin->getLogin(['username' => $username]);
                 if($userInfo) {
                     //print_r($userInfo);
-                    $checkpassword = Hash::check($password,$userInfo['password_hash']);
-    
+                    $checkpassword = Hash::check($password,$userInfo[0]['password_hash']);
                     if(!$checkpassword){
                         $response = [
                             'success' => false ,
@@ -144,8 +118,20 @@ class AuthenticationController extends Controller
                         ];
                     }
                     else{
-                        $user_id = $userInfo['id'];
-                        session()->set('LoginUserInfo',$user_id);
+                        $sessionData = [
+                            'id' => uniqid(),
+                            'user_id' => $userInfo[0]['id'],
+                            'ip_address' => $this->ipAddress,
+                            'hostname' => $this->hostname,
+                            'date' => $this->dateNow,
+                            'activity' => 'Login'
+                        ];
+                        //$authModel->setTable('tbl_user_session');
+                        $authModelSession = new AuthModel();
+                        $authModelSession->insertSession($sessionData);
+                        session()->set('LoginUserInfo',[
+                            'user_id' => $userInfo[0]['id']
+                        ]);
                         $response = [
                             'success' => true ,
                             'msg' => "Welcome ",
@@ -164,14 +150,26 @@ class AuthenticationController extends Controller
                 'success' => false ,
                 'msg' => "Lato2x Ka!",
             ];
-            //return redirect()->to(base_url('/'));
         }
+        //print_r($response);
         return $this->response->setJSON($response);
     }
-    public function LogoutUser(){
+    public function LogoutUser($userId){
+        echo $userId;
         if(session()->has('LoginUserInfo')){
             session()->remove('LoginUserInfo');
         }
+        $sessionData = [
+            'id' => uniqid(),
+            'user_id' => $userId,
+            'ip_address' => $this->ipAddress,
+            'hostname' => $this->hostname,
+            'date' => $this->dateNow,
+            'activity' => 'Logout'
+        ];
+        //$authModel->setTable('tbl_user_session');
+        $authModelSession = new AuthModel();
+        $authModelSession->insertSession($sessionData);
         return redirect()->to(base_url('/?access=loggedout'))->with('failed','Logout ka');
     }
 
@@ -221,16 +219,16 @@ class AuthenticationController extends Controller
         }
 
         $password = $this->request->getPost('password');
-        $user_id = date('m-d-Y').'-'.uniqid();
+        //$user_id = date('m-d-Y').'-'.uniqid();
         $data = [
-            'id' => $user_id,
+            'id' => uniqid(),
             'firstname' => $this->request->getPost('firstname'),
             'lastname' => $this->request->getPost('lastname'),
             'email' => $this->request->getPost('email'),
             'password_hash' => Hash::encrypt($password),
         ];
 
-        $auth_model = new \App\Models\Authentications\AuthModel();
+        
         $query = $auth_model->insert($data);
         if(!$query){
             return redirect()->back()->with('failed', 'Server error');

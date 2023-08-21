@@ -54,10 +54,10 @@ $routes->get('tablue', 'Tablue::index');
 //Authentications
 $routes->get('/', 'authentications\AuthenticationController::index');
 $routes->post('/login', 'authentications\AuthenticationController::LoginUser');
-$routes->get('/=7911]]/logout', 'authentications\AuthenticationController::LogoutUser');
+$routes->get('/logout/(:any)', 'authentications\AuthenticationController::LogoutUser/$1');
 //regstration useracount
 $routes->get('/=78888]]/register', 'authentications\AuthenticationController::RegisterView');
-$routes->post('/=78888]]/newaccount', 'authentications\AuthenticationController::RegisterUser');
+$routes->post('/newaccount', 'authentications\AuthenticationController::RegisterUser');
 
 
 

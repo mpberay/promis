@@ -40,17 +40,15 @@ abstract class BaseController extends Controller
     /**
      * Constructor.
      */
+    //private $sessionUserInfo = NULL;
     public function __construct()
     {
+        
         if(!session()->get('LoginUserInfo')){
-            //return redirect()->to(base_url('/=7911]]/signin'));
+            return redirect()->to(base_url('/'));
         }else{
-            $userModel = new AuthModel();
-            $emp_id = session()->get('LoginUserInfo');
-            $userInfo = $userModel->where('employee_id',$emp_id)->first();
-
-            // $this->firstname = $userInfo['firstname'];
-            // $this->lastname = $userInfo['lastname'];
+            //$userModel = new AuthModel();
+            $this->sessionUserInfo = session()->get('LoginUserInfo');
         }
         
     }
@@ -64,8 +62,8 @@ abstract class BaseController extends Controller
         // E.g.: $this->session = \Config\Services::session();
     }
     public function render($page, $data = []){
-        //$data['firstname'] =  $this->firstname.' '.$this->lastname;
-        echo view('includes/header');
+        $headerData['userId'] =  $this->sessionUserInfo['user_id'];
+        echo view('includes/header',$headerData);
         echo view($page,$data);
         echo view('includes/footer');
     }
