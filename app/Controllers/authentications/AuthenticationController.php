@@ -13,6 +13,7 @@ class AuthenticationController extends Controller
     private $hostname = NULL;
     private $dateNow = NULL;
     private $ipAddress = NULL;
+    private $authModel = NULL;
     public function __construct(){
         helper('date');
 		require_once APPPATH. 'Libraries/vendor/autoload.php';
@@ -29,7 +30,7 @@ class AuthenticationController extends Controller
         $this->dateNow = date('Y-m-d H:i:s', now());
         $request = service('request');
         $this->ipAddress = $request->getIPAddress();
-        
+        $this->authModel = new AuthModel();
 	}
     public function index(){
         $authModel = new AuthModel();
@@ -116,8 +117,12 @@ class AuthenticationController extends Controller
                             'success' => false ,
                             'msg' => "Incorrect Password",
                         ];
-                    }
-                    else{
+                    }else if($userInfo[0]['is_active'] == 0){
+                        $response = [
+                            'success' => false ,
+                            'msg' => "Useraccount is not active, Contact system administrator to activate you account",
+                        ];
+                    }else{
                         $sessionData = [
                             'id' => uniqid(),
                             'user_id' => $userInfo[0]['id'],
@@ -174,68 +179,59 @@ class AuthenticationController extends Controller
     }
 
     public function RegisterUser(){
-        $data_validated = $this->validate([
-            'firstname' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => 'Your Firstname is required',
-                ]
-            ],
-            'lastname' => [
-                'rules' => 'required',
-                'errors' => [
-                    'required' => 'Your Lastname is required',
-                ]
-            ],
-            'email' => [
-                'rules' => 'required|valid_email',
-                'errors' => [
-                    'required' => 'Your Email is required',
-                    'valid_email' => 'Email address already exist'
-                ]
-            ],
-            'password' => [
-                'rules' => 'required|min_length[5]|max_length[20]|matches[confirm_password]',
-                'errors' => [
-                    'required' => 'Your Password is required',
-                    'min_length' => 'Password has minimum of five characters',
-                    'max_length' => 'Password has maximum of five characters',
-                    'matches' => 'Password did not match'
-                ]
-            ],
-            'confirm_password' => [
-                'rules' => 'required|min_length[5]|max_length[20]|matches[password]',
-                'errors' => [
-                    'required' => 'Your Cofirm Password is required',
-                    'min_length' => 'Password has minimum of five characters',
-                    'max_length' => 'Password has maximum of five characters',
-                    'matches' => 'Password did not match'
-                ]
-            ],
-        ]);
-
-        if(!$data_validated){
-            return view('authentications/SignupView',['validation' => $this->validator]);
-        }
-
-        $password = $this->request->getPost('password');
-        //$user_id = date('m-d-Y').'-'.uniqid();
-        $data = [
-            'id' => uniqid(),
-            'firstname' => $this->request->getPost('firstname'),
-            'lastname' => $this->request->getPost('lastname'),
-            'email' => $this->request->getPost('email'),
-            'password_hash' => Hash::encrypt($password),
-        ];
-
-        
-        $query = $auth_model->insert($data);
-        if(!$query){
-            return redirect()->back()->with('failed', 'Server error');
+        $emp_id = $this->request->getPost('employee_id');
+        $email = $this->request->getPost('email');
+        $username = $this->request->getPost('username');
+        $checkEmail = $this->authModel->getLogin(['email' => $email]);
+        $checkUsername = $this->authModel->getLogin(['username' => $username]);
+        $checkEmployeeId = $this->authModel->getLogin(['employee_id' => $emp_id]);
+        $password = Hash::encrypt($this->request->getPost('password'),PASSWORD_DEFAULT);
+        //print_r($username);
+        if($checkEmployeeId ){
+            $response = [
+                'success' => false ,
+                'msg' => "Employeed ID already exist ",
+            ];
+        }else if($checkEmail){
+            $response = [
+                'success' => false ,
+                'msg' => "Email Address already exist ",
+            ];
+        }else if($checkUsername){
+            $response = [
+                'success' => false ,
+                'msg' => "Username  already exist ",
+            ];
         }else{
-            return redirect()->back()->with('success', 'Successfully Register');
+            $data = [
+                'id' => uniqid(),
+                'employee_id' => $this->request->getPost('employee_id'),
+                'firstname' => $this->request->getPost('firstname'),
+                'middlename' => $this->request->getPost('middlename'),
+                'lastname' => $this->request->getPost('lastname'),
+                'extensionname' => $this->request->getPost('extname'),
+                'email' => $this->request->getPost('email'),
+                'username' => $this->request->getPost('username'),
+                'password_hash' => $password,
+                'date_register' => $this->dateNow,
+                'is_active' => 0
+            ];
+            $insertNewAccount = $this->authModel->insertNewAccount($data);
+            if($insertNewAccount == 0){
+                $response = [
+                    'success' => true ,
+                    'msg' => "Successfully register please contact admin for activation",
+                ];
+            }else{
+                $response = [
+                    'success' => false ,
+                    'msg' => "Server down contact serve administrator",
+                ];
+            }
         }
-
+        // print_r($data);
+        return $this->response->setJSON($response);
+        //echo $insertNewAccount;
     }
 
 }

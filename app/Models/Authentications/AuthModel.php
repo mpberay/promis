@@ -17,7 +17,16 @@ class AuthModel extends Model{
     // protected $protectFields    = true;
     protected $allowedFields = [
         'id',
+        'employee_id',
         'username',
+        'firstname',
+        'middlename',
+        'lastname',
+        'extensionname',
+        'email',
+        'password_hash',
+        'date_register',
+        'is_active',
         'user_id',
         'ip_address',
         'hostname',
@@ -54,7 +63,10 @@ class AuthModel extends Model{
         // $filteredData = array_intersect_key($data, array_flip($allowedFields));
         return $this->insert($data);
     }
-   
+    public function insertNewAccount($data){
+        $this->table = $this->table ?: 'auth_user';
+        return $this->insert($data);
+    }
     public function LogIn($username){
         $query = $this->db->table('auth_user')->where('username',$username);
         return $query->get()->getResultArray();

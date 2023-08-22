@@ -9,7 +9,7 @@
     <meta name="author" content="pixelstrap">
     <link rel="icon" href="<?php echo base_url(); ?>/vendors/images/logo/favicon.png" type="image/x-icon">
     <link rel="shortcut icon" href="<?php echo base_url(); ?>/vendors/images/logo/favicon.png" type="image/x-icon">
-    <title>I-AIMS - Internal Audit Information Management System</title>
+    <title>PROMIS - Procurement Management Information System</title>
     <!-- Google font-->
     <link href="https://fonts.googleapis.com/css?family=Rubik:400,400i,500,500i,700,700i&amp;display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900&amp;display=swap" rel="stylesheet">
@@ -44,49 +44,49 @@
             <div><div class="login-main"> 
                 <h4>Create your account</h4>
                 <p>Enter your personal details to create account</p>
-                <?php 
-                  if(!empty(session()->getFlashdata('success'))){ ?>
-                    <div class="alert alert-success"><?= session()->getFlashdata('success') ?></div>
-                  <?php }else if(!empty(session()->getFlashdata('failed'))){?>
-                    <div class="alert alert-danger"><?= session()->getFlashdata('failed') ?></div>
-                <?php } ?>
+                <div class="alert alert-danger" style="display: none;" id="DivValidator">
+                  <span id="spanValidator"></span>  
+                </div> 
                 <form class="theme-form" method="POST" action="javascript:void(0)" id="frmRegistration">
-                  <?= csrf_field(); ?>
                   <div class="form-group">
-                    <input class="form-control" type="text" required="" name="firstname" value="<?= set_value('firstname'); ?>" placeholder="First Name1">
+                    <input class="form-control" type="text" required="" name="employee_id" placeholder="Employeed ID">
                   </div>
                   <div class="form-group">
-                    <input class="form-control" type="text" required="" name="middlename" value="<?= set_value('middlename'); ?>" placeholder="Middle Name">
+                    <input class="form-control" type="text" required="" name="firstname" placeholder="First Name">
                   </div>
                   <div class="form-group">
-                    <input class="form-control" type="text" required="" name="lastname" value="<?= set_value('lastname'); ?>" placeholder="Last Name">
+                    <input class="form-control" type="text" name="middlename" placeholder="Middle Name">
                   </div>
                   <div class="form-group">
-                    <input class="form-control" type="email" required="" name="email" value="<?= set_value('email'); ?>"  placeholder="Official Email Address (@dswd.gov.ph)">
+                    <input class="form-control" type="text" required="" name="lastname" placeholder="Last Name">
+                  </div>
+                  <div class="form-group">
+                    <input class="form-control" type="text" name="extname" placeholder="Extension Name">
+                  </div>
+                  <div class="form-group">
+                    <input class="form-control" type="email" required="" name="email" placeholder="Official Email Address (@dswd.gov.ph)">
                   </div>
                   <div class="form-group">
                     <label class="col-form-label">User Account</label>
-                    <input class="form-control" type="text" required="" name="username" value="<?= set_value('email'); ?>"  placeholder="Username">
+                    <input class="form-control" type="text" required="" name="username" placeholder="Username">
+                      <span class="text-danger text-sm">
+                        <?= isset($validation) ? display_form_errors($validation, 'password') : ''; ?>
+                      </span>
                   </div>
                   <div class="form-group">
                     <div class="form-input position-relative">
-                      <input class="form-control" type="password" name="password" required="" value="<?= set_value('password'); ?>" placeholder="Password">
+                      <input class="form-control" type="password" id="password" name="password" required="" placeholder="Password">
                       <div class="show-hide">
                         <span class="show" onclick="registerShowPassword();" id="registerSpanPassword"></span>
                       </div>
-                      <span class="text-danger text-sm">
-                        <?= isset($validation) ? display_form_errors($validation, 'password') : ''; ?>
+                      <span class="text-danger text-sm" id = "spanPassword">
                       </span>
                     </div>
                   </div>
                   <div class="form-group">
                     <div class="form-input position-relative">
-                      <input class="form-control" type="password" name="confirm_password" required="" value="<?= set_value('confirm_password'); ?>" placeholder="Confirm Password">
-                      <div class="show-hide">
-                        <span class="show" onclick="confirmShowPassword();" id="confirmSpanPassword"></span>
-                      </div>
-                      <span class="text-danger text-sm">
-                        <?= isset($validation) ? display_form_errors($validation, 'confirm_password') : ''; ?>
+                      <input class="form-control" type="password" name="confirm_password" id="confirm_password" required="" placeholder="Confirm Password">
+                      <span class="text-danger text-sm" id = "spanConfirmPassword">
                       </span>
                     </div>
                   </div>
@@ -94,8 +94,11 @@
                     <div class="checkbox p-0">
                       <input id="checkbox1" type="checkbox">
                       <label class="text-muted" for="checkbox1">Agree with<a class="ms-2" href="#">Privacy Policy</a></label>
+                      <br>
+                      <span class="text-danger text-sm" id = "spanAgree">
+                      </span>
                     </div>
-                    <button class="btn btn-primary btn-block w-100" type="submit">Save</button>
+                    <input class="btn btn-primary btn-block w-100" type="submit" value="Create Account" disabled> 
                     <p class="mt-4 mb-0 text-center">Already have an account?<a class="ms-2" href="<?= base_url('/')?>">Sign in</a></p>
                   </div>
                 </form>

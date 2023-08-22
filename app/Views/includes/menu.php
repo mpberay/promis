@@ -19,6 +19,12 @@
                 <li class="sidebar-list text-ul">
                     <a class="sidebar-link sidebar-title link-nav" href="<?= base_url('isp/clients'); ?>"><i data-feather="home"> </i><span>Dashboard</span></a>
                 </li>
+                <li class="sidebar-list text-ul"><a class="sidebar-link sidebar-title" href="#"><i data-feather="mail"></i><span>PPMP</span></a>
+                    <ul class="sidebar-submenu text-ul">
+                        <li><a href="email-application.html">Shopee</a></li>
+                        <li><a href="email-compose.html">Purchase</a></li>
+                    </ul>
+                </li>
                 <li class="sidebar-list text-ul"><a class="sidebar-link sidebar-title" href="#"><i data-feather="mail"></i><span>Incoming</span></a>
                     <ul class="sidebar-submenu text-ul">
                         <li><a href="email-application.html">Shopee</a></li>
