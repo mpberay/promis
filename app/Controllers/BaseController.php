@@ -41,15 +41,12 @@ abstract class BaseController extends Controller
      * Constructor.
      */
     //private $sessionUserInfo = NULL;
-    public function __construct()
-    {
+    public function __construct(){
         
         if(!session()->get('LoginUserInfo')){
             return redirect()->to(base_url('/'));
-        }else{
-            //$userModel = new AuthModel();
-            $this->sessionUserInfo = session()->get('LoginUserInfo');
         }
+        //print_r($this->sessionUserInfo);
         
     }
     public function initController(RequestInterface $request, ResponseInterface $response, LoggerInterface $logger)
@@ -62,7 +59,9 @@ abstract class BaseController extends Controller
         // E.g.: $this->session = \Config\Services::session();
     }
     public function render($page, $data = []){
-        $headerData['userId'] =  $this->sessionUserInfo['user_id'];
+        //$headerData['userId'] =  $this->sessionUserInfo['user_id'];
+        $headerData['userSession'] = session()->get('LoginUserInfo');
+        //print_r($headerData);
         echo view('includes/header',$headerData);
         echo view($page,$data);
         echo view('includes/footer');

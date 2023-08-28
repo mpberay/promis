@@ -71,7 +71,6 @@ class AuthModel extends Model{
         $query = $this->db->table('auth_user')->where('username',$username);
         return $query->get()->getResultArray();
     }
-   
     // public function UserSessionHistory($data){
     //     $this->db->trans_start();
     //     $this->db->insert('tbl_user_session', $data);

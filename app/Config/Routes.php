@@ -20,7 +20,9 @@ $routes->setDefaultNamespace('App\Controllers');
 $routes->setDefaultController('Home');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
-$routes->set404Override();
+$routes->set404Override(function(){
+    echo view('Page404');
+});
 // The Auto Routing (Legacy) is very dangerous. It is easy to create vulnerable apps
 // where controller filters or CSRF protection are bypassed.
 // If you don't want to define all routes, please use the Auto Routing (Improved).
@@ -37,7 +39,22 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 //$routes->get('/', 'Home::index');
 $routes->group('', ['filter' => 'AuthCheck'], function($routes){ 
-    $routes->get('dashboard', 'DashboardController::index');
+    $routes->get('dashboard', 'dashboard\DashboardController::index');
+    //$routes->get('dashboard', 'DashboardController::index');
+
+    //for users module
+    $routes->get('/users/@list', 'users\UsersController::userListPage',['as' => 'userListPage']);
+    $routes->get('/users/@logs', 'users\UsersController::userLogsPage',['as' => 'userLogsPage']);
+    $routes->get('/users/loadLogs', 'users\UsersController::loadLogs');
+    $routes->get('/users/loadList', 'users\UsersController::loadList');
+
+
+    //for libraries/offices module
+    $routes->get('/libraries/@offices', 'Libraries\Office\MainController::officePage',['as' => 'officePage']);
+
+    $routes->get('/libraries/position/load/(:any)', 'Libraries\Office\PositionController::loadPosition/$1');
+    $routes->post('/libraries/position/action', 'Libraries\Office\PositionController::actionInsert');
+    $routes->post('/libraries/position/status', 'Libraries\Office\PositionController::actionStatus');
 });
 
 
@@ -49,11 +66,12 @@ $routes->post('test/check', 'Test::check');
 $routes->get('/hacker', function(){
     echo "Hacker ko";
 });
-$routes->get('tablue', 'Tablue::index');
 
-//Authentications
-$routes->get('/', 'authentications\AuthenticationController::index');
-$routes->post('/login', 'authentications\AuthenticationController::LoginUser');
+//Authentications homepage
+$routes->get('/', 'authentications\AuthenticationController::index',['as' => 'homePage']);
+
+
+$routes->post('/login', 'authentications\AuthenticationController::LoginUser',['as' => 'loginAction']);
 $routes->get('/logout/(:any)', 'authentications\AuthenticationController::LogoutUser/$1');
 //regstration useracount
 $routes->get('/=78888]]/register', 'authentications\AuthenticationController::RegisterView');
@@ -61,9 +79,8 @@ $routes->post('/newaccount', 'authentications\AuthenticationController::Register
 
 
 
-    // route for internet connection module
-$routes->get('internet/new', 'Internet\NewAccountController::index');
 
+ 
 
 
     
@@ -75,19 +92,14 @@ $routes->get('issso_logout', 'authentications\AuthenticationController::LogoutUs
 
 $routes->get('/recap', 'GoogleReCaptcha::index');
 
-/*
- * --------------------------------------------------------------------
- * Additional Routing
- * --------------------------------------------------------------------
- *
- * There will often be times that you need additional routing and you
- * need it to be able to override any defaults in this file. Environment
- * based routes is one such time. require() additional route files here
- * to make that happen.
- *
- * You will have access to the $routes object within that file without
- * needing to reload it.
- */
+//routing for grouping
+$routes->group('wajamo',static function($routes){
+    $routes->group('', [], static function($routes){
+        $routes->get('', 'landingpage\HomeController::index');
+    });
+});
+
+
 if (is_file(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
     require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
 }

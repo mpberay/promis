@@ -135,7 +135,8 @@ class AuthenticationController extends Controller
                         $authModelSession = new AuthModel();
                         $authModelSession->insertSession($sessionData);
                         session()->set('LoginUserInfo',[
-                            'user_id' => $userInfo[0]['id']
+                            'user_id' => $userInfo[0]['id'],
+                            'username' => $userInfo[0]['username']
                         ]);
                         $response = [
                             'success' => true ,

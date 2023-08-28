@@ -35,6 +35,10 @@
     <link id="color" rel="stylesheet" href="<?= base_url(); ?>/vendors/cuba/assets/css/color-1.css" media="screen">
     <!-- Responsive css-->
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/vendors/cuba/assets/css/responsive.css">
+    <!-- dataTables css-->
+    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/vendors/cuba/assets/css/vendors/datatables.css">
+    <!-- sweetalert2 css-->
+    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/vendors/cuba/libraries/sweetalert2/dist/sweetalert2.min.css">
     <style>
       .simplebar-content{
         text-align: center;

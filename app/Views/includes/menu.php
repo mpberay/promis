@@ -48,8 +48,8 @@
                     <ul class="sidebar-submenu text-ul">
                         <li><a class="submenu-title" href="#">Accounting <span class="sub-arrow"><i class="fa fa-angle-right"></i></span></a>
                             <ul class="nav-sub-childmenu submenu-content">
-                            <li><a href="tab-bootstrap.html">Bootstrap Tabs</a></li>
-                            <li><a href="tab-material.html">Line Tabs</a></li>
+                                <li><a href="tab-bootstrap.html">Bootstrap Tabs</a></li>
+                                <li><a href="tab-material.html">Line Tabs</a></li>
                             </ul>
                         </li>
                         <li><a class="submenu-title" href="#">Budget <span class="sub-arrow"><i class="fa fa-angle-right"></i></span></a>
@@ -71,12 +71,22 @@
                 </li>
                 <li class="sidebar-list text-ul"><a class="sidebar-link sidebar-title" href="#"><i class="icofont icofont-users-social"></i><span> User's</span></a>
                     <ul class="sidebar-submenu text-ul">
-                        <li><a href="email-compose.html">List</a></li>
-                        <li><a href="email-application.html">Session History</a></li>
+                        <li><a href="<?= route_to('userListPage') ?>">List</a></li>
+                        <li><a href="<?= route_to('userLogsPage') ?>">Session History</a></li>
                     </ul>
                 </li>
                 <li class="sidebar-list text-ul"><a class="sidebar-link sidebar-title" href="#"><i class="fa fa-institution"></i><span> Libraries</span></a>
                     <ul class="sidebar-submenu text-ul">
+                        <!--li><a class="submenu-title" href="#">Offices<span class="sub-arrow"><i class="fa fa-angle-right"></i></span></a>
+                            <ul class="nav-sub-childmenu submenu-content">
+                                <li><a href="<?= route_to('divisionPage') ?>">Position</a></li>
+                                <li><a href="<?= route_to('divisionPage') ?>">Head</a></li>
+                                <li><a href="<?= route_to('divisionPage') ?>">Designation</a></li>
+                                <li><a href="<?= route_to('divisionPage') ?>">Division</a></li>
+                                <li><a href="<?= route_to('sectionPage') ?>">Sections</a></li>
+                            </ul>
+                        </li-->
+                        <li><a href="<?= route_to('officePage') ?>">Offices</a></li>
                         <li><a href="email-compose.html">Product</a></li>
                         <li><a href="email-application.html">Supplier</a></li>
                         <li><a href="email-application.html">Office's</a></li>

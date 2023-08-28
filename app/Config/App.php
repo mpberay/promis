@@ -7,6 +7,7 @@ use CodeIgniter\Session\Handlers\FileHandler;
 
 class App extends BaseConfig
 {
+    
     /**
      * --------------------------------------------------------------------------
      * Base Site URL
@@ -110,7 +111,7 @@ class App extends BaseConfig
      *
      * @var string
      */
-    public $appTimezone = 'America/Chicago';
+    public $appTimezone = 'Asia/Manila';
 
     /**
      * --------------------------------------------------------------------------

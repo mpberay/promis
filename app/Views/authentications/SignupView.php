@@ -99,7 +99,7 @@
                       </span>
                     </div>
                     <input class="btn btn-primary btn-block w-100" type="submit" value="Create Account" disabled> 
-                    <p class="mt-4 mb-0 text-center">Already have an account?<a class="ms-2" href="<?= base_url('/')?>">Sign in</a></p>
+                    <p class="mt-4 mb-0 text-center">Already have an account?<a class="ms-2" href="<?= route_to('homePage'); ?>">Sign in</a></p>
                   </div>
                 </form>
               </div>
@@ -123,7 +123,7 @@
       <script src="<?php echo base_url(); ?>/vendors/cuba/assets/js/script.js"></script>
       <!-- login js-->
       <!-- Plugin used-->
-      <script src="<?= base_url(); ?>/js/authentication/auth.js"></script>
+      <script src="<?= base_url(); ?>/js/authentications/auth.js"></script>
       <script>
         var baseUrl = '<?= base_url(); ?>';
       </script>

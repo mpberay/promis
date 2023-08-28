@@ -62,10 +62,6 @@
                   </div>
                 </div>
                 <div class="form-group mb-0">
-                  <div class="checkbox p-0">
-                    <input id="checkbox1" type="checkbox">
-                    <label class="text-muted" for="checkbox1">Remember password</label>
-                  </div><a class="link" href="forget-password.html">Forgot password?</a>
                   <div class="g-recaptcha" data-sitekey="6Leo8AkjAAAAAOoPOKlj9QdB7-eI73zA09sk0p2O"></div>
                   <div class="text-end mt-3">
                     <button class="btn btn-primary btn-block w-100" type="submit">Sign in</button>
@@ -80,7 +76,7 @@
       </div>
     </div>
     <!-- latest jquery-->
-    <script src="<?php echo base_url(); ?>/vendors/cuba/assets/js/jquery-3.5.1.min.js"></script>
+    <script src="<?= base_url(); ?>/vendors/cuba/assets/js/jquery-3.5.1.min.js"></script>
     <!-- Bootstrap js-->
     <script src="<?php echo base_url(); ?>/vendors/cuba/assets/js/bootstrap/bootstrap.bundle.min.js"></script>
     <!-- feather icon js-->
@@ -94,7 +90,7 @@
 
     <!-- recap js-->
     <script src='https://www.google.com/recaptcha/api.js'></script>
-    <script src="<?= base_url(); ?>/js/authentication/auth.js"></script>
+    <script src="<?= base_url(); ?>/js/authentications/auth.js"></script>
     <script>
       var baseUrl = '<?= base_url(); ?>';
     </script>

@@ -93,7 +93,7 @@
                 <li class="profile-nav onhover-dropdown p-0 me-0">
                     <div class="media profile-media"><img class="b-r-10" src="<?= base_url(); ?>/vendors/cuba/assets/images/dashboard/profile.jpg" alt="">
                         <div class="media-body"><span></span>
-                        <p class="mb-0 font-roboto">Admin <i class="middle fa fa-angle-down"></i></p>
+                        <p class="mb-0 font-roboto"><?= $userSession['username'] ?> <i class="middle fa fa-angle-down"></i></p>
                         </div>
                     </div>
                     <ul class="profile-dropdown onhover-show-div">
@@ -101,7 +101,7 @@
                         <li><a href="#"><i data-feather="mail"></i><span>Inbox</span></a></li>
                         <li><a href="#"><i data-feather="file-text"></i><span>Taskboard</span></a></li>
                         <li><a href="#"><i data-feather="settings"></i><span>Settings</span></a></li>
-                        <li><a href="<?= base_url().'/logout/'.$userId;?>"><i data-feather="log-in"> </i><span>Log Out</span></a></li>
+                        <li><a href="<?= base_url().'/logout/'.$userSession['user_id'];?>"><i data-feather="log-in"> </i><span>Log Out</span></a></li>
                     </ul>
                 </li>
             </ul>
