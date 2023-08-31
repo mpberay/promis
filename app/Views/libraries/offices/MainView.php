@@ -32,19 +32,19 @@
                                     <div class="material-border"></div>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="profile-top-tab" data-bs-toggle="tab" href="#headTab" role="tab" aria-controls="top-profile" aria-selected="true" data-bs-original-title="" title=""><i class="fa fa-users"></i> Office Heads</a>
+                                    <a class="nav-link" id="topHeadTab" data-bs-toggle="tab" href="#headTab" role="tab" aria-controls="top-profile" aria-selected="true" data-bs-original-title="" title=""><i class="fa fa-users"></i> Office Heads</a>
                                     <div class="material-border"></div>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="contact-top-tab" data-bs-toggle="tab" href="#designationTab" role="tab" aria-controls="top-contact" aria-selected="false" data-bs-original-title="" title=""><i class="fa fa-gavel"></i> Designations</a>
+                                    <a class="nav-link" id="topDesignationTab" data-bs-toggle="tab" href="#designationTab" role="tab" aria-controls="top-contact" aria-selected="false" data-bs-original-title="" title=""><i class="fa fa-gavel"></i> Designations</a>
                                     <div class="material-border"></div>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="brand-top-tab" data-bs-toggle="tab" href="#divisionTab" role="tab" aria-controls="top-brand" aria-selected="false" data-bs-original-title="" title=""><i class="fa fa-stack-overflow"></i> Divisions</a>
+                                    <a class="nav-link" id="topDivisionTab" data-bs-toggle="tab" href="#divisionTab" role="tab" aria-controls="top-brand" aria-selected="false" data-bs-original-title="" title=""><i class="fa fa-stack-overflow"></i> Divisions</a>
                                     <div class="material-border"></div>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="brand-top-tab" data-bs-toggle="tab" href="#sectionTab" role="tab" aria-controls="top-brand" aria-selected="false" data-bs-original-title="" title=""><i class="fa fa-vk"></i> Sections</a>
+                                    <a class="nav-link" id="topSectionTab" data-bs-toggle="tab" href="#sectionTab" role="tab" aria-controls="top-brand" aria-selected="false" data-bs-original-title="" title=""><i class="fa fa-vk"></i> Sections</a>
                                     <div class="material-border"></div>
                                 </li>
                             </ul>
@@ -54,7 +54,7 @@
                                         <div class="col-xl-4 xl-100 box-col-4">
                                             <div class="card">
                                                 <div class="card-body">
-                                                    <h6>Create / Update Position</h6>
+                                                    <h6>Create / Update Employee Position</h6>
                                                     <form class="theme-form" method="POST" action="javascript:void(0)" id="frmPosition">
                                                         <input class="form-control" type="text" name="posID" placeholder="" style="display: none;">
                                                         <div class="form-group">
@@ -79,7 +79,7 @@
                                                 <div class="card-body">
                                                     <h6>List Position</h6>
                                                     <div class="table-responsive">
-                                                        <table class="table table-bordered" id="tablePosition">
+                                                        <table class="table table-bordered row-border display" id="tablePosition">
                                                             <thead>
                                                                 <tr>
                                                                     <th>#</th>
@@ -101,48 +101,56 @@
                                         <!-- DataTables events  Ends-->
                                     </div>
                                 </div>
-                                <div class="tab-pane active show" id="headTab" role="tabpanel" aria-labelledby="profile-top-tab">
+                                <div class="tab-pane fade" id="headTab" role="tabpanel" aria-labelledby="profile-top-tab">
                                     <div class="row">
                                         <div class="col-xl-4 xl-100 box-col-4">
                                             <div class="card">
                                                 <div class="card-body">
                                                     <h6>Create / Update Office Head</h6>
                                                     <form class="theme-form" method="POST" action="javascript:void(0)" id="frmHead">
-                                                        <input class="form-control" type="text" name="posID" placeholder="" style="display: none;">
+                                                        <input class="form-control" type="text" name="headID" placeholder="" style="display: none;">
                                                         <div class="form-group">
                                                             <label class="col-form-label">First Name</label>
-                                                            <input class="form-control" type="text" required name="posName" placeholder="">
+                                                            <input class="form-control" type="text" required name="firstname" placeholder="">
                                                         </div>
                                                         <div class="form-group">
                                                             <label class="col-form-label">Middle Name</label>
-                                                            <input class="form-control" type="text" required name="posAcronym" placeholder="">
+                                                            <input class="form-control" type="text" name="middlename" placeholder="">
                                                         </div>
                                                         <div class="form-group">
                                                             <label class="col-form-label">Last Name</label>
-                                                            <input class="form-control" type="text" required name="posAcronym" placeholder="">
+                                                            <input class="form-control" type="text" required name="lastname" placeholder="">
                                                         </div>
                                                         <div class="form-group">
                                                             <label class="col-form-label">Extention Name</label>
-                                                            <input class="form-control" type="text" required name="posAcronym" placeholder="">
+                                                            <input class="form-control" type="text" name="extensionname" placeholder="">
                                                         </div>
                                                         <div class="form-group">
                                                             <label class="col-form-label">Sex</label>
-                                                                <div class="col">
+                                                            <div class="col">
                                                                 <div class="m-t-15 m-checkbox-inline custom-radio-ml">
                                                                     <div class="form-check form-check-inline radio radio-primary">
-                                                                        <input class="form-check-input" id="radioinline1" type="radio" name="radio1" value="option1" data-bs-original-title="" title="">
+                                                                        <input class="form-check-input" id="radioinline1" type="radio" name="radioSex" value="Female" data-bs-original-title="" title="">
                                                                         <label class="form-check-label mb-0" for="radioinline1">Female</label>
                                                                     </div>
                                                                     <div class="form-check form-check-inline radio radio-primary">
-                                                                        <input class="form-check-input" id="radioinline2" type="radio" name="radio1" value="option1" data-bs-original-title="" title="">
+                                                                        <input class="form-check-input" id="radioinline2" type="radio" name="radioSex" value="Male" data-bs-original-title="" title="">
                                                                         <label class="form-check-label mb-0" for="radioinline2">Male</label>
                                                                     </div>
                                                                 </div>
                                                             </div>
+                                                            <h6 style="font-weight: bold;font-style: italic;color:red" id="sexValidator"></h6>
                                                         </div>
                                                         <div class="form-group">
                                                             <label class="col-form-label">Position</label>
-                                                            <input class="form-control" type="text" required name="posAcronym" placeholder="">
+                                                            <select class="jsSingleSelect col-sm-12" name="getPosition" id="getPosition">
+                                                                <option>Select Position . . .</option>
+                                                                <option value="AL">Alabama</option>
+                                                                <option value="WY">Wyoming</option>
+                                                                <option value="WY">Wyoming</option>
+                                                                <option value="WY">Wyoming</option>
+                                                            </select>
+                                                            <h6 style="font-weight: bold;font-style: italic;color:red" id="sexPosition"></h6>
                                                         </div>
                                                         <div class="form-group mb-0">
                                                             <div class="text-end mt-3">
@@ -158,12 +166,16 @@
                                                 <div class="card-body">
                                                     <h6>List Head</h6>
                                                     <div class="table-responsive">
-                                                        <table class="table table-bordered" id="tablePosition">
+                                                        <table class="table table-bordered row-border display " id="tableHead">
                                                             <thead>
                                                                 <tr>
                                                                     <th>#</th>
-                                                                    <th>Name</th>
-                                                                    <th>Acronym</th>
+                                                                    <th>First Name</th>
+                                                                    <th>Middle Name</th>
+                                                                    <th>Last Name</th>
+                                                                    <th>Ext. Name</th>
+                                                                    <th>Sex</th>
+                                                                    <th>Position</th>
                                                                     <th>Date Added</th>
                                                                     <th>Status</th>
                                                                     <th>Action</th>
@@ -181,10 +193,128 @@
                                     </div>
                                 </div>
                                 <div class="tab-pane fade" id="designationTab" role="tabpanel" aria-labelledby="contact-top-tab">
-                                    <h1>designation</h1>
+                                    <div class="row">
+                                        <div class="col-xl-4 xl-100 box-col-4">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <h6>Create / Update Employee Designation</h6>
+                                                    <form class="theme-form" method="POST" action="javascript:void(0)" id="frmDesignation">
+                                                        <input class="form-control" type="text" name="desID" placeholder="" style="display: none;">
+                                                        <div class="form-group">
+                                                            <label class="col-form-label">Designation Name</label>
+                                                            <input class="form-control" type="text" required name="desName" placeholder="">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-form-label">Acronym</label>
+                                                            <input class="form-control" type="text" name="desAcronym" placeholder="">
+                                                        </div>
+                                                        <div class="form-group mb-0">
+                                                            <div class="text-end mt-3">
+                                                                <button class="btn btn-pill btn-outline-primary btn-lg" type="submit">Save</button>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-8 xl-100 box-col-8">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <h6>List Designation</h6>
+                                                    <div class="table-responsive">
+                                                        <table class="table table-bordered row-border display" id="tableDesignation">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>#</th>
+                                                                    <th>Name</th>
+                                                                    <th>Acronym</th>
+                                                                    <th>Date Added</th>
+                                                                    <th>Status</th>
+                                                                    <th>Action</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- DataTables events  Ends-->
+                                    </div>
                                 </div>
-                                <div class="tab-pane fade" id="divisionTab" role="tabpanel" aria-labelledby="brand-top-tab">
-                                    <h1>division</h1>
+                                <div class="tab-pane active show" id="divisionTab" role="tabpanel" aria-labelledby="brand-top-tab">
+                                    <div class="row">
+                                        <div class="col-xl-4 xl-100 box-col-4">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <h6>Create / Update Division Office</h6>
+                                                    <form class="theme-form" method="POST" action="javascript:void(0)" id="frmDivision">
+                                                        <input class="form-control" type="text" name="divID" placeholder="" >
+                                                        <div class="form-group">
+                                                            <label class="col-form-label">Code</label>
+                                                            <input class="form-control" type="text" required name="divCode" placeholder="">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-form-label">Name</label>
+                                                            <input class="form-control" type="text" required name="divName" placeholder="">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-form-label">Acronym</label>
+                                                            <input class="form-control" type="text" required name="divAcronym" placeholder="">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-form-label">Office Head</label>
+                                                            <select class="jsSingleSelect col-sm-12" name="headID">
+                                                                <option>Select office head . . .</option>
+                                                            </select>
+                                                            <h6 style="font-weight: bold;font-style: italic;color:red" id="sexPosition"></h6>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-form-label">Head designation</label>
+                                                            <select class="jsSingleSelect col-sm-12" name="desID">
+                                                                <option>Select head designation . . .</option>
+                                                            </select>
+                                                            <h6 style="font-weight: bold;font-style: italic;color:red" id="sexPosition"></h6>
+                                                        </div>
+                                                        <div class="form-group mb-0">
+                                                            <div class="text-end mt-3">
+                                                                <button class="btn btn-pill btn-outline-info btn-lg" type="submit">Click Here</button>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-8 xl-100 box-col-8">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <h6>List Division</h6>
+                                                    <div class="table-responsive">
+                                                        <table class="table table-bordered row-border display " id="tableDivision">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>#</th>
+                                                                    <th>Code</th>
+                                                                    <th>Division Name</th>
+                                                                    <th>Head</th>
+                                                                    <th>Designation</th>
+                                                                    <th>Date Added</th>
+                                                                    <th>Status</th>
+                                                                    <th>Action</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- DataTables events  Ends-->
+                                    </div>
                                 </div>
                                 <div class="tab-pane fade" id="sectionTab" role="tabpanel" aria-labelledby="brand-top-tab">
                                     <h1>sections</h1>
@@ -198,7 +328,11 @@
         </div>
     </div>
 </div>
-<script src="<?= base_url(); ?>/js/libraries/offices/position.js"></script>
+<script src="<?= base_url(); ?>/js/libraries/offices/Main.js"></script>
+<script src="<?= base_url(); ?>/js/libraries/offices/Position.js"></script>
+<script src="<?= base_url(); ?>/js/libraries/offices/Head.js"></script>
+<script src="<?= base_url(); ?>/js/libraries/offices/Designation.js"></script>
+<script src="<?= base_url(); ?>/js/libraries/offices/Division.js"></script>
 <script>
     var baseUrl = '<?= base_url(); ?>';
 </script>

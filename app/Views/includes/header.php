@@ -39,6 +39,8 @@
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/vendors/cuba/assets/css/vendors/datatables.css">
     <!-- sweetalert2 css-->
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/vendors/cuba/libraries/sweetalert2/dist/sweetalert2.min.css">
+    <!-- select22 css-->
+    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/vendors/cuba/assets/css/vendors/select2.css">
     <style>
       .simplebar-content{
         text-align: center;

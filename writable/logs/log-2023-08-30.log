@@ -1,0 +1,661 @@
+ERROR - 2023-08-30 08:20:49 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it.
+ in C:\laragon\www\promis\system\Database\MySQLi\Connection.php:171
+Stack trace:
+#0 C:\laragon\www\promis\system\Database\MySQLi\Connection.php(171): mysqli->real_connect('localhost', 'root', '', 'prism', 3306, '', 0)
+#1 C:\laragon\www\promis\system\Database\BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\laragon\www\promis\system\Database\BaseConnection.php(588): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\laragon\www\promis\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\laragon\www\promis\app\Models\Authentications\AuthModel.php(57): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\promis\app\Controllers\authentications\AuthenticationController.php(111): App\Models\Authentications\AuthModel->getLogin(Array)
+#6 C:\laragon\www\promis\system\CodeIgniter.php(904): App\Controllers\authentications\AuthenticationController->LoginUser()
+#7 C:\laragon\www\promis\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\authentications\AuthenticationController))
+#8 C:\laragon\www\promis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\laragon\www\promis\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\laragon\www\promis\system\Commands\Server\rewrite.php(43): require_once('C:\\laragon\\www\\...')
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it.
+ in C:\laragon\www\promis\system\Database\MySQLi\Connection.php:215
+Stack trace:
+#0 C:\laragon\www\promis\system\Database\BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\laragon\www\promis\system\Database\BaseConnection.php(588): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\laragon\www\promis\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\laragon\www\promis\app\Models\Authentications\AuthModel.php(57): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\laragon\www\promis\app\Controllers\authentications\AuthenticationController.php(111): App\Models\Authentications\AuthModel->getLogin(Array)
+#5 C:\laragon\www\promis\system\CodeIgniter.php(904): App\Controllers\authentications\AuthenticationController->LoginUser()
+#6 C:\laragon\www\promis\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\authentications\AuthenticationController))
+#7 C:\laragon\www\promis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\laragon\www\promis\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#9 C:\laragon\www\promis\system\Commands\Server\rewrite.php(43): require_once('C:\\laragon\\www\\...')
+#10 {main}
+CRITICAL - 2023-08-30 08:20:49 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it.
+
+in SYSTEMPATH\Database\BaseConnection.php on line 418.
+ 1 SYSTEMPATH\Database\BaseConnection.php(588): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `auth_user`
+WHERE `username` = :username:', [...], false)
+ 3 APPPATH\Models\Authentications\AuthModel.php(57): CodeIgniter\Database\BaseBuilder->get()
+ 4 APPPATH\Controllers\authentications\AuthenticationController.php(111): App\Models\Authentications\AuthModel->getLogin([...])
+ 5 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\authentications\AuthenticationController->LoginUser()
+ 6 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\authentications\AuthenticationController))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-30 11:26:45 --> Invalid argument supplied for foreach()
+in VENDORPATH\hermawan\codeigniter4-datatables\src\DataTableQuery.php on line 153.
+ 1 VENDORPATH\hermawan\codeigniter4-datatables\src\DataTableQuery.php(153): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Invalid argument supplied for foreach()', 'VENDORPATH\\hermawan\\codeigniter4-datatables\\src\\DataTableQuery.php', 153, [...])
+ 2 VENDORPATH\hermawan\codeigniter4-datatables\src\DataTableQuery.php(61): Hermawan\DataTables\DataTableQuery->queryFilterSearch(Object(CodeIgniter\Database\MySQLi\Builder))
+ 3 VENDORPATH\hermawan\codeigniter4-datatables\src\DataTable.php(175): Hermawan\DataTables\DataTableQuery->countFiltered()
+ 4 APPPATH\Controllers\libraries\Office\HeadController.php(54): Hermawan\DataTables\DataTable->toJson(true)
+ 5 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\Libraries\Office\HeadController->getHeadDatatable()
+ 6 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Libraries\Office\HeadController))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-30 11:27:00 --> Invalid argument supplied for foreach()
+in VENDORPATH\hermawan\codeigniter4-datatables\src\DataTableQuery.php on line 153.
+ 1 VENDORPATH\hermawan\codeigniter4-datatables\src\DataTableQuery.php(153): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Invalid argument supplied for foreach()', 'VENDORPATH\\hermawan\\codeigniter4-datatables\\src\\DataTableQuery.php', 153, [...])
+ 2 VENDORPATH\hermawan\codeigniter4-datatables\src\DataTableQuery.php(61): Hermawan\DataTables\DataTableQuery->queryFilterSearch(Object(CodeIgniter\Database\MySQLi\Builder))
+ 3 VENDORPATH\hermawan\codeigniter4-datatables\src\DataTable.php(175): Hermawan\DataTables\DataTableQuery->countFiltered()
+ 4 APPPATH\Controllers\libraries\Office\HeadController.php(54): Hermawan\DataTables\DataTable->toJson(true)
+ 5 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\Libraries\Office\HeadController->getHeadDatatable()
+ 6 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Libraries\Office\HeadController))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-30 11:29:25 --> Invalid argument supplied for foreach()
+in VENDORPATH\hermawan\codeigniter4-datatables\src\DataTableQuery.php on line 153.
+ 1 VENDORPATH\hermawan\codeigniter4-datatables\src\DataTableQuery.php(153): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Invalid argument supplied for foreach()', 'VENDORPATH\\hermawan\\codeigniter4-datatables\\src\\DataTableQuery.php', 153, [...])
+ 2 VENDORPATH\hermawan\codeigniter4-datatables\src\DataTableQuery.php(61): Hermawan\DataTables\DataTableQuery->queryFilterSearch(Object(CodeIgniter\Database\MySQLi\Builder))
+ 3 VENDORPATH\hermawan\codeigniter4-datatables\src\DataTable.php(175): Hermawan\DataTables\DataTableQuery->countFiltered()
+ 4 APPPATH\Controllers\libraries\Office\HeadController.php(55): Hermawan\DataTables\DataTable->toJson(true)
+ 5 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\Libraries\Office\HeadController->getHeadDatatable()
+ 6 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Libraries\Office\HeadController))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-30 11:30:31 --> Invalid argument supplied for foreach()
+in VENDORPATH\hermawan\codeigniter4-datatables\src\DataTableQuery.php on line 153.
+ 1 VENDORPATH\hermawan\codeigniter4-datatables\src\DataTableQuery.php(153): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Invalid argument supplied for foreach()', 'VENDORPATH\\hermawan\\codeigniter4-datatables\\src\\DataTableQuery.php', 153, [...])
+ 2 VENDORPATH\hermawan\codeigniter4-datatables\src\DataTableQuery.php(61): Hermawan\DataTables\DataTableQuery->queryFilterSearch(Object(CodeIgniter\Database\MySQLi\Builder))
+ 3 VENDORPATH\hermawan\codeigniter4-datatables\src\DataTable.php(175): Hermawan\DataTables\DataTableQuery->countFiltered()
+ 4 APPPATH\Controllers\libraries\Office\HeadController.php(55): Hermawan\DataTables\DataTable->toJson(true)
+ 5 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\Libraries\Office\HeadController->getHeadDatatable()
+ 6 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Libraries\Office\HeadController))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-30 11:31:16 --> Invalid argument supplied for foreach()
+in VENDORPATH\hermawan\codeigniter4-datatables\src\DataTableQuery.php on line 153.
+ 1 VENDORPATH\hermawan\codeigniter4-datatables\src\DataTableQuery.php(153): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Invalid argument supplied for foreach()', 'VENDORPATH\\hermawan\\codeigniter4-datatables\\src\\DataTableQuery.php', 153, [...])
+ 2 VENDORPATH\hermawan\codeigniter4-datatables\src\DataTableQuery.php(61): Hermawan\DataTables\DataTableQuery->queryFilterSearch(Object(CodeIgniter\Database\MySQLi\Builder))
+ 3 VENDORPATH\hermawan\codeigniter4-datatables\src\DataTable.php(175): Hermawan\DataTables\DataTableQuery->countFiltered()
+ 4 APPPATH\Controllers\libraries\Office\PositionController.php(51): Hermawan\DataTables\DataTable->toJson(true)
+ 5 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\Libraries\Office\PositionController->getPositionDatatable('0')
+ 6 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Libraries\Office\PositionController))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-30 11:31:16 --> Invalid argument supplied for foreach()
+in VENDORPATH\hermawan\codeigniter4-datatables\src\DataTableQuery.php on line 153.
+ 1 VENDORPATH\hermawan\codeigniter4-datatables\src\DataTableQuery.php(153): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Invalid argument supplied for foreach()', 'VENDORPATH\\hermawan\\codeigniter4-datatables\\src\\DataTableQuery.php', 153, [...])
+ 2 VENDORPATH\hermawan\codeigniter4-datatables\src\DataTableQuery.php(61): Hermawan\DataTables\DataTableQuery->queryFilterSearch(Object(CodeIgniter\Database\MySQLi\Builder))
+ 3 VENDORPATH\hermawan\codeigniter4-datatables\src\DataTable.php(175): Hermawan\DataTables\DataTableQuery->countFiltered()
+ 4 APPPATH\Controllers\libraries\Office\HeadController.php(55): Hermawan\DataTables\DataTable->toJson(true)
+ 5 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\Libraries\Office\HeadController->getHeadDatatable()
+ 6 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Libraries\Office\HeadController))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-30 11:31:31 --> Invalid argument supplied for foreach()
+in VENDORPATH\hermawan\codeigniter4-datatables\src\DataTableQuery.php on line 153.
+ 1 VENDORPATH\hermawan\codeigniter4-datatables\src\DataTableQuery.php(153): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Invalid argument supplied for foreach()', 'VENDORPATH\\hermawan\\codeigniter4-datatables\\src\\DataTableQuery.php', 153, [...])
+ 2 VENDORPATH\hermawan\codeigniter4-datatables\src\DataTableQuery.php(61): Hermawan\DataTables\DataTableQuery->queryFilterSearch(Object(CodeIgniter\Database\MySQLi\Builder))
+ 3 VENDORPATH\hermawan\codeigniter4-datatables\src\DataTable.php(175): Hermawan\DataTables\DataTableQuery->countFiltered()
+ 4 APPPATH\Controllers\libraries\Office\HeadController.php(55): Hermawan\DataTables\DataTable->toJson(true)
+ 5 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\Libraries\Office\HeadController->getHeadDatatable()
+ 6 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Libraries\Office\HeadController))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-30 11:40:01 --> Undefined property: stdClass::$posAcronym
+in APPPATH\Controllers\libraries\Office\HeadController.php on line 53.
+ 1 APPPATH\Controllers\libraries\Office\HeadController.php(53): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined property: stdClass::$posAcronym', 'APPPATH\\Controllers\\libraries\\Office\\HeadController.php', 53, [...])
+ 2 VENDORPATH\hermawan\codeigniter4-datatables\src\DataTableQuery.php(91): App\Controllers\Libraries\Office\HeadController->App\Controllers\Libraries\Office\{closure}(Object(stdClass))
+ 3 VENDORPATH\hermawan\codeigniter4-datatables\src\DataTable.php(176): Hermawan\DataTables\DataTableQuery->getDataResult()
+ 4 APPPATH\Controllers\libraries\Office\HeadController.php(55): Hermawan\DataTables\DataTable->toJson(true)
+ 5 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\Libraries\Office\HeadController->getHeadDatatable()
+ 6 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Libraries\Office\HeadController))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-30 11:40:07 --> Undefined property: stdClass::$posAcronym
+in APPPATH\Controllers\libraries\Office\HeadController.php on line 53.
+ 1 APPPATH\Controllers\libraries\Office\HeadController.php(53): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined property: stdClass::$posAcronym', 'APPPATH\\Controllers\\libraries\\Office\\HeadController.php', 53, [...])
+ 2 VENDORPATH\hermawan\codeigniter4-datatables\src\DataTableQuery.php(91): App\Controllers\Libraries\Office\HeadController->App\Controllers\Libraries\Office\{closure}(Object(stdClass))
+ 3 VENDORPATH\hermawan\codeigniter4-datatables\src\DataTable.php(176): Hermawan\DataTables\DataTableQuery->getDataResult()
+ 4 APPPATH\Controllers\libraries\Office\HeadController.php(55): Hermawan\DataTables\DataTable->toJson(true)
+ 5 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\Libraries\Office\HeadController->getHeadDatatable()
+ 6 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Libraries\Office\HeadController))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-30 13:10:33 --> Undefined property: App\Controllers\Libraries\Office\HeadController::$positionModel
+in APPPATH\Controllers\libraries\Office\HeadController.php on line 103.
+ 1 APPPATH\Controllers\libraries\Office\HeadController.php(103): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined property: App\\Controllers\\Libraries\\Office\\HeadController::$positionModel', 'APPPATH\\Controllers\\libraries\\Office\\HeadController.php', 103, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\Libraries\Office\HeadController->actionStatus()
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Libraries\Office\HeadController))
+ 4 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-30 13:33:58 --> Array to string conversion
+in APPPATH\Controllers\libraries\Office\HeadController.php on line 89.
+ 1 APPPATH\Controllers\libraries\Office\HeadController.php(89): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Array to string conversion', 'APPPATH\\Controllers\\libraries\\Office\\HeadController.php', 89, [...])
+ 2 VENDORPATH\hermawan\codeigniter4-datatables\src\DataTableQuery.php(91): App\Controllers\Libraries\Office\HeadController->App\Controllers\Libraries\Office\{closure}(Object(stdClass))
+ 3 VENDORPATH\hermawan\codeigniter4-datatables\src\DataTable.php(176): Hermawan\DataTables\DataTableQuery->getDataResult()
+ 4 APPPATH\Controllers\libraries\Office\HeadController.php(91): Hermawan\DataTables\DataTable->toJson(true)
+ 5 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\Libraries\Office\HeadController->getHeadDatatable('0')
+ 6 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Libraries\Office\HeadController))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-30 13:34:23 --> Undefined variable: data
+in APPPATH\Controllers\libraries\Office\HeadController.php on line 86.
+ 1 APPPATH\Controllers\libraries\Office\HeadController.php(86): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: data', 'APPPATH\\Controllers\\libraries\\Office\\HeadController.php', 86, [...])
+ 2 VENDORPATH\hermawan\codeigniter4-datatables\src\DataTableQuery.php(91): App\Controllers\Libraries\Office\HeadController->App\Controllers\Libraries\Office\{closure}(Object(stdClass))
+ 3 VENDORPATH\hermawan\codeigniter4-datatables\src\DataTable.php(176): Hermawan\DataTables\DataTableQuery->getDataResult()
+ 4 APPPATH\Controllers\libraries\Office\HeadController.php(88): Hermawan\DataTables\DataTable->toJson(true)
+ 5 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\Libraries\Office\HeadController->getHeadDatatable('0')
+ 6 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Libraries\Office\HeadController))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-30 13:35:31 --> Array to string conversion
+in APPPATH\Controllers\libraries\Office\HeadController.php on line 89.
+ 1 APPPATH\Controllers\libraries\Office\HeadController.php(89): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Array to string conversion', 'APPPATH\\Controllers\\libraries\\Office\\HeadController.php', 89, [...])
+ 2 VENDORPATH\hermawan\codeigniter4-datatables\src\DataTableQuery.php(91): App\Controllers\Libraries\Office\HeadController->App\Controllers\Libraries\Office\{closure}(Object(stdClass))
+ 3 VENDORPATH\hermawan\codeigniter4-datatables\src\DataTable.php(176): Hermawan\DataTables\DataTableQuery->getDataResult()
+ 4 APPPATH\Controllers\libraries\Office\HeadController.php(91): Hermawan\DataTables\DataTable->toJson(true)
+ 5 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\Libraries\Office\HeadController->getHeadDatatable('0')
+ 6 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Libraries\Office\HeadController))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-30 13:35:41 --> Array to string conversion
+in APPPATH\Controllers\libraries\Office\HeadController.php on line 89.
+ 1 APPPATH\Controllers\libraries\Office\HeadController.php(89): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Array to string conversion', 'APPPATH\\Controllers\\libraries\\Office\\HeadController.php', 89, [...])
+ 2 VENDORPATH\hermawan\codeigniter4-datatables\src\DataTableQuery.php(91): App\Controllers\Libraries\Office\HeadController->App\Controllers\Libraries\Office\{closure}(Object(stdClass))
+ 3 VENDORPATH\hermawan\codeigniter4-datatables\src\DataTable.php(176): Hermawan\DataTables\DataTableQuery->getDataResult()
+ 4 APPPATH\Controllers\libraries\Office\HeadController.php(91): Hermawan\DataTables\DataTable->toJson(true)
+ 5 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\Libraries\Office\HeadController->getHeadDatatable('0')
+ 6 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Libraries\Office\HeadController))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-30 13:36:14 --> Array to string conversion
+in APPPATH\Controllers\libraries\Office\HeadController.php on line 89.
+ 1 APPPATH\Controllers\libraries\Office\HeadController.php(89): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Array to string conversion', 'APPPATH\\Controllers\\libraries\\Office\\HeadController.php', 89, [...])
+ 2 VENDORPATH\hermawan\codeigniter4-datatables\src\DataTableQuery.php(91): App\Controllers\Libraries\Office\HeadController->App\Controllers\Libraries\Office\{closure}(Object(stdClass))
+ 3 VENDORPATH\hermawan\codeigniter4-datatables\src\DataTable.php(176): Hermawan\DataTables\DataTableQuery->getDataResult()
+ 4 APPPATH\Controllers\libraries\Office\HeadController.php(91): Hermawan\DataTables\DataTable->toJson(true)
+ 5 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\Libraries\Office\HeadController->getHeadDatatable('0')
+ 6 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Libraries\Office\HeadController))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-30 13:39:10 --> Array to string conversion
+in APPPATH\Controllers\libraries\Office\HeadController.php on line 86.
+ 1 APPPATH\Controllers\libraries\Office\HeadController.php(86): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Array to string conversion', 'APPPATH\\Controllers\\libraries\\Office\\HeadController.php', 86, [...])
+ 2 VENDORPATH\hermawan\codeigniter4-datatables\src\DataTableQuery.php(91): App\Controllers\Libraries\Office\HeadController->App\Controllers\Libraries\Office\{closure}(Object(stdClass))
+ 3 VENDORPATH\hermawan\codeigniter4-datatables\src\DataTable.php(176): Hermawan\DataTables\DataTableQuery->getDataResult()
+ 4 APPPATH\Controllers\libraries\Office\HeadController.php(88): Hermawan\DataTables\DataTable->toJson(true)
+ 5 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\Libraries\Office\HeadController->getHeadDatatable('0')
+ 6 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Libraries\Office\HeadController))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-30 13:39:14 --> Array to string conversion
+in APPPATH\Controllers\libraries\Office\HeadController.php on line 86.
+ 1 APPPATH\Controllers\libraries\Office\HeadController.php(86): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Array to string conversion', 'APPPATH\\Controllers\\libraries\\Office\\HeadController.php', 86, [...])
+ 2 VENDORPATH\hermawan\codeigniter4-datatables\src\DataTableQuery.php(91): App\Controllers\Libraries\Office\HeadController->App\Controllers\Libraries\Office\{closure}(Object(stdClass))
+ 3 VENDORPATH\hermawan\codeigniter4-datatables\src\DataTable.php(176): Hermawan\DataTables\DataTableQuery->getDataResult()
+ 4 APPPATH\Controllers\libraries\Office\HeadController.php(88): Hermawan\DataTables\DataTable->toJson(true)
+ 5 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\Libraries\Office\HeadController->getHeadDatatable('0')
+ 6 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Libraries\Office\HeadController))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-30 15:15:35 --> Too few arguments to function App\Models\Libraries\Office\HeadModel::headUpdate(), 1 passed in C:\laragon\www\promis\app\Controllers\libraries\Office\HeadController.php on line 51 and exactly 2 expected
+in APPPATH\Models\Libraries\Office\HeadModel.php on line 43.
+ 1 APPPATH\Controllers\libraries\Office\HeadController.php(51): App\Models\Libraries\Office\HeadModel->headUpdate([...])
+ 2 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\Libraries\Office\HeadController->actionInsertUpdate()
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Libraries\Office\HeadController))
+ 4 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-30 15:16:47 --> Too few arguments to function App\Models\Libraries\Office\HeadModel::headUpdate(), 1 passed in C:\laragon\www\promis\app\Controllers\libraries\Office\HeadController.php on line 51 and exactly 2 expected
+in APPPATH\Models\Libraries\Office\HeadModel.php on line 43.
+ 1 APPPATH\Controllers\libraries\Office\HeadController.php(51): App\Models\Libraries\Office\HeadModel->headUpdate([...])
+ 2 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\Libraries\Office\HeadController->actionInsertUpdate()
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Libraries\Office\HeadController))
+ 4 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-30 15:17:45 --> Too few arguments to function App\Models\Libraries\Office\HeadModel::headUpdate(), 1 passed in C:\laragon\www\promis\app\Controllers\libraries\Office\HeadController.php on line 51 and exactly 2 expected
+in APPPATH\Models\Libraries\Office\HeadModel.php on line 43.
+ 1 APPPATH\Controllers\libraries\Office\HeadController.php(51): App\Models\Libraries\Office\HeadModel->headUpdate([...])
+ 2 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\Libraries\Office\HeadController->actionInsertUpdate()
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Libraries\Office\HeadController))
+ 4 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2023-08-30 15:22:31 --> mysqli_sql_exception: Unknown column 'posHead' in 'where clause' in C:\laragon\www\promis\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\laragon\www\promis\system\Database\MySQLi\Connection.php(292): mysqli->query('UPDATE `lib_off...', 0)
+#1 C:\laragon\www\promis\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `lib_off...')
+#2 C:\laragon\www\promis\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `lib_off...')
+#3 C:\laragon\www\promis\system\Database\BaseBuilder.php(2078): CodeIgniter\Database\BaseConnection->query('UPDATE `lib_off...', Array, false)
+#4 C:\laragon\www\promis\app\Models\Libraries\Office\HeadModel.php(48): CodeIgniter\Database\BaseBuilder->update(Array)
+#5 C:\laragon\www\promis\app\Controllers\libraries\Office\HeadController.php(51): App\Models\Libraries\Office\HeadModel->headUpdate(Array, '64eeec3a659a7')
+#6 C:\laragon\www\promis\system\CodeIgniter.php(904): App\Controllers\Libraries\Office\HeadController->actionInsertUpdate()
+#7 C:\laragon\www\promis\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Libraries\Office\HeadController))
+#8 C:\laragon\www\promis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\laragon\www\promis\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\laragon\www\promis\system\Commands\Server\rewrite.php(43): require_once('C:\\laragon\\www\\...')
+#11 {main}
+CRITICAL - 2023-08-30 15:22:31 --> Unknown column 'posHead' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('UPDATE `lib_office_head` SET `firstname` = \'Randy\', `middlename` = \'S.\', `lastname` = \'Jan\', `extensionname` = \'\', `sex` = \'Female\', `posID` = \'64ee9ebb8ccb7\', `isActive` = 1
+WHERE `posHead` = \'64eeec3a659a7\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `lib_office_head` SET `firstname` = \'Randy\', `middlename` = \'S.\', `lastname` = \'Jan\', `extensionname` = \'\', `sex` = \'Female\', `posID` = \'64ee9ebb8ccb7\', `isActive` = 1
+WHERE `posHead` = \'64eeec3a659a7\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `lib_office_head` SET `firstname` = \'Randy\', `middlename` = \'S.\', `lastname` = \'Jan\', `extensionname` = \'\', `sex` = \'Female\', `posID` = \'64ee9ebb8ccb7\', `isActive` = 1
+WHERE `posHead` = \'64eeec3a659a7\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2078): CodeIgniter\Database\BaseConnection->query('UPDATE `lib_office_head` SET `firstname` = :firstname:, `middlename` = :middlename:, `lastname` = :lastname:, `extensionname` = :extensionname:, `sex` = :sex:, `posID` = :posID:, `isActive` = :isActive:
+WHERE `posHead` = :posHead:', [...], false)
+ 5 APPPATH\Models\Libraries\Office\HeadModel.php(48): CodeIgniter\Database\BaseBuilder->update([...])
+ 6 APPPATH\Controllers\libraries\Office\HeadController.php(51): App\Models\Libraries\Office\HeadModel->headUpdate([...], '64eeec3a659a7')
+ 7 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\Libraries\Office\HeadController->actionInsertUpdate()
+ 8 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Libraries\Office\HeadController))
+ 9 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2023-08-30 15:23:43 --> mysqli_sql_exception: Unknown column '64eeee7f252b8' in 'field list' in C:\laragon\www\promis\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\laragon\www\promis\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `li...', 0)
+#1 C:\laragon\www\promis\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `li...')
+#2 C:\laragon\www\promis\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `li...')
+#3 C:\laragon\www\promis\system\Database\BaseBuilder.php(1916): CodeIgniter\Database\BaseConnection->query('INSERT INTO `li...', Array, false)
+#4 C:\laragon\www\promis\app\Models\Libraries\Office\HeadModel.php(41): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\laragon\www\promis\app\Controllers\libraries\Office\HeadController.php(51): App\Models\Libraries\Office\HeadModel->headInsert(Array, '64eeee7f252b8')
+#6 C:\laragon\www\promis\system\CodeIgniter.php(904): App\Controllers\Libraries\Office\HeadController->actionInsertUpdate()
+#7 C:\laragon\www\promis\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Libraries\Office\HeadController))
+#8 C:\laragon\www\promis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\laragon\www\promis\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\laragon\www\promis\system\Commands\Server\rewrite.php(43): require_once('C:\\laragon\\www\\...')
+#11 {main}
+CRITICAL - 2023-08-30 15:23:43 --> Unknown column '64eeee7f252b8' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `lib_office_head` (`64eeee7f252b8`, `firstname`, `middlename`, `lastname`, `extensionname`, `sex`, `posID`, `isActive`, `dateAdded`) VALUES (\'\', \'Sample 1\', \'Test\', \'Beray\', \'\', \'Female\', \'64eec87642dee\', 1, \'2023-08-30 15:23:43\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `lib_office_head` (`64eeee7f252b8`, `firstname`, `middlename`, `lastname`, `extensionname`, `sex`, `posID`, `isActive`, `dateAdded`) VALUES (\'\', \'Sample 1\', \'Test\', \'Beray\', \'\', \'Female\', \'64eec87642dee\', 1, \'2023-08-30 15:23:43\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `lib_office_head` (`64eeee7f252b8`, `firstname`, `middlename`, `lastname`, `extensionname`, `sex`, `posID`, `isActive`, `dateAdded`) VALUES (\'\', \'Sample 1\', \'Test\', \'Beray\', \'\', \'Female\', \'64eec87642dee\', 1, \'2023-08-30 15:23:43\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1916): CodeIgniter\Database\BaseConnection->query('INSERT INTO `lib_office_head` (`64eeee7f252b8`, `firstname`, `middlename`, `lastname`, `extensionname`, `sex`, `posID`, `isActive`, `dateAdded`) VALUES (:64eeee7f252b8:, :firstname:, :middlename:, :lastname:, :extensionname:, :sex:, :posID:, :isActive:, :dateAdded:)', [...], false)
+ 5 APPPATH\Models\Libraries\Office\HeadModel.php(41): CodeIgniter\Database\BaseBuilder->insert()
+ 6 APPPATH\Controllers\libraries\Office\HeadController.php(51): App\Models\Libraries\Office\HeadModel->headInsert([...], '64eeee7f252b8')
+ 7 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\Libraries\Office\HeadController->actionInsertUpdate()
+ 8 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Libraries\Office\HeadController))
+ 9 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-30 19:05:40 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\authentications\AuthenticationController.php on line 103.
+ 1 APPPATH\Controllers\authentications\AuthenticationController.php(103): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to access array offset on value of type null', 'APPPATH\\Controllers\\authentications\\AuthenticationController.php', 103, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\authentications\AuthenticationController->LoginUser()
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\authentications\AuthenticationController))
+ 4 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-30 19:05:40 --> Uncaught CodeIgniter\Format\Exceptions\FormatException: Failed to parse json string, error: "Type is not supported". in C:\laragon\www\promis\system\Format\JSONFormatter.php:41
+Stack trace:
+#0 C:\laragon\www\promis\system\Format\JSONFormatter.php(41): CodeIgniter\Format\Exceptions\FormatException::forInvalidJSON('Type is not sup...')
+#1 C:\laragon\www\promis\system\API\ResponseTrait.php(348): CodeIgniter\Format\JSONFormatter->format(Array)
+#2 C:\laragon\www\promis\system\API\ResponseTrait.php(99): CodeIgniter\Debug\Exceptions->format(Array)
+#3 C:\laragon\www\promis\system\Debug\Exceptions.php(132): CodeIgniter\Debug\Exceptions->respond(Array, 500)
+#4 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(ErrorException))
+#5 {main}
+  thrown
+in SYSTEMPATH\Format\JSONFormatter.php on line 41.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-08-30 20:06:39 --> You must set the database table to be used with your query.
+in SYSTEMPATH\Database\BaseConnection.php on line 872.
+ 1 SYSTEMPATH\Model.php(587): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Model.php(764): CodeIgniter\Model->builder()
+ 3 APPPATH\Controllers\libraries\Office\DesignationController.php(33): CodeIgniter\Model->__call('designationInsert', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\Libraries\Office\DesignationController->actionInsertUpdate()
+ 5 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Libraries\Office\DesignationController))
+ 6 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2023-08-30 20:10:28 --> mysqli_sql_exception: Unknown column 'headID' in 'field list' in C:\laragon\www\promis\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\laragon\www\promis\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `li...', 0)
+#1 C:\laragon\www\promis\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `li...')
+#2 C:\laragon\www\promis\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `li...')
+#3 C:\laragon\www\promis\system\Database\BaseBuilder.php(1916): CodeIgniter\Database\BaseConnection->query('INSERT INTO `li...', Array, false)
+#4 C:\laragon\www\promis\app\Models\Libraries\Office\DesignationModel.php(32): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\laragon\www\promis\app\Controllers\libraries\Office\DesignationController.php(33): App\Models\Libraries\Office\DesignationModel->designationInsert(Array, '64ef31b4743cd')
+#6 C:\laragon\www\promis\system\CodeIgniter.php(904): App\Controllers\Libraries\Office\DesignationController->actionInsertUpdate()
+#7 C:\laragon\www\promis\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Libraries\Office\DesignationController))
+#8 C:\laragon\www\promis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\laragon\www\promis\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\laragon\www\promis\system\Commands\Server\rewrite.php(43): require_once('C:\\laragon\\www\\...')
+#11 {main}
+CRITICAL - 2023-08-30 20:10:28 --> Unknown column 'headID' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `lib_office_designation` (`headID`, `desName`, `desAcronym`, `isActive`, `dateAdded`) VALUES (\'64ef31b4743cd\', \'asdasd\', \'asdasd\', 1, \'2023-08-30 20:10:28\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `lib_office_designation` (`headID`, `desName`, `desAcronym`, `isActive`, `dateAdded`) VALUES (\'64ef31b4743cd\', \'asdasd\', \'asdasd\', 1, \'2023-08-30 20:10:28\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `lib_office_designation` (`headID`, `desName`, `desAcronym`, `isActive`, `dateAdded`) VALUES (\'64ef31b4743cd\', \'asdasd\', \'asdasd\', 1, \'2023-08-30 20:10:28\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1916): CodeIgniter\Database\BaseConnection->query('INSERT INTO `lib_office_designation` (`headID`, `desName`, `desAcronym`, `isActive`, `dateAdded`) VALUES (:headID:, :desName:, :desAcronym:, :isActive:, :dateAdded:)', [...], false)
+ 5 APPPATH\Models\Libraries\Office\DesignationModel.php(32): CodeIgniter\Database\BaseBuilder->insert()
+ 6 APPPATH\Controllers\libraries\Office\DesignationController.php(33): App\Models\Libraries\Office\DesignationModel->designationInsert([...], '64ef31b4743cd')
+ 7 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\Libraries\Office\DesignationController->actionInsertUpdate()
+ 8 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Libraries\Office\DesignationController))
+ 9 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-30 20:14:23 --> You must set the database table to be used with your query.
+in SYSTEMPATH\Database\BaseConnection.php on line 872.
+ 1 SYSTEMPATH\Model.php(587): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Model.php(764): CodeIgniter\Model->builder()
+ 3 APPPATH\Controllers\libraries\Office\DesignationController.php(33): CodeIgniter\Model->__call('designationInsert', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\Libraries\Office\DesignationController->actionInsertUpdate()
+ 5 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Libraries\Office\DesignationController))
+ 6 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-30 20:24:41 --> Undefined property: stdClass::$headID
+in APPPATH\Controllers\libraries\Office\DesignationController.php on line 72.
+ 1 APPPATH\Controllers\libraries\Office\DesignationController.php(72): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined property: stdClass::$headID', 'APPPATH\\Controllers\\libraries\\Office\\DesignationController.php', 72, [...])
+ 2 VENDORPATH\hermawan\codeigniter4-datatables\src\DataTableQuery.php(91): App\Controllers\Libraries\Office\DesignationController->App\Controllers\Libraries\Office\{closure}(Object(stdClass))
+ 3 VENDORPATH\hermawan\codeigniter4-datatables\src\DataTable.php(176): Hermawan\DataTables\DataTableQuery->getDataResult()
+ 4 APPPATH\Controllers\libraries\Office\DesignationController.php(79): Hermawan\DataTables\DataTable->toJson(true)
+ 5 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\Libraries\Office\DesignationController->getDatatable('0')
+ 6 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Libraries\Office\DesignationController))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2023-08-30 20:40:15 --> mysqli_sql_exception: Unknown column 'headID' in 'where clause' in C:\laragon\www\promis\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\laragon\www\promis\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\laragon\www\promis\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\laragon\www\promis\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\laragon\www\promis\system\Database\BaseBuilder.php(1669): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\laragon\www\promis\vendor\hermawan\codeigniter4-datatables\src\DataTableQuery.php(53): CodeIgniter\Database\BaseBuilder->countAllResults()
+#5 C:\laragon\www\promis\vendor\hermawan\codeigniter4-datatables\src\DataTable.php(174): Hermawan\DataTables\DataTableQuery->countAll()
+#6 C:\laragon\www\promis\app\Controllers\libraries\Office\DesignationController.php(79): Hermawan\DataTables\DataTable->toJson(true)
+#7 C:\laragon\www\promis\system\CodeIgniter.php(904): App\Controllers\Libraries\Office\DesignationController->getDatatable('64ef32b7e340d')
+#8 C:\laragon\www\promis\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Libraries\Office\DesignationController))
+#9 C:\laragon\www\promis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\laragon\www\promis\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 C:\laragon\www\promis\system\Commands\Server\rewrite.php(43): require_once('C:\\laragon\\www\\...')
+#12 {main}
+CRITICAL - 2023-08-30 20:40:15 --> Unknown column 'headID' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `lib_office_designation`
+WHERE `headID` = \'64ef32b7e340d\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `lib_office_designation`
+WHERE `headID` = \'64ef32b7e340d\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `lib_office_designation`
+WHERE `headID` = \'64ef32b7e340d\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1669): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `lib_office_designation`
+WHERE `headID` = :headID:', [...], false)
+ 5 VENDORPATH\hermawan\codeigniter4-datatables\src\DataTableQuery.php(53): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 6 VENDORPATH\hermawan\codeigniter4-datatables\src\DataTable.php(174): Hermawan\DataTables\DataTableQuery->countAll()
+ 7 APPPATH\Controllers\libraries\Office\DesignationController.php(79): Hermawan\DataTables\DataTable->toJson(true)
+ 8 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\Libraries\Office\DesignationController->getDatatable('64ef32b7e340d')
+ 9 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Libraries\Office\DesignationController))
+10 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2023-08-30 20:40:44 --> mysqli_sql_exception: Unknown column 'headID' in 'where clause' in C:\laragon\www\promis\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\laragon\www\promis\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\laragon\www\promis\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\laragon\www\promis\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\laragon\www\promis\system\Database\BaseBuilder.php(1669): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\laragon\www\promis\vendor\hermawan\codeigniter4-datatables\src\DataTableQuery.php(53): CodeIgniter\Database\BaseBuilder->countAllResults()
+#5 C:\laragon\www\promis\vendor\hermawan\codeigniter4-datatables\src\DataTable.php(174): Hermawan\DataTables\DataTableQuery->countAll()
+#6 C:\laragon\www\promis\app\Controllers\libraries\Office\DesignationController.php(79): Hermawan\DataTables\DataTable->toJson(true)
+#7 C:\laragon\www\promis\system\CodeIgniter.php(904): App\Controllers\Libraries\Office\DesignationController->getDatatable('64ef32b7e340d')
+#8 C:\laragon\www\promis\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Libraries\Office\DesignationController))
+#9 C:\laragon\www\promis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\laragon\www\promis\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 C:\laragon\www\promis\system\Commands\Server\rewrite.php(43): require_once('C:\\laragon\\www\\...')
+#12 {main}
+CRITICAL - 2023-08-30 20:40:44 --> Unknown column 'headID' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `lib_office_designation`
+WHERE `headID` = \'64ef32b7e340d\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `lib_office_designation`
+WHERE `headID` = \'64ef32b7e340d\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `lib_office_designation`
+WHERE `headID` = \'64ef32b7e340d\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1669): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `lib_office_designation`
+WHERE `headID` = :headID:', [...], false)
+ 5 VENDORPATH\hermawan\codeigniter4-datatables\src\DataTableQuery.php(53): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 6 VENDORPATH\hermawan\codeigniter4-datatables\src\DataTable.php(174): Hermawan\DataTables\DataTableQuery->countAll()
+ 7 APPPATH\Controllers\libraries\Office\DesignationController.php(79): Hermawan\DataTables\DataTable->toJson(true)
+ 8 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\Libraries\Office\DesignationController->getDatatable('64ef32b7e340d')
+ 9 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Libraries\Office\DesignationController))
+10 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2023-08-30 20:42:48 --> mysqli_sql_exception: Unknown column 'headID' in 'where clause' in C:\laragon\www\promis\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\laragon\www\promis\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\laragon\www\promis\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\laragon\www\promis\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\laragon\www\promis\system\Database\BaseBuilder.php(1669): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\laragon\www\promis\vendor\hermawan\codeigniter4-datatables\src\DataTableQuery.php(53): CodeIgniter\Database\BaseBuilder->countAllResults()
+#5 C:\laragon\www\promis\vendor\hermawan\codeigniter4-datatables\src\DataTable.php(174): Hermawan\DataTables\DataTableQuery->countAll()
+#6 C:\laragon\www\promis\app\Controllers\libraries\Office\DesignationController.php(79): Hermawan\DataTables\DataTable->toJson(true)
+#7 C:\laragon\www\promis\system\CodeIgniter.php(904): App\Controllers\Libraries\Office\DesignationController->getDatatable('64ef32b7e340d')
+#8 C:\laragon\www\promis\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Libraries\Office\DesignationController))
+#9 C:\laragon\www\promis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\laragon\www\promis\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 C:\laragon\www\promis\system\Commands\Server\rewrite.php(43): require_once('C:\\laragon\\www\\...')
+#12 {main}
+CRITICAL - 2023-08-30 20:42:48 --> Unknown column 'headID' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `lib_office_designation`
+WHERE `headID` = \'64ef32b7e340d\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `lib_office_designation`
+WHERE `headID` = \'64ef32b7e340d\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `lib_office_designation`
+WHERE `headID` = \'64ef32b7e340d\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1669): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `lib_office_designation`
+WHERE `headID` = :headID:', [...], false)
+ 5 VENDORPATH\hermawan\codeigniter4-datatables\src\DataTableQuery.php(53): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 6 VENDORPATH\hermawan\codeigniter4-datatables\src\DataTable.php(174): Hermawan\DataTables\DataTableQuery->countAll()
+ 7 APPPATH\Controllers\libraries\Office\DesignationController.php(79): Hermawan\DataTables\DataTable->toJson(true)
+ 8 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\Libraries\Office\DesignationController->getDatatable('64ef32b7e340d')
+ 9 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Libraries\Office\DesignationController))
+10 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2023-08-30 23:13:31 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AS `od`' at line 1 in C:\laragon\www\promis\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\laragon\www\promis\system\Database\MySQLi\Connection.php(292): mysqli->query('SHOW COLUMNS FR...', 0)
+#1 C:\laragon\www\promis\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SHOW COLUMNS FR...')
+#2 C:\laragon\www\promis\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SHOW COLUMNS FR...')
+#3 C:\laragon\www\promis\system\Database\MySQLi\Connection.php(408): CodeIgniter\Database\BaseConnection->query('SHOW COLUMNS FR...')
+#4 C:\laragon\www\promis\system\Database\BaseConnection.php(1514): CodeIgniter\Database\MySQLi\Connection->_fieldData('`lib_office_div...')
+#5 C:\laragon\www\promis\vendor\hermawan\codeigniter4-datatables\src\DataTableColumnDefs.php(335): CodeIgniter\Database\BaseConnection->getFieldData('`lib_office_div...')
+#6 C:\laragon\www\promis\vendor\hermawan\codeigniter4-datatables\src\DataTableColumnDefs.php(17): Hermawan\DataTables\DataTableColumnDefs->initFromBuilder(Object(CodeIgniter\Database\MySQLi\Builder))
+#7 C:\laragon\www\promis\vendor\hermawan\codeigniter4-datatables\src\DataTable.php(35): Hermawan\DataTables\DataTableColumnDefs->__construct(Object(CodeIgniter\Database\MySQLi\Builder))
+#8 C:\laragon\www\promis\vendor\hermawan\codeigniter4-datatables\src\DataTable.php(46): Hermawan\DataTables\DataTable->__construct(Object(CodeIgniter\Database\MySQLi\Builder))
+#9 C:\laragon\www\promis\app\Controllers\libraries\Office\DivisionController.php(71): Hermawan\DataTables\DataTable::of(Object(CodeIgniter\Database\MySQLi\Builder))
+#10 C:\laragon\www\promis\system\CodeIgniter.php(904): App\Controllers\Libraries\Office\DivisionController->getDatatable('0')
+#11 C:\laragon\www\promis\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Libraries\Office\DivisionController))
+#12 C:\laragon\www\promis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\laragon\www\promis\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#14 C:\laragon\www\promis\system\Commands\Server\rewrite.php(43): require_once('C:\\laragon\\www\\...')
+#15 {main}
+CRITICAL - 2023-08-30 23:13:31 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AS `od`' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SHOW COLUMNS FROM `lib_office_division` AS `od`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SHOW COLUMNS FROM `lib_office_division` AS `od`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SHOW COLUMNS FROM `lib_office_division` AS `od`')
+ 4 SYSTEMPATH\Database\MySQLi\Connection.php(408): CodeIgniter\Database\BaseConnection->query('SHOW COLUMNS FROM `lib_office_division` AS `od`')
+ 5 SYSTEMPATH\Database\BaseConnection.php(1514): CodeIgniter\Database\MySQLi\Connection->_fieldData('`lib_office_division` AS `od`')
+ 6 VENDORPATH\hermawan\codeigniter4-datatables\src\DataTableColumnDefs.php(335): CodeIgniter\Database\BaseConnection->getFieldData('`lib_office_division` AS `od`')
+ 7 VENDORPATH\hermawan\codeigniter4-datatables\src\DataTableColumnDefs.php(17): Hermawan\DataTables\DataTableColumnDefs->initFromBuilder(Object(CodeIgniter\Database\MySQLi\Builder))
+ 8 VENDORPATH\hermawan\codeigniter4-datatables\src\DataTable.php(35): Hermawan\DataTables\DataTableColumnDefs->__construct(Object(CodeIgniter\Database\MySQLi\Builder))
+ 9 VENDORPATH\hermawan\codeigniter4-datatables\src\DataTable.php(46): Hermawan\DataTables\DataTable->__construct(Object(CodeIgniter\Database\MySQLi\Builder))
+10 APPPATH\Controllers\libraries\Office\DivisionController.php(71): Hermawan\DataTables\DataTable::of(Object(CodeIgniter\Database\MySQLi\Builder))
+11 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\Libraries\Office\DivisionController->getDatatable('0')
+12 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Libraries\Office\DivisionController))
+13 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+14 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+15 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2023-08-30 23:14:50 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AS `div`' at line 1 in C:\laragon\www\promis\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\laragon\www\promis\system\Database\MySQLi\Connection.php(292): mysqli->query('SHOW COLUMNS FR...', 0)
+#1 C:\laragon\www\promis\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SHOW COLUMNS FR...')
+#2 C:\laragon\www\promis\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SHOW COLUMNS FR...')
+#3 C:\laragon\www\promis\system\Database\MySQLi\Connection.php(408): CodeIgniter\Database\BaseConnection->query('SHOW COLUMNS FR...')
+#4 C:\laragon\www\promis\system\Database\BaseConnection.php(1514): CodeIgniter\Database\MySQLi\Connection->_fieldData('`lib_office_div...')
+#5 C:\laragon\www\promis\vendor\hermawan\codeigniter4-datatables\src\DataTableColumnDefs.php(335): CodeIgniter\Database\BaseConnection->getFieldData('`lib_office_div...')
+#6 C:\laragon\www\promis\vendor\hermawan\codeigniter4-datatables\src\DataTableColumnDefs.php(17): Hermawan\DataTables\DataTableColumnDefs->initFromBuilder(Object(CodeIgniter\Database\MySQLi\Builder))
+#7 C:\laragon\www\promis\vendor\hermawan\codeigniter4-datatables\src\DataTable.php(35): Hermawan\DataTables\DataTableColumnDefs->__construct(Object(CodeIgniter\Database\MySQLi\Builder))
+#8 C:\laragon\www\promis\vendor\hermawan\codeigniter4-datatables\src\DataTable.php(46): Hermawan\DataTables\DataTable->__construct(Object(CodeIgniter\Database\MySQLi\Builder))
+#9 C:\laragon\www\promis\app\Controllers\libraries\Office\DivisionController.php(71): Hermawan\DataTables\DataTable::of(Object(CodeIgniter\Database\MySQLi\Builder))
+#10 C:\laragon\www\promis\system\CodeIgniter.php(904): App\Controllers\Libraries\Office\DivisionController->getDatatable('0')
+#11 C:\laragon\www\promis\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Libraries\Office\DivisionController))
+#12 C:\laragon\www\promis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\laragon\www\promis\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#14 C:\laragon\www\promis\system\Commands\Server\rewrite.php(43): require_once('C:\\laragon\\www\\...')
+#15 {main}
+CRITICAL - 2023-08-30 23:14:50 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AS `div`' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SHOW COLUMNS FROM `lib_office_division` AS `div`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SHOW COLUMNS FROM `lib_office_division` AS `div`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SHOW COLUMNS FROM `lib_office_division` AS `div`')
+ 4 SYSTEMPATH\Database\MySQLi\Connection.php(408): CodeIgniter\Database\BaseConnection->query('SHOW COLUMNS FROM `lib_office_division` AS `div`')
+ 5 SYSTEMPATH\Database\BaseConnection.php(1514): CodeIgniter\Database\MySQLi\Connection->_fieldData('`lib_office_division` AS `div`')
+ 6 VENDORPATH\hermawan\codeigniter4-datatables\src\DataTableColumnDefs.php(335): CodeIgniter\Database\BaseConnection->getFieldData('`lib_office_division` AS `div`')
+ 7 VENDORPATH\hermawan\codeigniter4-datatables\src\DataTableColumnDefs.php(17): Hermawan\DataTables\DataTableColumnDefs->initFromBuilder(Object(CodeIgniter\Database\MySQLi\Builder))
+ 8 VENDORPATH\hermawan\codeigniter4-datatables\src\DataTable.php(35): Hermawan\DataTables\DataTableColumnDefs->__construct(Object(CodeIgniter\Database\MySQLi\Builder))
+ 9 VENDORPATH\hermawan\codeigniter4-datatables\src\DataTable.php(46): Hermawan\DataTables\DataTable->__construct(Object(CodeIgniter\Database\MySQLi\Builder))
+10 APPPATH\Controllers\libraries\Office\DivisionController.php(71): Hermawan\DataTables\DataTable::of(Object(CodeIgniter\Database\MySQLi\Builder))
+11 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\Libraries\Office\DivisionController->getDatatable('0')
+12 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Libraries\Office\DivisionController))
+13 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+14 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+15 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2023-08-30 23:16:16 --> mysqli_sql_exception: Unknown column 'od.headID' in 'on clause' in C:\laragon\www\promis\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\laragon\www\promis\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\laragon\www\promis\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\laragon\www\promis\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\laragon\www\promis\system\Database\BaseBuilder.php(1669): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\laragon\www\promis\vendor\hermawan\codeigniter4-datatables\src\DataTableQuery.php(53): CodeIgniter\Database\BaseBuilder->countAllResults()
+#5 C:\laragon\www\promis\vendor\hermawan\codeigniter4-datatables\src\DataTable.php(174): Hermawan\DataTables\DataTableQuery->countAll()
+#6 C:\laragon\www\promis\app\Controllers\libraries\Office\DivisionController.php(86): Hermawan\DataTables\DataTable->toJson(true)
+#7 C:\laragon\www\promis\system\CodeIgniter.php(904): App\Controllers\Libraries\Office\DivisionController->getDatatable('0')
+#8 C:\laragon\www\promis\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Libraries\Office\DivisionController))
+#9 C:\laragon\www\promis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\laragon\www\promis\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 C:\laragon\www\promis\system\Commands\Server\rewrite.php(43): require_once('C:\\laragon\\www\\...')
+#12 {main}
+CRITICAL - 2023-08-30 23:16:16 --> Unknown column 'od.headID' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `lib_office_division` AS `div`
+LEFT JOIN `lib_office_head` AS `head` ON `head`.`headID` = `od`.`headID`
+LEFT JOIN `lib_office_designation` AS `des` ON `des`.`desID` = `od`.`desID`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `lib_office_division` AS `div`
+LEFT JOIN `lib_office_head` AS `head` ON `head`.`headID` = `od`.`headID`
+LEFT JOIN `lib_office_designation` AS `des` ON `des`.`desID` = `od`.`desID`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `lib_office_division` AS `div`
+LEFT JOIN `lib_office_head` AS `head` ON `head`.`headID` = `od`.`headID`
+LEFT JOIN `lib_office_designation` AS `des` ON `des`.`desID` = `od`.`desID`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1669): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `lib_office_division` AS `div`
+LEFT JOIN `lib_office_head` AS `head` ON `head`.`headID` = `od`.`headID`
+LEFT JOIN `lib_office_designation` AS `des` ON `des`.`desID` = `od`.`desID`', [], false)
+ 5 VENDORPATH\hermawan\codeigniter4-datatables\src\DataTableQuery.php(53): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 6 VENDORPATH\hermawan\codeigniter4-datatables\src\DataTable.php(174): Hermawan\DataTables\DataTableQuery->countAll()
+ 7 APPPATH\Controllers\libraries\Office\DivisionController.php(86): Hermawan\DataTables\DataTable->toJson(true)
+ 8 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\Libraries\Office\DivisionController->getDatatable('0')
+ 9 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Libraries\Office\DivisionController))
+10 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2023-08-30 23:16:31 --> mysqli_sql_exception: Column 'dateAdded' in order clause is ambiguous in C:\laragon\www\promis\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\laragon\www\promis\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `div`.`d...', 0)
+#1 C:\laragon\www\promis\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `div`.`d...')
+#2 C:\laragon\www\promis\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `div`.`d...')
+#3 C:\laragon\www\promis\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT `div`.`d...', Array, false)
+#4 C:\laragon\www\promis\vendor\hermawan\codeigniter4-datatables\src\DataTableQuery.php(219): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\promis\vendor\hermawan\codeigniter4-datatables\src\DataTableQuery.php(70): Hermawan\DataTables\DataTableQuery->queryResult()
+#6 C:\laragon\www\promis\vendor\hermawan\codeigniter4-datatables\src\DataTable.php(176): Hermawan\DataTables\DataTableQuery->getDataResult()
+#7 C:\laragon\www\promis\app\Controllers\libraries\Office\DivisionController.php(86): Hermawan\DataTables\DataTable->toJson(true)
+#8 C:\laragon\www\promis\system\CodeIgniter.php(904): App\Controllers\Libraries\Office\DivisionController->getDatatable('0')
+#9 C:\laragon\www\promis\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Libraries\Office\DivisionController))
+#10 C:\laragon\www\promis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\laragon\www\promis\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 C:\laragon\www\promis\system\Commands\Server\rewrite.php(43): require_once('C:\\laragon\\www\\...')
+#13 {main}
+CRITICAL - 2023-08-30 23:16:31 --> Column 'dateAdded' in order clause is ambiguous
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `div`.`divID`
+FROM `lib_office_division` AS `div`
+LEFT JOIN `lib_office_head` AS `head` ON `head`.`headID` = `div`.`headID`
+LEFT JOIN `lib_office_designation` AS `des` ON `des`.`desID` = `div`.`desID`
+ORDER BY `dateAdded` DESC
+ LIMIT 10', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `div`.`divID`
+FROM `lib_office_division` AS `div`
+LEFT JOIN `lib_office_head` AS `head` ON `head`.`headID` = `div`.`headID`
+LEFT JOIN `lib_office_designation` AS `des` ON `des`.`desID` = `div`.`desID`
+ORDER BY `dateAdded` DESC
+ LIMIT 10')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `div`.`divID`
+FROM `lib_office_division` AS `div`
+LEFT JOIN `lib_office_head` AS `head` ON `head`.`headID` = `div`.`headID`
+LEFT JOIN `lib_office_designation` AS `des` ON `des`.`desID` = `div`.`desID`
+ORDER BY `dateAdded` DESC
+ LIMIT 10')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT `div`.`divID`
+FROM `lib_office_division` AS `div`
+LEFT JOIN `lib_office_head` AS `head` ON `head`.`headID` = `div`.`headID`
+LEFT JOIN `lib_office_designation` AS `des` ON `des`.`desID` = `div`.`desID`
+ORDER BY `dateAdded` DESC
+ LIMIT 10', [], false)
+ 5 VENDORPATH\hermawan\codeigniter4-datatables\src\DataTableQuery.php(219): CodeIgniter\Database\BaseBuilder->get()
+ 6 VENDORPATH\hermawan\codeigniter4-datatables\src\DataTableQuery.php(70): Hermawan\DataTables\DataTableQuery->queryResult()
+ 7 VENDORPATH\hermawan\codeigniter4-datatables\src\DataTable.php(176): Hermawan\DataTables\DataTableQuery->getDataResult()
+ 8 APPPATH\Controllers\libraries\Office\DivisionController.php(86): Hermawan\DataTables\DataTable->toJson(true)
+ 9 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\Libraries\Office\DivisionController->getDatatable('0')
+10 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Libraries\Office\DivisionController))
+11 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')

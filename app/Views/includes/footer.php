@@ -36,6 +36,7 @@
     <script src="<?= base_url(); ?>/vendors/cuba/assets/js/datatable/datatables/jquery.dataTables.min.js"></script>
     <!-- sweetalert2 js-->
     <script src="<?= base_url(); ?>/vendors/cuba/libraries/sweetalert2/dist/sweetalert2.all.min.js"></script>
+    <script src="<?= base_url(); ?>/vendors/cuba/assets/js/select2/select2.full.min.js"></script>
     <script src="<?= base_url(); ?>/js/sweetAlert.js"></script>
   </body>
 </html>

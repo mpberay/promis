@@ -9,6 +9,11 @@ use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 use Psr\Log\LoggerInterface;
 use \App\Models\Authentications\AuthModel;
+
+//models libraries for model
+use \App\Models\Libraries\Office\PositionModel;
+
+
 /**
  * Class BaseController
  *
@@ -27,6 +32,7 @@ abstract class BaseController extends Controller
      * @var CLIRequest|IncomingRequest
      */
     protected $request;
+    private $positionModel = NULL;
 
     /**
      * An array of helpers to be loaded automatically upon
@@ -42,7 +48,7 @@ abstract class BaseController extends Controller
      */
     //private $sessionUserInfo = NULL;
     public function __construct(){
-        
+        $this->positionModel = new PositionModel();
         if(!session()->get('LoginUserInfo')){
             return redirect()->to(base_url('/'));
         }
@@ -70,5 +76,4 @@ abstract class BaseController extends Controller
         $answer = $a + $b;
         echo $answer;
     }
-
 }

@@ -51,10 +51,26 @@ $routes->group('', ['filter' => 'AuthCheck'], function($routes){
 
     //for libraries/offices module
     $routes->get('/libraries/@offices', 'Libraries\Office\MainController::officePage',['as' => 'officePage']);
-
-    $routes->get('/libraries/position/load/(:any)', 'Libraries\Office\PositionController::loadPosition/$1');
+        //position
+    $routes->get('/libraries/position/load/(:any)', 'Libraries\Office\PositionController::getPositionDatatable/$1');
     $routes->post('/libraries/position/action', 'Libraries\Office\PositionController::actionInsert');
-    $routes->post('/libraries/position/status', 'Libraries\Office\PositionController::actionStatus');
+    $routes->post('/libraries/position/status', 'Libraries\Office\PositionController::actionStatus');    
+        //head
+    $routes->get('/libraries/head/getDataTable/(:any)', 'Libraries\Office\HeadController::getHeadDatatable/$1');
+    $routes->get('/libraries/head/getHead/(:any)', 'Libraries\Office\HeadController::getHead/$1');
+    $routes->post('/libraries/head/action', 'Libraries\Office\HeadController::actionInsertUpdate');
+    $routes->post('/libraries/head/status', 'Libraries\Office\HeadController::actionStatus');
+        //designation
+    $routes->get('/libraries/designation/getDataTable/(:any)', 'Libraries\Office\DesignationController::getDatatable/$1');
+    $routes->post('/libraries/designation/action', 'Libraries\Office\DesignationController::actionInsertUpdate');
+    $routes->post('/libraries/designation/status', 'Libraries\Office\DesignationController::actionStatus');
+        //for select attribute
+    $routes->get('/libraries/position/select', 'Libraries\Office\PositionController::getPosition');
+    $routes->get('/libraries/head/select', 'Libraries\Office\HeadController::getAllHead');
+    $routes->get('/libraries/designation/select', 'Libraries\Office\DesignationController::getAllDesignation');
+        //division
+    $routes->post('/libraries/division/action', 'Libraries\Office\DivisionController::actionInsertUpdate');
+    $routes->get('/libraries/division/getDataTable/(:any)', 'Libraries\Office\DivisionController::getDatatable/$1');
 });
 
 
@@ -69,7 +85,6 @@ $routes->get('/hacker', function(){
 
 //Authentications homepage
 $routes->get('/', 'authentications\AuthenticationController::index',['as' => 'homePage']);
-
 
 $routes->post('/login', 'authentications\AuthenticationController::LoginUser',['as' => 'loginAction']);
 $routes->get('/logout/(:any)', 'authentications\AuthenticationController::LogoutUser/$1');

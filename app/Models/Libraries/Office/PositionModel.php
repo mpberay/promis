@@ -23,18 +23,13 @@ class PositionModel extends Model
     {
         return $this->allowedFieldsMap[$table] ?? [];
     }
-    public function loadPosition($posID){
-        $query = NULL;
-        if($posID == 0){
-            $query = $this->db
-            ->table('lib_office_position')
-            ->orderBy('dateAdded','DESC');
-        }else{
-            $query = $this->db
-            ->table('lib_office_position')
-            ->where('posID',$posID)
-            ->orderBy('dateAdded','DESC');
+    public function getPositionDatatable($conditions = []){
+        $this->table = $this->table ?: 'lib_office_position';
+        $query = $this->builder();
+        if (!empty($conditions)) {
+            $query->where($conditions);
         }
+        $query->orderBy('dateAdded','DESC');
         return $query;
     }
     public function insertPosition($data){
@@ -49,6 +44,15 @@ class PositionModel extends Model
             ->table('lib_office_position')
             ->where('posID',$posID)
             ->update($data);
+        return $query;
+    }
+    public function getPositionSelect($conditions = []){
+        $this->table = $this->table ?: 'lib_office_position';
+        $query = $this->builder();
+        if (!empty($conditions)) {
+            $query->where($conditions);
+        }
+        $query->orderBy('posName','ASC');
         return $query;
     }
 }

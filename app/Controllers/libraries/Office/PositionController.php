@@ -19,11 +19,18 @@ class PositionController extends BaseController
     {
         //
     }
-    public function loadPosition($postID){
-        // echo $postID;
-        //echo 'asdasd';
-        $builder = $this->positionModel->loadPosition($postID);
+    public function getPositionDatatable($posID){
+        if($posID == 0){
+            $condition = NULL;
+        }else{
+            $condition = [
+                "posID" => $posID
+            ];
+        }
+        $builder = $this->positionModel->getPositionDatatable($condition);
+        //$builder = $this->positionModel->loadPosition($postID);
         //print_r($builder);
+        //print_r($condition);
         return DataTable::of($builder)
             ->addNumbering('no')
             //->hide('username')
@@ -44,6 +51,7 @@ class PositionController extends BaseController
     public function actionInsert(){
         $id = uniqid();
         $posID = $this->request->getPost('posID');
+        //condition insert and update
         if($posID == ""){
             $dataInsert = [
                 "posID" => $id,
@@ -63,17 +71,18 @@ class PositionController extends BaseController
         }
         // $action = $this->positionModel->insertPosition($data);
         //echo $action;
+        //condition json response to ajax
         if($action == 0){ //insert 
             $response = [
                 'status' => 'success',
-                'msg' => 'Successfully save',  
+                'msg' => 'New position successfully added',  
                 'success' => true,
                 'posID' => $id          
             ];
         }else if($action == 1){ //update 
             $response = [
                 'status' => 'success',
-                'msg' => 'Successfully update',  
+                'msg' => 'Position Successfully updated',  
                 'success' => true,
                 'posID' => $posID          
             ];
@@ -117,6 +126,11 @@ class PositionController extends BaseController
                 'success' => false              
             ];
         }
+        return $this->response->setJSON($response);
+    }
+    public function getPosition(){
+        $response = $this->positionModel->getPositionSelect(["isActive" => 1])->get()->getResultArray();
+        //print_r($position->get()->getResultArray());
         return $this->response->setJSON($response);
     }
     
