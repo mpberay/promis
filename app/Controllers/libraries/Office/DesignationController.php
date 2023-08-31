@@ -85,7 +85,7 @@ class DesignationController extends BaseController
             $data = [
                 'isActive' => 0
             ];
-            $msg = 'Successfully Deactivated asdasdasd';
+            $msg = 'Successfully Deactivated';
         }else{
             $data = [
                 'isActive' => 1

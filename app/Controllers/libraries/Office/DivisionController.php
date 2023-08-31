@@ -57,12 +57,12 @@ class DivisionController extends BaseController
         //print_r($dataArray);
         //echo $action;
     }
-    public function getDatatable($desID){
-        if($desID == 0){
+    public function getDatatable($divID){
+        if($divID == 0){
             $param = NULL;
         }else{
             $param = [
-                'desID' => $desID
+                'divID' => $divID
             ];
         }
         $builder = $this->divisionModel->getDatatable($param);
@@ -74,18 +74,54 @@ class DivisionController extends BaseController
         // ->setSearchableColumns(['username', 'hostname','firstname','lastname','date'])
         ->add('status', function($row){
             if($row->isActive == 0){
-                $status = '<a class="ms-2" href="#" style="color:red" onclick="jsUpdateDesignationStatus(\''.$row->divID.'\',\''.$row->isActive.'\')">In Active</a>';
+                $status = '<a class="ms-2" href="#" style="color:red" onclick="jsUpdateDivisionStatus(\''.$row->divID.'\',\''.$row->isActive.'\')">In Active</a>';
             }else{
-                $status = '<a class="ms-2" href="#" style="color:green" onclick="jsUpdateDesignationStatus(\''.$row->divID.'\',\''.$row->isActive.'\')">Active</a>';
+                $status = '<a class="ms-2" href="#" style="color:green" onclick="jsUpdateDivisionStatus(\''.$row->divID.'\',\''.$row->isActive.'\')">Active</a>';
             }
             return $status;
         }, 'last')
         ->add('action', function($row){
-            return '<a class="ms-2" href="#" style="color:blue" onclick="jsDesignationLoadInformation(\''.$row->divID.'\')">Update</a>';
+            return '<a class="ms-2" href="#" style="color:blue" onclick="jsgitDivisionInfo(\''.$row->divID.'\')">Update</a>';
         }, 'last')
             ->add('fullname', function($row){
                 return ''.$row->firstname.' '.$row->middlename.' '.$row->lastname.' '.$row->extensionname.'';
             }, 'last')
         ->toJson(true);
+    }
+    public function actionStatus(){
+        $divID = $this->request->getPost('divID');
+        $status = $this->request->getPost('status');
+        if($status == 1){
+            $data = [
+                'isActive' => 0
+            ];
+            $msg = 'Successfully Deactivated';
+        }else{
+            $data = [
+                'isActive' => 1
+            ];
+            $msg = 'Successfully Activated';
+        }
+        $action = $this->divisionModel->divisionUpdate($data,$divID);
+        //echo $action;
+        if($action == 1){
+            $response = [
+                'status' => 'success',
+                'msg' =>  $msg,  
+                'success' => true              
+            ];
+        }else{
+            $response = [
+                'status' => 'error',
+                'msg' => 'Sever error. contact system administrator',  
+                'success' => false              
+            ];
+        }
+        return $this->response->setJSON($response);
+    }
+    public function getDivisionInformation($divID){
+        $response = $this->divisionModel->getDatatable(["divID" => $divID])->get()->getResultArray();
+        //print_r($position->get()->getResultArray());
+        return $this->response->setJSON($response);
     }
 }

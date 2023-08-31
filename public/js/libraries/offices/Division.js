@@ -86,3 +86,65 @@ function getDivisionDatatable(divID){
         ]
     });
 }
+function jsUpdateDivisionStatus(divID,status){
+    $.ajax({
+        url: baseUrl + "/libraries/division/status",
+        type: "POST",
+        cache: false,
+        data: {
+            divID:divID,
+            status:status
+        },
+        // processData: false,
+        // contentType: false,
+        dataType: "JSON",
+        success: function(data) {
+            if (data.success == true) {
+                sweetAlert(1000,'Update Status',data.msg,data.status);
+                getDivisionDatatable(divID);
+            }else{
+                sweetAlert(1000,'Update Status',data.msg,data.status);
+            }
+        },
+    });
+}
+function jsgitDivisionInfo(divID){
+    $.ajax({
+        url: baseUrl + "/libraries/division/getDivisionInformation/"+divID,
+        type: "GET",
+        cache: false,
+        //data: formData,
+        // processData: false,
+        // contentType: false,
+        dataType: "JSON",
+        success: function(data) {
+            // $("#getPosition").empty(); 
+            // $("#getPosition").append('<option selected value="">Select Position . . .</option>'); 
+            Swal.fire({
+                title: 'Please wait getting information. . .',
+                timer: 1000,
+                onOpen: function () {
+                    swal.showLoading();
+                }
+            }).then(
+                function () {
+                    // Swal.fire(title,msg,status)
+                    $.each(data, function(key,val){
+                        // $("#getPosition").append($('<option>', {value : val.posID}).text(val.posName+' - '+val.posAcronym));
+                        $("#frmDivision input[name='divCode']").val(val.divCode);
+                        $("#frmDivision input[name='divName']").val(val.divName);
+                        $("#frmDivision input[name='divAcronym']").val(val.divAcronym);
+                        getSelectHead();
+                        getSelectDesignation();
+                    });
+                },
+                // handling the promise rejection
+                function (dismiss) {
+                    if (dismiss === 'timer') {
+                       
+                    }
+                }
+            );
+        },
+    });
+}

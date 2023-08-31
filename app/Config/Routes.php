@@ -71,6 +71,8 @@ $routes->group('', ['filter' => 'AuthCheck'], function($routes){
         //division
     $routes->post('/libraries/division/action', 'Libraries\Office\DivisionController::actionInsertUpdate');
     $routes->get('/libraries/division/getDataTable/(:any)', 'Libraries\Office\DivisionController::getDatatable/$1');
+    $routes->post('/libraries/division/status', 'Libraries\Office\DivisionController::actionStatus');
+    $routes->get('/libraries/division/getDivisionInformation/(:any)', 'Libraries\Office\DivisionController::getDivisionInformation/$1');
 });
 
 
