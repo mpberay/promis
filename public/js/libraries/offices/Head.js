@@ -3,6 +3,10 @@ $(function(){
         getSelectPosition();
         getHeadDatatable(headID = 0);
     });
+    $('a[name="refreshHead"]').on('click', function(e) {
+        getSelectPosition();
+        getHeadDatatable(headID = 0);
+    });
     $('#frmHead').on('submit', function(e) {
         e.preventDefault();
         var formData = new FormData(this);
@@ -60,7 +64,7 @@ function getSelectPosition(){
         dataType: "JSON",
         success: function(data) {
             $("#getPosition").empty(); 
-            $("#getPosition").append('<option selected value="">Select Position . . .</option>'); 
+            $("#getPosition").append('<option selected value="0">Select Position . . .</option>'); 
             $.each(data, function(key,val){
                 $("#getPosition").append($('<option>', {value : val.posID}).text(val.posName+' - '+val.posAcronym));
             });

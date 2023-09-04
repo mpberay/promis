@@ -1,5 +1,8 @@
 $(function(){
     loadPosition(posID = 0);
+    $('a[name="refreshPosition"]').on('click', function(e) {
+        loadPosition(posID = 0);
+    });
     $('#frmPosition').on('submit', function(e) {
         e.preventDefault();
         var formData = new FormData(this);

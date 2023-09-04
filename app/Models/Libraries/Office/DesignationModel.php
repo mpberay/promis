@@ -38,6 +38,7 @@ class DesignationModel extends Model
             if (!empty($conditions)) {
                 $query->where($conditions);
             }
+            $query->where('isActive',1);
             $query->orderBy('desName','ASC');
         return $query;
     }

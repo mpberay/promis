@@ -68,11 +68,23 @@ $routes->group('', ['filter' => 'AuthCheck'], function($routes){
     $routes->get('/libraries/position/select', 'Libraries\Office\PositionController::getPosition');
     $routes->get('/libraries/head/select', 'Libraries\Office\HeadController::getAllHead');
     $routes->get('/libraries/designation/select', 'Libraries\Office\DesignationController::getAllDesignation');
+    $routes->get('/libraries/division/select', 'Libraries\Office\DivisionController::getAllDivision');
         //division
     $routes->post('/libraries/division/action', 'Libraries\Office\DivisionController::actionInsertUpdate');
     $routes->get('/libraries/division/getDataTable/(:any)', 'Libraries\Office\DivisionController::getDatatable/$1');
     $routes->post('/libraries/division/status', 'Libraries\Office\DivisionController::actionStatus');
-    $routes->get('/libraries/division/getDivisionInformation/(:any)', 'Libraries\Office\DivisionController::getDivisionInformation/$1');
+    $routes->get('/libraries/division/getDivisionInformation', 'Libraries\Office\DivisionController::getDivisionInformation');
+        //Sections
+    $routes->post('/libraries/section/action', 'Libraries\Office\SectionController::actionInsertUpdate'); 
+    $routes->get('/libraries/section/getDataTable/(:any)', 'Libraries\Office\SectionController::getDatatable/$1');
+    $routes->post('/libraries/section/status', 'Libraries\Office\SectionController::actionStatus');
+    $routes->get('/libraries/section/getInformation', 'Libraries\Office\SectionController::getSectionInformation');
+
+    //PSGC
+    $routes->get('/libraries/@psgc', 'Libraries\Psgc\MainController::index',['as' => 'psgcPage']);
+        //province
+    $routes->get('/libraries/provice/getregion', 'Libraries\Psgc\ProvinceController::getRegion');
+    $routes->get('/libraries/provice/getDataTable/(:any)', 'Libraries\Psgc\ProvinceController::getDatatable/$1');
 });
 
 

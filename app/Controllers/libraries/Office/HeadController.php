@@ -128,7 +128,7 @@ class HeadController extends BaseController
         return $this->response->setJSON($response);
     }
     public function getAllHead(){
-        $response = $this->headModel->getAllHead(["isActive" => 1])->get()->getResultArray();
+        $response = $this->headModel->getAllHead()->get()->getResultArray();
         //print_r($position->get()->getResultArray());
         return $this->response->setJSON($response);
     }

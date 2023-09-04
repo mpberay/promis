@@ -84,6 +84,10 @@ class HeadModel extends Model
             if (!empty($conditions)) {
                 $query->where($conditions);
             }
+            // foreach ($conditions as $field => $value) {
+            //     $query->where($field . ' !=', $value);
+            // }
+            $query->where('isActive',1);
             $query->orderBy('firstname','ASC');
         return $query;
     }

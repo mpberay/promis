@@ -1,4 +1,3 @@
-
 <div class="page-body">
     <div class="container-fluid">
         <div class="page-title">
@@ -49,7 +48,7 @@
                                 </li>
                             </ul>
                             <div class="tab-content" id="top-tabContent">
-                                <div class="tab-pane fade" id="positionTab" role="tabpanel" aria-labelledby="top-home-tab">
+                                <div class="tab-pane active show" id="positionTab" role="tabpanel" aria-labelledby="top-home-tab">
                                     <div class="row">
                                         <div class="col-xl-4 xl-100 box-col-4">
                                             <div class="card">
@@ -77,7 +76,7 @@
                                         <div class="col-xl-8 xl-100 box-col-8">
                                             <div class="card">
                                                 <div class="card-body">
-                                                    <h6>List Position</h6>
+                                                    <h6>List Position <a class="ms-2" href="#" name="refreshPosition"><i class="fa fa-refresh"></i></a></h6> 
                                                     <div class="table-responsive">
                                                         <table class="table table-bordered row-border display" id="tablePosition">
                                                             <thead>
@@ -103,7 +102,7 @@
                                 </div>
                                 <div class="tab-pane fade" id="headTab" role="tabpanel" aria-labelledby="profile-top-tab">
                                     <div class="row">
-                                        <div class="col-xl-4 xl-100 box-col-4">
+                                        <div class="col-xl-3 xl-100 box-col-3">
                                             <div class="card">
                                                 <div class="card-body">
                                                     <h6>Create / Update Office Head</h6>
@@ -144,11 +143,6 @@
                                                         <div class="form-group">
                                                             <label class="col-form-label">Position</label>
                                                             <select class="jsSingleSelect col-sm-12" name="getPosition" id="getPosition">
-                                                                <option>Select Position . . .</option>
-                                                                <option value="AL">Alabama</option>
-                                                                <option value="WY">Wyoming</option>
-                                                                <option value="WY">Wyoming</option>
-                                                                <option value="WY">Wyoming</option>
                                                             </select>
                                                             <h6 style="font-weight: bold;font-style: italic;color:red" id="sexPosition"></h6>
                                                         </div>
@@ -161,10 +155,10 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-xl-8 xl-100 box-col-8">
+                                        <div class="col-xl-9 xl-100 box-col-9">
                                             <div class="card">
                                                 <div class="card-body">
-                                                    <h6>List Head</h6>
+                                                    <h6>List Head <a class="ms-2" href="#" name="refreshHead"><i class="fa fa-refresh"></i></a></h6>
                                                     <div class="table-responsive">
                                                         <table class="table table-bordered row-border display " id="tableHead">
                                                             <thead>
@@ -194,7 +188,7 @@
                                 </div>
                                 <div class="tab-pane fade" id="designationTab" role="tabpanel" aria-labelledby="contact-top-tab">
                                     <div class="row">
-                                        <div class="col-xl-4 xl-100 box-col-4">
+                                        <div class="col-xl-3 xl-100 box-col-3">
                                             <div class="card">
                                                 <div class="card-body">
                                                     <h6>Create / Update Employee Designation</h6>
@@ -217,10 +211,10 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-xl-8 xl-100 box-col-8">
+                                        <div class="col-xl-9 xl-100 box-col-9">
                                             <div class="card">
                                                 <div class="card-body">
-                                                    <h6>List Designation</h6>
+                                                    <h6>List Designation <a class="ms-2" href="#" name="refreshDesignation"><i class="fa fa-refresh"></i></a></h6>
                                                     <div class="table-responsive">
                                                         <table class="table table-bordered row-border display" id="tableDesignation">
                                                             <thead>
@@ -244,14 +238,14 @@
                                         <!-- DataTables events  Ends-->
                                     </div>
                                 </div>
-                                <div class="tab-pane active show" id="divisionTab" role="tabpanel" aria-labelledby="brand-top-tab">
+                                <div class="tab-pane fade" id="divisionTab" role="tabpanel" aria-labelledby="brand-top-tab">
                                     <div class="row">
-                                        <div class="col-xl-4 xl-100 box-col-4">
+                                        <div class="col-xl-3 xl-100 box-col-3">
                                             <div class="card">
                                                 <div class="card-body">
                                                     <h6>Create / Update Division Office</h6>
                                                     <form class="theme-form" method="POST" action="javascript:void(0)" id="frmDivision">
-                                                        <input class="form-control" type="text" name="divID" placeholder="" >
+                                                        <input class="form-control" type="text" name="divID" placeholder="" style="display: none;">
                                                         <div class="form-group">
                                                             <label class="col-form-label">Code</label>
                                                             <input class="form-control" type="text" required name="divCode" placeholder="">
@@ -269,14 +263,14 @@
                                                             <select class="jsSingleSelect col-sm-12" name="headID">
                                                                 <option>Select office head . . .</option>
                                                             </select>
-                                                            <h6 style="font-weight: bold;font-style: italic;color:red" id="sexPosition"></h6>
+                                                            <h6 style="font-weight: bold;font-style: italic;color:red" id="h6_headID"></h6>
                                                         </div>
                                                         <div class="form-group">
                                                             <label class="col-form-label">Head designation</label>
                                                             <select class="jsSingleSelect col-sm-12" name="desID">
                                                                 <option>Select head designation . . .</option>
                                                             </select>
-                                                            <h6 style="font-weight: bold;font-style: italic;color:red" id="sexPosition"></h6>
+                                                            <h6 style="font-weight: bold;font-style: italic;color:red" id="h6_desID"></h6>
                                                         </div>
                                                         <div class="form-group mb-0">
                                                             <div class="text-end mt-3">
@@ -287,10 +281,10 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-xl-8 xl-100 box-col-8">
+                                        <div class="col-xl-9 xl-100 box-col-9">
                                             <div class="card">
                                                 <div class="card-body">
-                                                    <h6>List Division</h6>
+                                                    <h6>List Division <a class="ms-2" href="#" name="refreshDivision"><i class="fa fa-refresh"></i></a></h6>
                                                     <div class="table-responsive">
                                                         <table class="table table-bordered row-border display " id="tableDivision">
                                                             <thead>
@@ -298,6 +292,7 @@
                                                                     <th>#</th>
                                                                     <th>Code</th>
                                                                     <th>Division Name</th>
+                                                                    <th>Acronym</th>
                                                                     <th>Head</th>
                                                                     <th>Designation</th>
                                                                     <th>Date Added</th>
@@ -317,7 +312,85 @@
                                     </div>
                                 </div>
                                 <div class="tab-pane fade" id="sectionTab" role="tabpanel" aria-labelledby="brand-top-tab">
-                                    <h1>sections</h1>
+                                    <div class="row">
+                                        <div class="col-xl-3 xl-100 box-col-3">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <h6>Create / Update Section</h6>
+                                                    <form class="theme-form" method="POST" action="javascript:void(0)" id="frmSection">
+                                                        <input class="form-control" type="text" name="secID" placeholder="" style="display: none;">
+                                                        <div class="form-group">
+                                                            <label class="col-form-label">Code</label>
+                                                            <input class="form-control" type="text" required name="secCode" placeholder="">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-form-label">Name</label>
+                                                            <input class="form-control" type="text" required name="secName" placeholder="">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-form-label">Acronym</label>
+                                                            <input class="form-control" type="text" required name="secAcronym" placeholder="">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-form-label">Division</label>
+                                                            <select class="jsSingleSelect col-sm-12" name="divID">
+                                                                <option>Select division name . . .</option>
+                                                            </select>
+                                                            <h6 style="font-weight: bold;font-style: italic;color:red" id="h6_divID"></h6>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-form-label">Head</label>
+                                                            <select class="jsSingleSelect col-sm-12" name="headID">
+                                                                <option>Select office head . . .</option>
+                                                            </select>
+                                                            <h6 style="font-weight: bold;font-style: italic;color:red" id="h6_headID"></h6>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="col-form-label">Designation</label>
+                                                            <select class="jsSingleSelect col-sm-12" name="desID">
+                                                                <option>Select head designation . . .</option>
+                                                            </select>
+                                                            <h6 style="font-weight: bold;font-style: italic;color:red" id="h6_desID"></h6>
+                                                        </div>
+                                                        <div class="form-group mb-0">
+                                                            <div class="text-end mt-3">
+                                                                <button class="btn btn-pill btn-outline-info btn-lg" type="submit">Click Here</button>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-9 xl-100 box-col-9">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <h6>List Section <a class="ms-2" href="#" name="refreshSection"><i class="fa fa-refresh"></i></a></h6>
+                                                    <div class="table-responsive">
+                                                        <table class="table table-bordered row-border display " id="tableSection">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>#</th>
+                                                                    <th>Code</th>
+                                                                    <th>Section Name</th>
+                                                                    <th>Acronym</th>
+                                                                    <th>Division Name</th>
+                                                                    <th>Head</th>
+                                                                    <th>Designation</th>
+                                                                    <th>Date Added</th>
+                                                                    <th>Status</th>
+                                                                    <th>Action</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- DataTables events  Ends-->
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -333,6 +406,7 @@
 <script src="<?= base_url(); ?>/js/libraries/offices/Head.js"></script>
 <script src="<?= base_url(); ?>/js/libraries/offices/Designation.js"></script>
 <script src="<?= base_url(); ?>/js/libraries/offices/Division.js"></script>
+<script src="<?= base_url(); ?>/js/libraries/offices/Section.js"></script>
 <script>
     var baseUrl = '<?= base_url(); ?>';
 </script>

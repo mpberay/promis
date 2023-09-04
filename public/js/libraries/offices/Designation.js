@@ -2,6 +2,9 @@ $(function(){
     $('#topDesignationTab').on('click', function(e) {
         getDesignationDatatable(desID=0);
     });
+    $('a[name="refreshDesignation"]').on('click', function(e) {
+        getDesignationDatatable(desID=0);
+    });
     $('#frmDesignation').on('submit', function(e) {
         e.preventDefault();
         var formData = new FormData(this);

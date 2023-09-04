@@ -110,7 +110,7 @@ class DesignationController extends BaseController
         return $this->response->setJSON($response);
     }
     public function getAllDesignation(){
-        $response = $this->designationModel->getAllDesignation(["isActive" => 1])->get()->getResultArray();
+        $response = $this->designationModel->getAllDesignation()->get()->getResultArray();
         //print_r($position->get()->getResultArray());
         return $this->response->setJSON($response);
     }

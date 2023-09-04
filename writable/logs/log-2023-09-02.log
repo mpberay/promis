@@ -1,0 +1,322 @@
+CRITICAL - 2023-09-02 07:45:35 --> Call to a member function setJSON() on null
+in APPPATH\Controllers\libraries\Office\HeadController.php on line 138.
+ 1 APPPATH\Controllers\libraries\Office\DivisionController.php(136): App\Controllers\Libraries\Office\HeadController->getAllHead('64eeaeadde29f')
+ 2 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\Libraries\Office\DivisionController->getDivisionInformation()
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Libraries\Office\DivisionController))
+ 4 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2023-09-02 07:46:17 --> Call to a member function setJSON() on null
+in APPPATH\Controllers\libraries\Office\HeadController.php on line 138.
+ 1 APPPATH\Controllers\libraries\Office\DivisionController.php(136): App\Controllers\Libraries\Office\HeadController->getAllHead(0)
+ 2 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\Libraries\Office\DivisionController->getDivisionInformation()
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Libraries\Office\DivisionController))
+ 4 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2023-09-02 07:46:36 --> Call to a member function setJSON() on null
+in APPPATH\Controllers\libraries\Office\HeadController.php on line 138.
+ 1 APPPATH\Controllers\libraries\Office\DivisionController.php(136): App\Controllers\Libraries\Office\HeadController->getAllHead(0)
+ 2 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\Libraries\Office\DivisionController->getDivisionInformation()
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Libraries\Office\DivisionController))
+ 4 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2023-09-02 07:49:23 --> Call to a member function setJSON() on null
+in APPPATH\Controllers\libraries\Office\HeadController.php on line 138.
+ 1 APPPATH\Controllers\libraries\Office\DivisionController.php(136): App\Controllers\Libraries\Office\HeadController->getAllHead(0)
+ 2 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\Libraries\Office\DivisionController->getDivisionInformation()
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Libraries\Office\DivisionController))
+ 4 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2023-09-02 13:22:28 --> mysqli_sql_exception: Unknown column 'secAcronym' in 'field list' in C:\laragon\www\promis\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\laragon\www\promis\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `li...', 0)
+#1 C:\laragon\www\promis\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `li...')
+#2 C:\laragon\www\promis\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `li...')
+#3 C:\laragon\www\promis\system\Database\BaseBuilder.php(1916): CodeIgniter\Database\BaseConnection->query('INSERT INTO `li...', Array, false)
+#4 C:\laragon\www\promis\app\Models\Libraries\Office\SectionModel.php(15): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\laragon\www\promis\app\Controllers\libraries\Office\SectionController.php(44): App\Models\Libraries\Office\SectionModel->sectionInsert(Array, '64f2c694dfc6c')
+#6 C:\laragon\www\promis\system\CodeIgniter.php(904): App\Controllers\Libraries\Office\SectionController->actionInsertUpdate()
+#7 C:\laragon\www\promis\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Libraries\Office\SectionController))
+#8 C:\laragon\www\promis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\laragon\www\promis\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\laragon\www\promis\system\Commands\Server\rewrite.php(43): require_once('C:\\laragon\\www\\...')
+#11 {main}
+CRITICAL - 2023-09-02 13:22:28 --> Unknown column 'secAcronym' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `lib_office_section` (`secID`, `secCode`, `secName`, `secAcronym`, `divID`, `headID`, `desID`, `isActive`, `dateAdded`) VALUES (\'64f2c694dfc6c\', \'Test 1\', \'Test 2\', \'Test 3\', \'64f26b3083057\', \'64eee6911e912\', \'64ef42e13d1a2\', 1, \'2023-09-02 13:22:28\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `lib_office_section` (`secID`, `secCode`, `secName`, `secAcronym`, `divID`, `headID`, `desID`, `isActive`, `dateAdded`) VALUES (\'64f2c694dfc6c\', \'Test 1\', \'Test 2\', \'Test 3\', \'64f26b3083057\', \'64eee6911e912\', \'64ef42e13d1a2\', 1, \'2023-09-02 13:22:28\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `lib_office_section` (`secID`, `secCode`, `secName`, `secAcronym`, `divID`, `headID`, `desID`, `isActive`, `dateAdded`) VALUES (\'64f2c694dfc6c\', \'Test 1\', \'Test 2\', \'Test 3\', \'64f26b3083057\', \'64eee6911e912\', \'64ef42e13d1a2\', 1, \'2023-09-02 13:22:28\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1916): CodeIgniter\Database\BaseConnection->query('INSERT INTO `lib_office_section` (`secID`, `secCode`, `secName`, `secAcronym`, `divID`, `headID`, `desID`, `isActive`, `dateAdded`) VALUES (:secID:, :secCode:, :secName:, :secAcronym:, :divID:, :headID:, :desID:, :isActive:, :dateAdded:)', [...], false)
+ 5 APPPATH\Models\Libraries\Office\SectionModel.php(15): CodeIgniter\Database\BaseBuilder->insert()
+ 6 APPPATH\Controllers\libraries\Office\SectionController.php(44): App\Models\Libraries\Office\SectionModel->sectionInsert([...], '64f2c694dfc6c')
+ 7 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\Libraries\Office\SectionController->actionInsertUpdate()
+ 8 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Libraries\Office\SectionController))
+ 9 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2023-09-02 13:23:09 --> mysqli_sql_exception: Unknown column 'secAcronym' in 'field list' in C:\laragon\www\promis\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\laragon\www\promis\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `li...', 0)
+#1 C:\laragon\www\promis\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `li...')
+#2 C:\laragon\www\promis\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `li...')
+#3 C:\laragon\www\promis\system\Database\BaseBuilder.php(1916): CodeIgniter\Database\BaseConnection->query('INSERT INTO `li...', Array, false)
+#4 C:\laragon\www\promis\app\Models\Libraries\Office\SectionModel.php(15): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\laragon\www\promis\app\Controllers\libraries\Office\SectionController.php(44): App\Models\Libraries\Office\SectionModel->sectionInsert(Array, '64f2c6bde948f')
+#6 C:\laragon\www\promis\system\CodeIgniter.php(904): App\Controllers\Libraries\Office\SectionController->actionInsertUpdate()
+#7 C:\laragon\www\promis\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Libraries\Office\SectionController))
+#8 C:\laragon\www\promis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\laragon\www\promis\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\laragon\www\promis\system\Commands\Server\rewrite.php(43): require_once('C:\\laragon\\www\\...')
+#11 {main}
+CRITICAL - 2023-09-02 13:23:09 --> Unknown column 'secAcronym' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `lib_office_section` (`secID`, `secCode`, `secName`, `secAcronym`, `divID`, `headID`, `desID`, `isActive`, `dateAdded`) VALUES (\'64f2c6bde948f\', \'Test 1\', \'Test 2\', \'Test 3\', \'64f26b3083057\', \'64eee6911e912\', \'64ef42e13d1a2\', 1, \'2023-09-02 13:23:09\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `lib_office_section` (`secID`, `secCode`, `secName`, `secAcronym`, `divID`, `headID`, `desID`, `isActive`, `dateAdded`) VALUES (\'64f2c6bde948f\', \'Test 1\', \'Test 2\', \'Test 3\', \'64f26b3083057\', \'64eee6911e912\', \'64ef42e13d1a2\', 1, \'2023-09-02 13:23:09\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `lib_office_section` (`secID`, `secCode`, `secName`, `secAcronym`, `divID`, `headID`, `desID`, `isActive`, `dateAdded`) VALUES (\'64f2c6bde948f\', \'Test 1\', \'Test 2\', \'Test 3\', \'64f26b3083057\', \'64eee6911e912\', \'64ef42e13d1a2\', 1, \'2023-09-02 13:23:09\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1916): CodeIgniter\Database\BaseConnection->query('INSERT INTO `lib_office_section` (`secID`, `secCode`, `secName`, `secAcronym`, `divID`, `headID`, `desID`, `isActive`, `dateAdded`) VALUES (:secID:, :secCode:, :secName:, :secAcronym:, :divID:, :headID:, :desID:, :isActive:, :dateAdded:)', [...], false)
+ 5 APPPATH\Models\Libraries\Office\SectionModel.php(15): CodeIgniter\Database\BaseBuilder->insert()
+ 6 APPPATH\Controllers\libraries\Office\SectionController.php(44): App\Models\Libraries\Office\SectionModel->sectionInsert([...], '64f2c6bde948f')
+ 7 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\Libraries\Office\SectionController->actionInsertUpdate()
+ 8 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Libraries\Office\SectionController))
+ 9 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2023-09-02 13:23:41 --> mysqli_sql_exception: Unknown column 'desID' in 'field list' in C:\laragon\www\promis\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\laragon\www\promis\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `li...', 0)
+#1 C:\laragon\www\promis\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `li...')
+#2 C:\laragon\www\promis\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `li...')
+#3 C:\laragon\www\promis\system\Database\BaseBuilder.php(1916): CodeIgniter\Database\BaseConnection->query('INSERT INTO `li...', Array, false)
+#4 C:\laragon\www\promis\app\Models\Libraries\Office\SectionModel.php(15): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\laragon\www\promis\app\Controllers\libraries\Office\SectionController.php(44): App\Models\Libraries\Office\SectionModel->sectionInsert(Array, '64f2c6dded9b5')
+#6 C:\laragon\www\promis\system\CodeIgniter.php(904): App\Controllers\Libraries\Office\SectionController->actionInsertUpdate()
+#7 C:\laragon\www\promis\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Libraries\Office\SectionController))
+#8 C:\laragon\www\promis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\laragon\www\promis\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\laragon\www\promis\system\Commands\Server\rewrite.php(43): require_once('C:\\laragon\\www\\...')
+#11 {main}
+CRITICAL - 2023-09-02 13:23:41 --> Unknown column 'desID' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `lib_office_section` (`secID`, `secCode`, `secName`, `secAcronym`, `divID`, `headID`, `desID`, `isActive`, `dateAdded`) VALUES (\'64f2c6dded9b5\', \'Test 1\', \'Test 2\', \'Test 3\', \'64f26b3083057\', \'64eee6911e912\', \'64ef42e13d1a2\', 1, \'2023-09-02 13:23:41\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `lib_office_section` (`secID`, `secCode`, `secName`, `secAcronym`, `divID`, `headID`, `desID`, `isActive`, `dateAdded`) VALUES (\'64f2c6dded9b5\', \'Test 1\', \'Test 2\', \'Test 3\', \'64f26b3083057\', \'64eee6911e912\', \'64ef42e13d1a2\', 1, \'2023-09-02 13:23:41\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `lib_office_section` (`secID`, `secCode`, `secName`, `secAcronym`, `divID`, `headID`, `desID`, `isActive`, `dateAdded`) VALUES (\'64f2c6dded9b5\', \'Test 1\', \'Test 2\', \'Test 3\', \'64f26b3083057\', \'64eee6911e912\', \'64ef42e13d1a2\', 1, \'2023-09-02 13:23:41\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1916): CodeIgniter\Database\BaseConnection->query('INSERT INTO `lib_office_section` (`secID`, `secCode`, `secName`, `secAcronym`, `divID`, `headID`, `desID`, `isActive`, `dateAdded`) VALUES (:secID:, :secCode:, :secName:, :secAcronym:, :divID:, :headID:, :desID:, :isActive:, :dateAdded:)', [...], false)
+ 5 APPPATH\Models\Libraries\Office\SectionModel.php(15): CodeIgniter\Database\BaseBuilder->insert()
+ 6 APPPATH\Controllers\libraries\Office\SectionController.php(44): App\Models\Libraries\Office\SectionModel->sectionInsert([...], '64f2c6dded9b5')
+ 7 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\Libraries\Office\SectionController->actionInsertUpdate()
+ 8 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Libraries\Office\SectionController))
+ 9 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2023-09-02 17:30:30 --> Undefined property: stdClass::$decID
+in APPPATH\Controllers\libraries\Office\SectionController.php on line 83.
+ 1 APPPATH\Controllers\libraries\Office\SectionController.php(83): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined property: stdClass::$decID', 'APPPATH\\Controllers\\libraries\\Office\\SectionController.php', 83, [...])
+ 2 VENDORPATH\hermawan\codeigniter4-datatables\src\DataTableQuery.php(91): App\Controllers\Libraries\Office\SectionController->App\Controllers\Libraries\Office\{closure}(Object(stdClass))
+ 3 VENDORPATH\hermawan\codeigniter4-datatables\src\DataTable.php(176): Hermawan\DataTables\DataTableQuery->getDataResult()
+ 4 APPPATH\Controllers\libraries\Office\SectionController.php(93): Hermawan\DataTables\DataTable->toJson(true)
+ 5 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\Libraries\Office\SectionController->getDatatable('0')
+ 6 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Libraries\Office\SectionController))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2023-09-02 17:55:14 --> mysqli_sql_exception: Column 'divID' in where clause is ambiguous in C:\laragon\www\promis\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\laragon\www\promis\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\laragon\www\promis\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\laragon\www\promis\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\laragon\www\promis\system\Database\BaseBuilder.php(1669): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\laragon\www\promis\vendor\hermawan\codeigniter4-datatables\src\DataTableQuery.php(53): CodeIgniter\Database\BaseBuilder->countAllResults()
+#5 C:\laragon\www\promis\vendor\hermawan\codeigniter4-datatables\src\DataTable.php(174): Hermawan\DataTables\DataTableQuery->countAll()
+#6 C:\laragon\www\promis\app\Controllers\libraries\Office\SectionController.php(93): Hermawan\DataTables\DataTable->toJson(true)
+#7 C:\laragon\www\promis\system\CodeIgniter.php(904): App\Controllers\Libraries\Office\SectionController->getDatatable('64f2fd5a2813c')
+#8 C:\laragon\www\promis\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Libraries\Office\SectionController))
+#9 C:\laragon\www\promis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\laragon\www\promis\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 C:\laragon\www\promis\system\Commands\Server\rewrite.php(43): require_once('C:\\laragon\\www\\...')
+#12 {main}
+CRITICAL - 2023-09-02 17:55:14 --> Column 'divID' in where clause is ambiguous
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `lib_office_section` AS `sec`
+LEFT JOIN `lib_office_division` AS `div` ON `div`.`divID` = `sec`.`divID`
+LEFT JOIN `lib_office_head` AS `head` ON `head`.`headID` = `sec`.`headID`
+LEFT JOIN `lib_office_designation` AS `des` ON `des`.`desID` = `sec`.`desID`
+WHERE `divID` = \'64f2fd5a2813c\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `lib_office_section` AS `sec`
+LEFT JOIN `lib_office_division` AS `div` ON `div`.`divID` = `sec`.`divID`
+LEFT JOIN `lib_office_head` AS `head` ON `head`.`headID` = `sec`.`headID`
+LEFT JOIN `lib_office_designation` AS `des` ON `des`.`desID` = `sec`.`desID`
+WHERE `divID` = \'64f2fd5a2813c\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `lib_office_section` AS `sec`
+LEFT JOIN `lib_office_division` AS `div` ON `div`.`divID` = `sec`.`divID`
+LEFT JOIN `lib_office_head` AS `head` ON `head`.`headID` = `sec`.`headID`
+LEFT JOIN `lib_office_designation` AS `des` ON `des`.`desID` = `sec`.`desID`
+WHERE `divID` = \'64f2fd5a2813c\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1669): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `lib_office_section` AS `sec`
+LEFT JOIN `lib_office_division` AS `div` ON `div`.`divID` = `sec`.`divID`
+LEFT JOIN `lib_office_head` AS `head` ON `head`.`headID` = `sec`.`headID`
+LEFT JOIN `lib_office_designation` AS `des` ON `des`.`desID` = `sec`.`desID`
+WHERE `divID` = :divID:', [...], false)
+ 5 VENDORPATH\hermawan\codeigniter4-datatables\src\DataTableQuery.php(53): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 6 VENDORPATH\hermawan\codeigniter4-datatables\src\DataTable.php(174): Hermawan\DataTables\DataTableQuery->countAll()
+ 7 APPPATH\Controllers\libraries\Office\SectionController.php(93): Hermawan\DataTables\DataTable->toJson(true)
+ 8 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\Libraries\Office\SectionController->getDatatable('64f2fd5a2813c')
+ 9 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Libraries\Office\SectionController))
+10 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2023-09-02 17:56:20 --> mysqli_sql_exception: Unknown column 'action' in 'order clause' in C:\laragon\www\promis\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\laragon\www\promis\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `sec`.`s...', 0)
+#1 C:\laragon\www\promis\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `sec`.`s...')
+#2 C:\laragon\www\promis\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `sec`.`s...')
+#3 C:\laragon\www\promis\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT `sec`.`s...', Array, false)
+#4 C:\laragon\www\promis\vendor\hermawan\codeigniter4-datatables\src\DataTableQuery.php(219): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\promis\vendor\hermawan\codeigniter4-datatables\src\DataTableQuery.php(70): Hermawan\DataTables\DataTableQuery->queryResult()
+#6 C:\laragon\www\promis\vendor\hermawan\codeigniter4-datatables\src\DataTable.php(176): Hermawan\DataTables\DataTableQuery->getDataResult()
+#7 C:\laragon\www\promis\app\Controllers\libraries\Office\SectionController.php(93): Hermawan\DataTables\DataTable->toJson(true)
+#8 C:\laragon\www\promis\system\CodeIgniter.php(904): App\Controllers\Libraries\Office\SectionController->getDatatable('64f2fd5a2813c')
+#9 C:\laragon\www\promis\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Libraries\Office\SectionController))
+#10 C:\laragon\www\promis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\laragon\www\promis\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 C:\laragon\www\promis\system\Commands\Server\rewrite.php(43): require_once('C:\\laragon\\www\\...')
+#13 {main}
+CRITICAL - 2023-09-02 17:56:20 --> Unknown column 'action' in 'order clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `sec`.`secID`, `sec`.`secCode`, `sec`.`secName`, `sec`.`secAcronym`, `sec`.`divID`, `sec`.`headID`, `sec`.`desID`, `sec`.`dateAdded`, `sec`.`isActive`, `div`.`divCode`, `div`.`divName`, `div`.`divAcronym`, `head`.`firstname`, `head`.`middlename`, `head`.`lastname`, `head`.`extensionname`, `des`.`desName`, `des`.`desAcronym`
+FROM `lib_office_section` AS `sec`
+LEFT JOIN `lib_office_division` AS `div` ON `div`.`divID` = `sec`.`divID`
+LEFT JOIN `lib_office_head` AS `head` ON `head`.`headID` = `sec`.`headID`
+LEFT JOIN `lib_office_designation` AS `des` ON `des`.`desID` = `sec`.`desID`
+WHERE `secID` = \'64f2fd5a2813c\'
+ORDER BY `div`.`dateAdded` DESC, `action` ASC
+ LIMIT 10', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `sec`.`secID`, `sec`.`secCode`, `sec`.`secName`, `sec`.`secAcronym`, `sec`.`divID`, `sec`.`headID`, `sec`.`desID`, `sec`.`dateAdded`, `sec`.`isActive`, `div`.`divCode`, `div`.`divName`, `div`.`divAcronym`, `head`.`firstname`, `head`.`middlename`, `head`.`lastname`, `head`.`extensionname`, `des`.`desName`, `des`.`desAcronym`
+FROM `lib_office_section` AS `sec`
+LEFT JOIN `lib_office_division` AS `div` ON `div`.`divID` = `sec`.`divID`
+LEFT JOIN `lib_office_head` AS `head` ON `head`.`headID` = `sec`.`headID`
+LEFT JOIN `lib_office_designation` AS `des` ON `des`.`desID` = `sec`.`desID`
+WHERE `secID` = \'64f2fd5a2813c\'
+ORDER BY `div`.`dateAdded` DESC, `action` ASC
+ LIMIT 10')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `sec`.`secID`, `sec`.`secCode`, `sec`.`secName`, `sec`.`secAcronym`, `sec`.`divID`, `sec`.`headID`, `sec`.`desID`, `sec`.`dateAdded`, `sec`.`isActive`, `div`.`divCode`, `div`.`divName`, `div`.`divAcronym`, `head`.`firstname`, `head`.`middlename`, `head`.`lastname`, `head`.`extensionname`, `des`.`desName`, `des`.`desAcronym`
+FROM `lib_office_section` AS `sec`
+LEFT JOIN `lib_office_division` AS `div` ON `div`.`divID` = `sec`.`divID`
+LEFT JOIN `lib_office_head` AS `head` ON `head`.`headID` = `sec`.`headID`
+LEFT JOIN `lib_office_designation` AS `des` ON `des`.`desID` = `sec`.`desID`
+WHERE `secID` = \'64f2fd5a2813c\'
+ORDER BY `div`.`dateAdded` DESC, `action` ASC
+ LIMIT 10')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT `sec`.`secID`, `sec`.`secCode`, `sec`.`secName`, `sec`.`secAcronym`, `sec`.`divID`, `sec`.`headID`, `sec`.`desID`, `sec`.`dateAdded`, `sec`.`isActive`, `div`.`divCode`, `div`.`divName`, `div`.`divAcronym`, `head`.`firstname`, `head`.`middlename`, `head`.`lastname`, `head`.`extensionname`, `des`.`desName`, `des`.`desAcronym`
+FROM `lib_office_section` AS `sec`
+LEFT JOIN `lib_office_division` AS `div` ON `div`.`divID` = `sec`.`divID`
+LEFT JOIN `lib_office_head` AS `head` ON `head`.`headID` = `sec`.`headID`
+LEFT JOIN `lib_office_designation` AS `des` ON `des`.`desID` = `sec`.`desID`
+WHERE `secID` = :secID:
+ORDER BY `div`.`dateAdded` DESC, `action` ASC
+ LIMIT 10', [...], false)
+ 5 VENDORPATH\hermawan\codeigniter4-datatables\src\DataTableQuery.php(219): CodeIgniter\Database\BaseBuilder->get()
+ 6 VENDORPATH\hermawan\codeigniter4-datatables\src\DataTableQuery.php(70): Hermawan\DataTables\DataTableQuery->queryResult()
+ 7 VENDORPATH\hermawan\codeigniter4-datatables\src\DataTable.php(176): Hermawan\DataTables\DataTableQuery->getDataResult()
+ 8 APPPATH\Controllers\libraries\Office\SectionController.php(93): Hermawan\DataTables\DataTable->toJson(true)
+ 9 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\Libraries\Office\SectionController->getDatatable('64f2fd5a2813c')
+10 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Libraries\Office\SectionController))
+11 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2023-09-02 21:19:48 --> Invalid file: libraries/psgc/MainView.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('libraries/psgc/MainView.php')
+ 2 SYSTEMPATH\Common.php(1142): CodeIgniter\View\View->render('libraries/psgc/MainView', [], true)
+ 3 APPPATH\Controllers\BaseController.php(72): view('libraries/psgc/MainView', [])
+ 4 APPPATH\Controllers\libraries\Psgc\MainController.php(11): App\Controllers\BaseController->render('libraries/psgc/MainView')
+ 5 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\Libraries\Psgc\MainController->index()
+ 6 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Libraries\Psgc\MainController))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2023-09-02 23:45:37 --> mysqli_sql_exception: Table 'prism.lib_psgc_province' doesn't exist in C:\laragon\www\promis\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\laragon\www\promis\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\laragon\www\promis\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\laragon\www\promis\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\laragon\www\promis\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\laragon\www\promis\app\Controllers\libraries\Psgc\ProvinceController.php(25): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\promis\system\CodeIgniter.php(904): App\Controllers\Libraries\Psgc\ProvinceController->getDatatable('160000000')
+#6 C:\laragon\www\promis\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Libraries\Psgc\ProvinceController))
+#7 C:\laragon\www\promis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\laragon\www\promis\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#9 C:\laragon\www\promis\system\Commands\Server\rewrite.php(43): require_once('C:\\laragon\\www\\...')
+#10 {main}
+CRITICAL - 2023-09-02 23:45:37 --> Table 'prism.lib_psgc_province' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `lib_psgc_province` AS `prov`
+WHERE `regionCode` = \'160000000\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `lib_psgc_province` AS `prov`
+WHERE `regionCode` = \'160000000\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `lib_psgc_province` AS `prov`
+WHERE `regionCode` = \'160000000\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `lib_psgc_province` AS `prov`
+WHERE `regionCode` = :regionCode:', [...], false)
+ 5 APPPATH\Controllers\libraries\Psgc\ProvinceController.php(25): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\Libraries\Psgc\ProvinceController->getDatatable('160000000')
+ 7 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Libraries\Psgc\ProvinceController))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2023-09-02 23:49:37 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AS `prov`' at line 1 in C:\laragon\www\promis\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\laragon\www\promis\system\Database\MySQLi\Connection.php(292): mysqli->query('SHOW COLUMNS FR...', 0)
+#1 C:\laragon\www\promis\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SHOW COLUMNS FR...')
+#2 C:\laragon\www\promis\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SHOW COLUMNS FR...')
+#3 C:\laragon\www\promis\system\Database\MySQLi\Connection.php(408): CodeIgniter\Database\BaseConnection->query('SHOW COLUMNS FR...')
+#4 C:\laragon\www\promis\system\Database\BaseConnection.php(1514): CodeIgniter\Database\MySQLi\Connection->_fieldData('`lib_psgc_provi...')
+#5 C:\laragon\www\promis\vendor\hermawan\codeigniter4-datatables\src\DataTableColumnDefs.php(335): CodeIgniter\Database\BaseConnection->getFieldData('`lib_psgc_provi...')
+#6 C:\laragon\www\promis\vendor\hermawan\codeigniter4-datatables\src\DataTableColumnDefs.php(17): Hermawan\DataTables\DataTableColumnDefs->initFromBuilder(Object(CodeIgniter\Database\MySQLi\Builder))
+#7 C:\laragon\www\promis\vendor\hermawan\codeigniter4-datatables\src\DataTable.php(35): Hermawan\DataTables\DataTableColumnDefs->__construct(Object(CodeIgniter\Database\MySQLi\Builder))
+#8 C:\laragon\www\promis\vendor\hermawan\codeigniter4-datatables\src\DataTable.php(46): Hermawan\DataTables\DataTable->__construct(Object(CodeIgniter\Database\MySQLi\Builder))
+#9 C:\laragon\www\promis\app\Controllers\libraries\Psgc\ProvinceController.php(26): Hermawan\DataTables\DataTable::of(Object(CodeIgniter\Database\MySQLi\Builder))
+#10 C:\laragon\www\promis\system\CodeIgniter.php(904): App\Controllers\Libraries\Psgc\ProvinceController->getDatatable('160000000')
+#11 C:\laragon\www\promis\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Libraries\Psgc\ProvinceController))
+#12 C:\laragon\www\promis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\laragon\www\promis\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#14 C:\laragon\www\promis\system\Commands\Server\rewrite.php(43): require_once('C:\\laragon\\www\\...')
+#15 {main}
+CRITICAL - 2023-09-02 23:49:37 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AS `prov`' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SHOW COLUMNS FROM `lib_psgc_provinces` AS `prov`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SHOW COLUMNS FROM `lib_psgc_provinces` AS `prov`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SHOW COLUMNS FROM `lib_psgc_provinces` AS `prov`')
+ 4 SYSTEMPATH\Database\MySQLi\Connection.php(408): CodeIgniter\Database\BaseConnection->query('SHOW COLUMNS FROM `lib_psgc_provinces` AS `prov`')
+ 5 SYSTEMPATH\Database\BaseConnection.php(1514): CodeIgniter\Database\MySQLi\Connection->_fieldData('`lib_psgc_provinces` AS `prov`')
+ 6 VENDORPATH\hermawan\codeigniter4-datatables\src\DataTableColumnDefs.php(335): CodeIgniter\Database\BaseConnection->getFieldData('`lib_psgc_provinces` AS `prov`')
+ 7 VENDORPATH\hermawan\codeigniter4-datatables\src\DataTableColumnDefs.php(17): Hermawan\DataTables\DataTableColumnDefs->initFromBuilder(Object(CodeIgniter\Database\MySQLi\Builder))
+ 8 VENDORPATH\hermawan\codeigniter4-datatables\src\DataTable.php(35): Hermawan\DataTables\DataTableColumnDefs->__construct(Object(CodeIgniter\Database\MySQLi\Builder))
+ 9 VENDORPATH\hermawan\codeigniter4-datatables\src\DataTable.php(46): Hermawan\DataTables\DataTable->__construct(Object(CodeIgniter\Database\MySQLi\Builder))
+10 APPPATH\Controllers\libraries\Psgc\ProvinceController.php(26): Hermawan\DataTables\DataTable::of(Object(CodeIgniter\Database\MySQLi\Builder))
+11 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\Libraries\Psgc\ProvinceController->getDatatable('160000000')
+12 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Libraries\Psgc\ProvinceController))
+13 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+14 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+15 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2023-09-02 23:58:05 --> Undefined property: stdClass::$firstname
+in APPPATH\Controllers\libraries\Psgc\ProvinceController.php on line 42.
+ 1 APPPATH\Controllers\libraries\Psgc\ProvinceController.php(42): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined property: stdClass::$firstname', 'APPPATH\\Controllers\\libraries\\Psgc\\ProvinceController.php', 42, [...])
+ 2 VENDORPATH\hermawan\codeigniter4-datatables\src\DataTableQuery.php(91): App\Controllers\Libraries\Psgc\ProvinceController->App\Controllers\Libraries\Psgc\{closure}(Object(stdClass))
+ 3 VENDORPATH\hermawan\codeigniter4-datatables\src\DataTable.php(176): Hermawan\DataTables\DataTableQuery->getDataResult()
+ 4 APPPATH\Controllers\libraries\Psgc\ProvinceController.php(44): Hermawan\DataTables\DataTable->toJson(true)
+ 5 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\Libraries\Psgc\ProvinceController->getDatatable('160000000')
+ 6 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Libraries\Psgc\ProvinceController))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')

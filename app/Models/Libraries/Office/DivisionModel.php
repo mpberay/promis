@@ -56,6 +56,7 @@ class DivisionModel extends Model
             if (!empty($conditions)) {
                 $query->where($conditions);
             }
+            $query->where('isActive',1);
             $query->orderBy('divName','ASC');
         return $query;
     }

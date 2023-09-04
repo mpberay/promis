@@ -5,12 +5,19 @@ namespace App\Controllers\Libraries\Office;
 use App\Controllers\BaseController;
 use \App\Models\Libraries\Office\DivisionModel;
 use \Hermawan\DataTables\DataTable;
+
+use \App\Models\Libraries\Office\HeadModel;
+use \App\Models\Libraries\Office\DesignationModel;
 class DivisionController extends BaseController
 {
     private $divisionModel = NULL;
+    private $headModel = NULL;
+    private $designationModel = NULL;
     public function __construct()
     {
         $this->divisionModel = new DivisionModel();
+        $this->headModel = new HeadModel();
+        $this->designationModel = new DesignationModel();
     }
     public function index()
     {
@@ -44,7 +51,7 @@ class DivisionController extends BaseController
                 'status' => 'success',
                 'msg' => $msg,  
                 'success' => true,
-                'desID' => $divID          
+                'divID' => $divID          
             ];
         }else{
             $response = [
@@ -81,7 +88,7 @@ class DivisionController extends BaseController
             return $status;
         }, 'last')
         ->add('action', function($row){
-            return '<a class="ms-2" href="#" style="color:blue" onclick="jsgitDivisionInfo(\''.$row->divID.'\')">Update</a>';
+            return '<a class="ms-2" href="#" style="color:blue" onclick="jsgitDivisionInfo(\''.$row->divID.'\',\''.$row->headID.'\',\''.$row->desID.'\')">Update</a>';
         }, 'last')
             ->add('fullname', function($row){
                 return ''.$row->firstname.' '.$row->middlename.' '.$row->lastname.' '.$row->extensionname.'';
@@ -119,8 +126,22 @@ class DivisionController extends BaseController
         }
         return $this->response->setJSON($response);
     }
-    public function getDivisionInformation($divID){
-        $response = $this->divisionModel->getDatatable(["divID" => $divID])->get()->getResultArray();
+    public function getDivisionInformation(){
+        $data = [
+            "divID" => $this->request->getGet("divID"),
+            "headID" => $this->request->getGet("headID"),
+            "desID" => $this->request->getGet("desID")
+        ];
+        
+        $dataJson['division'] = $this->divisionModel->getDatatable(["divID" => $data['divID']])->get()->getResultArray();
+        $dataJson['head'] = $this->headModel->getAllHead(["headID !=" => $data['headID']])->get()->getResultArray();
+        $dataJson['designation'] = $this->designationModel->getAllDesignation(["desID !=" => $data['desID']])->get()->getResultArray();
+        
+        return $this->response->setJSON($dataJson);
+        //print_r($response);
+    }   
+    public function getAllDivision(){
+        $response = $this->divisionModel->getAllDivision()->get()->getResultArray();
         //print_r($position->get()->getResultArray());
         return $this->response->setJSON($response);
     }

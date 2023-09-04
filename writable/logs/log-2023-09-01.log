@@ -1,0 +1,45 @@
+ERROR - 2023-09-01 20:37:10 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it.
+ in C:\laragon\www\promis\system\Database\MySQLi\Connection.php:171
+Stack trace:
+#0 C:\laragon\www\promis\system\Database\MySQLi\Connection.php(171): mysqli->real_connect('localhost', 'root', '', 'prism', 3306, '', 0)
+#1 C:\laragon\www\promis\system\Database\BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\laragon\www\promis\system\Database\BaseConnection.php(588): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\laragon\www\promis\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\laragon\www\promis\app\Models\Authentications\AuthModel.php(57): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\promis\app\Controllers\authentications\AuthenticationController.php(111): App\Models\Authentications\AuthModel->getLogin(Array)
+#6 C:\laragon\www\promis\system\CodeIgniter.php(904): App\Controllers\authentications\AuthenticationController->LoginUser()
+#7 C:\laragon\www\promis\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\authentications\AuthenticationController))
+#8 C:\laragon\www\promis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\laragon\www\promis\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\laragon\www\promis\system\Commands\Server\rewrite.php(43): require_once('C:\\laragon\\www\\...')
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it.
+ in C:\laragon\www\promis\system\Database\MySQLi\Connection.php:215
+Stack trace:
+#0 C:\laragon\www\promis\system\Database\BaseConnection.php(382): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\laragon\www\promis\system\Database\BaseConnection.php(588): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\laragon\www\promis\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\laragon\www\promis\app\Models\Authentications\AuthModel.php(57): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\laragon\www\promis\app\Controllers\authentications\AuthenticationController.php(111): App\Models\Authentications\AuthModel->getLogin(Array)
+#5 C:\laragon\www\promis\system\CodeIgniter.php(904): App\Controllers\authentications\AuthenticationController->LoginUser()
+#6 C:\laragon\www\promis\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\authentications\AuthenticationController))
+#7 C:\laragon\www\promis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\laragon\www\promis\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#9 C:\laragon\www\promis\system\Commands\Server\rewrite.php(43): require_once('C:\\laragon\\www\\...')
+#10 {main}
+CRITICAL - 2023-09-01 20:37:10 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it.
+
+in SYSTEMPATH\Database\BaseConnection.php on line 418.
+ 1 SYSTEMPATH\Database\BaseConnection.php(588): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `auth_user`
+WHERE `username` = :username:', [...], false)
+ 3 APPPATH\Models\Authentications\AuthModel.php(57): CodeIgniter\Database\BaseBuilder->get()
+ 4 APPPATH\Controllers\authentications\AuthenticationController.php(111): App\Models\Authentications\AuthModel->getLogin([...])
+ 5 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\authentications\AuthenticationController->LoginUser()
+ 6 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\authentications\AuthenticationController))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')

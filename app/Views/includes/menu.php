@@ -87,10 +87,10 @@
                             </ul>
                         </li-->
                         <li><a href="<?= route_to('officePage') ?>">Offices</a></li>
-                        <li><a href="email-compose.html">Product</a></li>
-                        <li><a href="email-application.html">Supplier</a></li>
-                        <li><a href="email-application.html">Office's</a></li>
+                        <li><a href="<?= route_to('psgcPage') ?>">PSGC</a></li>
                         <li><a href="email-application.html">Signatory</a></li>
+                        <li><a href="email-compose.html">Items</a></li>
+                        <li><a href="email-application.html">Supplier</a></li>
                     </ul>
                 </li>
             </ul>
