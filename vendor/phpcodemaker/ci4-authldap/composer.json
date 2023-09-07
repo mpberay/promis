@@ -1,0 +1,28 @@
+{
+  "name": "phpcodemaker/ci4-authldap",
+  "description": "CodeIgniter4 Authenticate User using LDAP protocol",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "keywords": [
+      "codeigniter4 ldap",
+      "codeigniter4 ldap authenticate",
+      "codeigniter4 ldap authentication",
+      "ci4 ldap authenticate",
+      "ci4 ldap authentication",
+      "ci4 ldap"
+    ],
+  "authors": [
+    {
+      "name": "Karthikeyan C",
+      "email": "karthikn.mca@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "AuthLdap\\": "src"
+    }
+  }
+}

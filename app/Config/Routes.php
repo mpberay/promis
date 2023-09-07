@@ -99,6 +99,7 @@ $routes->get('/hacker', function(){
 
 //Authentications homepage
 $routes->get('/', 'authentications\AuthenticationController::index',['as' => 'homePage']);
+$routes->get('/ldap', 'authentications\AuthenticationController::ldap',['as' => 'ldap']);
 
 $routes->post('/login', 'authentications\AuthenticationController::LoginUser',['as' => 'loginAction']);
 $routes->get('/logout/(:any)', 'authentications\AuthenticationController::LogoutUser/$1');

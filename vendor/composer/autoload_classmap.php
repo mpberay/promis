@@ -7,6 +7,8 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Attribute' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
+    'AuthLdap\\Config\\AuthLdap' => $vendorDir . '/phpcodemaker/ci4-authldap/src/Config/AuthLdap.php',
+    'AuthLdap\\Libraries\\AuthLdap' => $vendorDir . '/phpcodemaker/ci4-authldap/src/Libraries/AuthLdap.php',
     'CodeIgniter\\API\\ResponseTrait' => $baseDir . '/system/API/ResponseTrait.php',
     'CodeIgniter\\Autoloader\\Autoloader' => $baseDir . '/system/Autoloader/Autoloader.php',
     'CodeIgniter\\Autoloader\\FileLocator' => $baseDir . '/system/Autoloader/FileLocator.php',

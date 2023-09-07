@@ -97,6 +97,10 @@ class ComposerStaticInitd4e3f1253be9157d831c693c0eddb144
             'CodeIgniter\\AutoReview\\' => 23,
             'CodeIgniter\\' => 12,
         ),
+        'A' => 
+        array (
+            'AuthLdap\\' => 9,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
@@ -270,6 +274,10 @@ class ComposerStaticInitd4e3f1253be9157d831c693c0eddb144
             1 => __DIR__ . '/../..' . '/tests/system',
             2 => __DIR__ . '/..' . '/codeigniter4/framework/system',
         ),
+        'AuthLdap\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpcodemaker/ci4-authldap/src',
+        ),
     );
 
     public static $prefixesPsr0 = array (
@@ -291,6 +299,8 @@ class ComposerStaticInitd4e3f1253be9157d831c693c0eddb144
 
     public static $classMap = array (
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
+        'AuthLdap\\Config\\AuthLdap' => __DIR__ . '/..' . '/phpcodemaker/ci4-authldap/src/Config/AuthLdap.php',
+        'AuthLdap\\Libraries\\AuthLdap' => __DIR__ . '/..' . '/phpcodemaker/ci4-authldap/src/Libraries/AuthLdap.php',
         'CodeIgniter\\API\\ResponseTrait' => __DIR__ . '/../..' . '/system/API/ResponseTrait.php',
         'CodeIgniter\\Autoloader\\Autoloader' => __DIR__ . '/../..' . '/system/Autoloader/Autoloader.php',
         'CodeIgniter\\Autoloader\\FileLocator' => __DIR__ . '/../..' . '/system/Autoloader/FileLocator.php',

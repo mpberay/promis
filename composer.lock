@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f3a36b260cec29e74abafad8fb067cfa",
+    "content-hash": "88ce3d578b0ed872c45d5d14ec56ae9a",
     "packages": [
         {
             "name": "codeigniter4/framework",
@@ -371,6 +371,54 @@
                 }
             ],
             "time": "2022-10-10T10:11:09+00:00"
+        },
+        {
+            "name": "phpcodemaker/ci4-authldap",
+            "version": "v1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpcodemaker/ci4-authldap.git",
+                "reference": "5ea3e99d5ec0f0f1361f5380361fb961e2882aa4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpcodemaker/ci4-authldap/zipball/5ea3e99d5ec0f0f1361f5380361fb961e2882aa4",
+                "reference": "5ea3e99d5ec0f0f1361f5380361fb961e2882aa4",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "AuthLdap\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Karthikeyan C",
+                    "email": "karthikn.mca@gmail.com"
+                }
+            ],
+            "description": "CodeIgniter4 Authenticate User using LDAP protocol",
+            "keywords": [
+                "ci4 ldap",
+                "ci4 ldap authenticate",
+                "ci4 ldap authentication",
+                "codeigniter4 ldap",
+                "codeigniter4 ldap authenticate",
+                "codeigniter4 ldap authentication"
+            ],
+            "support": {
+                "issues": "https://github.com/phpcodemaker/ci4-authldap/issues",
+                "source": "https://github.com/phpcodemaker/ci4-authldap/tree/master"
+            },
+            "time": "2020-05-18T04:24:30+00:00"
         },
         {
             "name": "psr/log",

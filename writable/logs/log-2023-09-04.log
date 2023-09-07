@@ -1,0 +1,99 @@
+CRITICAL - 2023-09-04 20:47:55 --> Class 'AuthLdap\Libraries\AuthLdap' not found
+in APPPATH\Controllers\authentications\AuthenticationController.php on line 44.
+ 1 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\authentications\AuthenticationController->ldap()
+ 2 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\authentications\AuthenticationController))
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2023-09-04 20:48:59 --> Class 'App\Libraries\AuthLdap' not found
+in APPPATH\Controllers\authentications\AuthenticationController.php on line 44.
+ 1 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\authentications\AuthenticationController->ldap()
+ 2 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\authentications\AuthenticationController))
+ 3 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2023-09-04 20:51:16 --> Class 'AuthLdap\Config\AuthLdap' not found
+in APPPATH\Libraries\AuthLdap.php on line 29.
+ 1 APPPATH\Controllers\authentications\AuthenticationController.php(45): App\Libraries\AuthLdap->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\authentications\AuthenticationController->ldap()
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\authentications\AuthenticationController))
+ 4 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2023-09-04 20:52:05 --> ldap_search(): Search: Operations error
+in APPPATH\Libraries\AuthLdap.php on line 65.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'ldap_search(): Search: Operations error', 'APPPATH\\Libraries\\AuthLdap.php', 65, [...])
+ 2 APPPATH\Libraries\AuthLdap.php(65): ldap_search(resource (ldap link), 'dc=ENTDSWD,dc=LOCAL', '(uid=mpberay1107)', [...])
+ 3 APPPATH\Libraries\AuthLdap.php(288): App\Libraries\AuthLdap->_authenticate('mpberay1107', 'dswd1234')
+ 4 APPPATH\Controllers\authentications\AuthenticationController.php(47): App\Libraries\AuthLdap->authenticate('mpberay1107', 'dswd1234')
+ 5 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\authentications\AuthenticationController->ldap()
+ 6 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\authentications\AuthenticationController))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2023-09-04 21:39:02 --> ldap_search(): Search: Operations error
+in APPPATH\Libraries\AuthLdap.php on line 65.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'ldap_search(): Search: Operations error', 'APPPATH\\Libraries\\AuthLdap.php', 65, [...])
+ 2 APPPATH\Libraries\AuthLdap.php(65): ldap_search(resource (ldap link), 'dc=ENTDSWD,dc=LOCAL', '(uid=mpberay1107)', [...])
+ 3 APPPATH\Libraries\AuthLdap.php(288): App\Libraries\AuthLdap->_authenticate('mpberay1107', 'dswd1234')
+ 4 APPPATH\Controllers\authentications\AuthenticationController.php(47): App\Libraries\AuthLdap->authenticate('mpberay1107', 'dswd1234')
+ 5 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\authentications\AuthenticationController->ldap()
+ 6 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\authentications\AuthenticationController))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2023-09-04 21:39:06 --> ldap_search(): Search: Operations error
+in APPPATH\Libraries\AuthLdap.php on line 65.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'ldap_search(): Search: Operations error', 'APPPATH\\Libraries\\AuthLdap.php', 65, [...])
+ 2 APPPATH\Libraries\AuthLdap.php(65): ldap_search(resource (ldap link), 'dc=ENTDSWD,dc=LOCAL', '(uid=mpberay1107)', [...])
+ 3 APPPATH\Libraries\AuthLdap.php(288): App\Libraries\AuthLdap->_authenticate('mpberay1107', 'dswd1234')
+ 4 APPPATH\Controllers\authentications\AuthenticationController.php(47): App\Libraries\AuthLdap->authenticate('mpberay1107', 'dswd1234')
+ 5 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\authentications\AuthenticationController->ldap()
+ 6 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\authentications\AuthenticationController))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2023-09-04 21:41:12 --> ldap_search(): Search: Operations error
+in APPPATH\Libraries\AuthLdap.php on line 65.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'ldap_search(): Search: Operations error', 'APPPATH\\Libraries\\AuthLdap.php', 65, [...])
+ 2 APPPATH\Libraries\AuthLdap.php(65): ldap_search(resource (ldap link), 'dc=ENTDSWD,dc=LOCAL', '(uid=mpberay1107)', [...])
+ 3 APPPATH\Libraries\AuthLdap.php(288): App\Libraries\AuthLdap->_authenticate('mpberay1107', 'dswd1234')
+ 4 APPPATH\Controllers\authentications\AuthenticationController.php(47): App\Libraries\AuthLdap->authenticate('mpberay1107', 'dswd1234')
+ 5 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\authentications\AuthenticationController->ldap()
+ 6 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\authentications\AuthenticationController))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2023-09-04 21:41:14 --> ldap_search(): Search: Operations error
+in APPPATH\Libraries\AuthLdap.php on line 65.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'ldap_search(): Search: Operations error', 'APPPATH\\Libraries\\AuthLdap.php', 65, [...])
+ 2 APPPATH\Libraries\AuthLdap.php(65): ldap_search(resource (ldap link), 'dc=ENTDSWD,dc=LOCAL', '(uid=mpberay1107)', [...])
+ 3 APPPATH\Libraries\AuthLdap.php(288): App\Libraries\AuthLdap->_authenticate('mpberay1107', 'dswd1234')
+ 4 APPPATH\Controllers\authentications\AuthenticationController.php(47): App\Libraries\AuthLdap->authenticate('mpberay1107', 'dswd1234')
+ 5 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\authentications\AuthenticationController->ldap()
+ 6 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\authentications\AuthenticationController))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2023-09-04 21:44:58 --> ldap_search(): Search: Bad search filter
+in APPPATH\Libraries\AuthLdap.php on line 65.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'ldap_search(): Search: Bad search filter', 'APPPATH\\Libraries\\AuthLdap.php', 65, [...])
+ 2 APPPATH\Libraries\AuthLdap.php(65): ldap_search(resource (ldap link), 'dc=ENTDSWD,dc=LOCAL', '(Active Directory Reader Account FO Caraga=mpberay1107)', [...])
+ 3 APPPATH\Libraries\AuthLdap.php(288): App\Libraries\AuthLdap->_authenticate('mpberay1107', 'dswd1234')
+ 4 APPPATH\Controllers\authentications\AuthenticationController.php(47): App\Libraries\AuthLdap->authenticate('mpberay1107', 'dswd1234')
+ 5 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\authentications\AuthenticationController->ldap()
+ 6 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\authentications\AuthenticationController))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2023-09-04 22:32:28 --> Trying to access array offset on value of type int
+in APPPATH\Libraries\AuthLdap.php on line 121.
+ 1 APPPATH\Libraries\AuthLdap.php(121): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to access array offset on value of type int', 'APPPATH\\Libraries\\AuthLdap.php', 121, [...])
+ 2 APPPATH\Libraries\AuthLdap.php(85): App\Libraries\AuthLdap->setUserAttributesFromLdap()
+ 3 APPPATH\Libraries\AuthLdap.php(288): App\Libraries\AuthLdap->_authenticate('riemann', 'password')
+ 4 APPPATH\Controllers\authentications\AuthenticationController.php(47): App\Libraries\AuthLdap->authenticate('riemann', 'password')
+ 5 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\authentications\AuthenticationController->ldap()
+ 6 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\authentications\AuthenticationController))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')

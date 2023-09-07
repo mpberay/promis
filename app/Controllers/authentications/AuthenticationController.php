@@ -6,6 +6,7 @@ use CodeIgniter\Controller;
 use CodeIgniter\I18n\Time;
 use \App\Models\Authentications\AuthModel;
 
+use App\Libraries\AuthLdap;
 class AuthenticationController extends Controller
 {
     private $facebook = NULL;
@@ -14,7 +15,12 @@ class AuthenticationController extends Controller
     private $dateNow = NULL;
     private $ipAddress = NULL;
     private $authModel = NULL;
+
+    private $authLdap;
+    private $session;
+
     public function __construct(){
+        $this->session = \Config\Services::session();
         helper('date');
 		require_once APPPATH. 'Libraries/vendor/autoload.php';
 		$this->facebook =  new \Facebook\Facebook([
@@ -32,6 +38,27 @@ class AuthenticationController extends Controller
         $this->ipAddress = $request->getIPAddress();
         $this->authModel = new AuthModel();
 	}
+
+    public function ldap(){
+        $username = "riemann";
+        $password = "password";
+        $this->authLdap = new AuthLdap();
+        if (is_object($this->authLdap) && method_exists($this->authLdap, 'authenticate')){
+            $authenticatedUserData  =   $this->authLdap->authenticate(trim($username),trim($password));
+            if (!empty($authenticatedUserData)){
+                $this->session->set($authenticatedUserData);
+                echo "success login";
+                //return redirect()->to('/user/dashboard');
+            }
+            else {
+                echo "error username";
+            }
+        }
+        else {
+            echo "LDAP connection error";
+        }
+	}
+    
     public function index(){
         $authModel = new AuthModel();
         // if (! is_file(APPPATH . 'Views/pages/' . $page . '.php')) {

@@ -48,4 +48,5 @@ return array(
     'CodeIgniter\\CodingStandard\\' => array($vendorDir . '/codeigniter/coding-standard/src'),
     'CodeIgniter\\AutoReview\\' => array($baseDir . '/tests/AutoReview'),
     'CodeIgniter\\' => array($baseDir . '/system', $baseDir . '/tests/system', $vendorDir . '/codeigniter4/framework/system'),
+    'AuthLdap\\' => array($vendorDir . '/phpcodemaker/ci4-authldap/src'),
 );

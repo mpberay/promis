@@ -3,7 +3,7 @@
         'name' => 'codeigniter4/codeigniter4',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '392a87c450edee7588e87ba4215a7e121de2ebf7',
+        'reference' => '0a1b878d69cce99fdbe0fc7a4dfd34d829122082',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -22,7 +22,7 @@
         'codeigniter4/codeigniter4' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '392a87c450edee7588e87ba4215a7e121de2ebf7',
+            'reference' => '0a1b878d69cce99fdbe0fc7a4dfd34d829122082',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -225,6 +225,15 @@
             'install_path' => __DIR__ . '/../php-cs-fixer/diff',
             'aliases' => array(),
             'dev_requirement' => true,
+        ),
+        'phpcodemaker/ci4-authldap' => array(
+            'pretty_version' => 'v1.0',
+            'version' => '1.0.0.0',
+            'reference' => '5ea3e99d5ec0f0f1361f5380361fb961e2882aa4',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../phpcodemaker/ci4-authldap',
+            'aliases' => array(),
+            'dev_requirement' => false,
         ),
         'phpstan/phpstan' => array(
             'pretty_version' => '1.8.10',
