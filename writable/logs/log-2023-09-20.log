@@ -1,0 +1,221 @@
+CRITICAL - 2023-09-20 08:56:18 --> Undefined variable: action
+in APPPATH\Controllers\libraries\Psgc\CityMunController.php on line 60.
+ 1 APPPATH\Controllers\libraries\Psgc\CityMunController.php(60): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: action', 'APPPATH\\Controllers\\libraries\\Psgc\\CityMunController.php', 60, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\Libraries\Psgc\CityMunController->actionInsertUpdate()
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Libraries\Psgc\CityMunController))
+ 4 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2023-09-20 11:06:59 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '.`regionName`
+FROM `lib_psgc_citymun` AS `citymun`
+LEFT JOIN `lib_psgc_provinces' at line 1 in C:\laragon\www\promis\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\laragon\www\promis\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `citymun...', 0)
+#1 C:\laragon\www\promis\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `citymun...')
+#2 C:\laragon\www\promis\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `citymun...')
+#3 C:\laragon\www\promis\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT `citymun...', Array, false)
+#4 C:\laragon\www\promis\app\Controllers\libraries\Psgc\CityMunController.php(128): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\promis\system\CodeIgniter.php(904): App\Controllers\Libraries\Psgc\CityMunController->getInformation()
+#6 C:\laragon\www\promis\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Libraries\Psgc\CityMunController))
+#7 C:\laragon\www\promis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\laragon\www\promis\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#9 C:\laragon\www\promis\system\Commands\Server\rewrite.php(43): require_once('C:\\laragon\\www\\...')
+#10 {main}
+CRITICAL - 2023-09-20 11:06:59 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '.`regionName`
+FROM `lib_psgc_citymun` AS `citymun`
+LEFT JOIN `lib_psgc_provinces' at line 1
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT `citymun`.`citymunID`, `citymun`.`citymunCode`, `citymun`.`citymunName`, `citymun`.`citymunAcronym`, `citymun`.`provinceID`, `citymun`.`zipCode`, `citymun`.`dateAdded`, `citymun`.`isActive`, `province`.`provinceID`, `province`.`provinceCode`, `province`.`provinceName`, `region`.`regionID`, `region`.`regionID` `region`.`regionName`
+FROM `lib_psgc_citymun` AS `citymun`
+LEFT JOIN `lib_psgc_provinces` AS `province` ON `province`.`provinceID` = `citymun`.`provinceID`
+LEFT JOIN `lib_psgc_region` AS `region` ON `region`.`regionID` = `province`.`regionID`
+WHERE `citymun`.`citymunID` = \'650a43589dcab\'
+ORDER BY `region`.`regionName` ASC, `province`.`provinceName` ASC, `citymun`.`citymunName` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `citymun`.`citymunID`, `citymun`.`citymunCode`, `citymun`.`citymunName`, `citymun`.`citymunAcronym`, `citymun`.`provinceID`, `citymun`.`zipCode`, `citymun`.`dateAdded`, `citymun`.`isActive`, `province`.`provinceID`, `province`.`provinceCode`, `province`.`provinceName`, `region`.`regionID`, `region`.`regionID` `region`.`regionName`
+FROM `lib_psgc_citymun` AS `citymun`
+LEFT JOIN `lib_psgc_provinces` AS `province` ON `province`.`provinceID` = `citymun`.`provinceID`
+LEFT JOIN `lib_psgc_region` AS `region` ON `region`.`regionID` = `province`.`regionID`
+WHERE `citymun`.`citymunID` = \'650a43589dcab\'
+ORDER BY `region`.`regionName` ASC, `province`.`provinceName` ASC, `citymun`.`citymunName` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `citymun`.`citymunID`, `citymun`.`citymunCode`, `citymun`.`citymunName`, `citymun`.`citymunAcronym`, `citymun`.`provinceID`, `citymun`.`zipCode`, `citymun`.`dateAdded`, `citymun`.`isActive`, `province`.`provinceID`, `province`.`provinceCode`, `province`.`provinceName`, `region`.`regionID`, `region`.`regionID` `region`.`regionName`
+FROM `lib_psgc_citymun` AS `citymun`
+LEFT JOIN `lib_psgc_provinces` AS `province` ON `province`.`provinceID` = `citymun`.`provinceID`
+LEFT JOIN `lib_psgc_region` AS `region` ON `region`.`regionID` = `province`.`regionID`
+WHERE `citymun`.`citymunID` = \'650a43589dcab\'
+ORDER BY `region`.`regionName` ASC, `province`.`provinceName` ASC, `citymun`.`citymunName` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT `citymun`.`citymunID`, `citymun`.`citymunCode`, `citymun`.`citymunName`, `citymun`.`citymunAcronym`, `citymun`.`provinceID`, `citymun`.`zipCode`, `citymun`.`dateAdded`, `citymun`.`isActive`, `province`.`provinceID`, `province`.`provinceCode`, `province`.`provinceName`, `region`.`regionID`, `region`.`regionID` `region`.`regionName`
+FROM `lib_psgc_citymun` AS `citymun`
+LEFT JOIN `lib_psgc_provinces` AS `province` ON `province`.`provinceID` = `citymun`.`provinceID`
+LEFT JOIN `lib_psgc_region` AS `region` ON `region`.`regionID` = `province`.`regionID`
+WHERE `citymun`.`citymunID` = :citymun.citymunID:
+ORDER BY `region`.`regionName` ASC, `province`.`provinceName` ASC, `citymun`.`citymunName` ASC', [...], false)
+ 5 APPPATH\Controllers\libraries\Psgc\CityMunController.php(128): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\Libraries\Psgc\CityMunController->getInformation()
+ 7 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Libraries\Psgc\CityMunController))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2023-09-20 11:25:01 --> mysqli_sql_exception: Unknown column 'provinceID' in 'where clause' in C:\laragon\www\promis\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\laragon\www\promis\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\laragon\www\promis\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\laragon\www\promis\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\laragon\www\promis\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\laragon\www\promis\app\Controllers\libraries\Psgc\CityMunController.php(137): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\promis\system\CodeIgniter.php(904): App\Controllers\Libraries\Psgc\CityMunController->getInformation()
+#6 C:\laragon\www\promis\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Libraries\Psgc\CityMunController))
+#7 C:\laragon\www\promis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\laragon\www\promis\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#9 C:\laragon\www\promis\system\Commands\Server\rewrite.php(43): require_once('C:\\laragon\\www\\...')
+#10 {main}
+CRITICAL - 2023-09-20 11:25:01 --> Unknown column 'provinceID' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `lib_psgc_region`
+WHERE `regionID` = \'64fd6eba4c3a8\'
+AND `provinceID` != \'64fd77724557d\'
+AND `isActive` = 1
+ORDER BY `regionName` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `lib_psgc_region`
+WHERE `regionID` = \'64fd6eba4c3a8\'
+AND `provinceID` != \'64fd77724557d\'
+AND `isActive` = 1
+ORDER BY `regionName` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `lib_psgc_region`
+WHERE `regionID` = \'64fd6eba4c3a8\'
+AND `provinceID` != \'64fd77724557d\'
+AND `isActive` = 1
+ORDER BY `regionName` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `lib_psgc_region`
+WHERE `regionID` = :regionID:
+AND `provinceID` != :provinceID:
+AND `isActive` = :isActive:
+ORDER BY `regionName` ASC', [...], false)
+ 5 APPPATH\Controllers\libraries\Psgc\CityMunController.php(137): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\Libraries\Psgc\CityMunController->getInformation()
+ 7 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Libraries\Psgc\CityMunController))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2023-09-20 11:25:54 --> mysqli_sql_exception: Table 'prism.lib_psgc_province' doesn't exist in C:\laragon\www\promis\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\laragon\www\promis\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\laragon\www\promis\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\laragon\www\promis\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\laragon\www\promis\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\laragon\www\promis\app\Controllers\libraries\Psgc\CityMunController.php(137): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\promis\system\CodeIgniter.php(904): App\Controllers\Libraries\Psgc\CityMunController->getInformation()
+#6 C:\laragon\www\promis\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Libraries\Psgc\CityMunController))
+#7 C:\laragon\www\promis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\laragon\www\promis\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#9 C:\laragon\www\promis\system\Commands\Server\rewrite.php(43): require_once('C:\\laragon\\www\\...')
+#10 {main}
+CRITICAL - 2023-09-20 11:25:54 --> Table 'prism.lib_psgc_province' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `lib_psgc_province`
+WHERE `regionID` = \'64fd6eba4c3a8\'
+AND `provinceID` != \'64fd77724557d\'
+AND `isActive` = 1
+ORDER BY `provinceName` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `lib_psgc_province`
+WHERE `regionID` = \'64fd6eba4c3a8\'
+AND `provinceID` != \'64fd77724557d\'
+AND `isActive` = 1
+ORDER BY `provinceName` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `lib_psgc_province`
+WHERE `regionID` = \'64fd6eba4c3a8\'
+AND `provinceID` != \'64fd77724557d\'
+AND `isActive` = 1
+ORDER BY `provinceName` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `lib_psgc_province`
+WHERE `regionID` = :regionID:
+AND `provinceID` != :provinceID:
+AND `isActive` = :isActive:
+ORDER BY `provinceName` ASC', [...], false)
+ 5 APPPATH\Controllers\libraries\Psgc\CityMunController.php(137): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\Libraries\Psgc\CityMunController->getInformation()
+ 7 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Libraries\Psgc\CityMunController))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2023-09-20 11:37:23 --> mysqli_sql_exception: Unknown column 'citymunZip' in 'where clause' in C:\laragon\www\promis\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\laragon\www\promis\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\laragon\www\promis\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\laragon\www\promis\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\laragon\www\promis\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\laragon\www\promis\app\Controllers\libraries\Psgc\CityMunController.php(50): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\promis\system\CodeIgniter.php(904): App\Controllers\Libraries\Psgc\CityMunController->actionInsertUpdate()
+#6 C:\laragon\www\promis\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Libraries\Psgc\CityMunController))
+#7 C:\laragon\www\promis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\laragon\www\promis\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#9 C:\laragon\www\promis\system\Commands\Server\rewrite.php(43): require_once('C:\\laragon\\www\\...')
+#10 {main}
+CRITICAL - 2023-09-20 11:37:23 --> Unknown column 'citymunZip' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `lib_psgc_citymun`
+WHERE `citymunID` != \'64fd782045bf2\'
+AND `citymunZip` = \'9093\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `lib_psgc_citymun`
+WHERE `citymunID` != \'64fd782045bf2\'
+AND `citymunZip` = \'9093\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `lib_psgc_citymun`
+WHERE `citymunID` != \'64fd782045bf2\'
+AND `citymunZip` = \'9093\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `lib_psgc_citymun`
+WHERE `citymunID` != :citymunID:
+AND `citymunZip` = :citymunZip:', [...], false)
+ 5 APPPATH\Controllers\libraries\Psgc\CityMunController.php(50): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\Libraries\Psgc\CityMunController->actionInsertUpdate()
+ 7 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Libraries\Psgc\CityMunController))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2023-09-20 11:37:51 --> mysqli_sql_exception: Unknown column 'citymunZip' in 'where clause' in C:\laragon\www\promis\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 C:\laragon\www\promis\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\laragon\www\promis\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\laragon\www\promis\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\laragon\www\promis\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\laragon\www\promis\app\Controllers\libraries\Psgc\CityMunController.php(50): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\promis\system\CodeIgniter.php(904): App\Controllers\Libraries\Psgc\CityMunController->actionInsertUpdate()
+#6 C:\laragon\www\promis\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Libraries\Psgc\CityMunController))
+#7 C:\laragon\www\promis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\laragon\www\promis\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#9 C:\laragon\www\promis\system\Commands\Server\rewrite.php(43): require_once('C:\\laragon\\www\\...')
+#10 {main}
+CRITICAL - 2023-09-20 11:37:51 --> Unknown column 'citymunZip' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *
+FROM `lib_psgc_citymun`
+WHERE `citymunID` != \'64fd782045bf2\'
+AND `citymunZip` = \'9093\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `lib_psgc_citymun`
+WHERE `citymunID` != \'64fd782045bf2\'
+AND `citymunZip` = \'9093\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `lib_psgc_citymun`
+WHERE `citymunID` != \'64fd782045bf2\'
+AND `citymunZip` = \'9093\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `lib_psgc_citymun`
+WHERE `citymunID` != :citymunID:
+AND `citymunZip` = :citymunZip:', [...], false)
+ 5 APPPATH\Controllers\libraries\Psgc\CityMunController.php(50): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\Libraries\Psgc\CityMunController->actionInsertUpdate()
+ 7 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Libraries\Psgc\CityMunController))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')

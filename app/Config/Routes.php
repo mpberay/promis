@@ -84,7 +84,19 @@ $routes->group('', ['filter' => 'AuthCheck'], function($routes){
     $routes->get('/libraries/@psgc', 'Libraries\Psgc\MainController::index',['as' => 'psgcPage']);
         //province
     $routes->get('/libraries/provice/getregion', 'Libraries\Psgc\ProvinceController::getRegion');
-    $routes->get('/libraries/provice/getDataTable/(:any)', 'Libraries\Psgc\ProvinceController::getDatatable/$1');
+    $routes->get('/libraries/provice/getprovince', 'Libraries\Psgc\ProvinceController::getProvince');
+    $routes->get('/libraries/provice/getDataTable', 'Libraries\Psgc\ProvinceController::getProvinceDatatable');
+    $routes->post('/libraries/provice/action', 'Libraries\Psgc\ProvinceController::actionInsertUpdate'); 
+    $routes->post('/libraries/provice/status', 'Libraries\Psgc\ProvinceController::status'); 
+    $routes->get('/libraries/provice/information', 'Libraries\Psgc\ProvinceController::getInformation');
+        //City Municipality
+    $routes->get('/libraries/citymun/getcitymun', 'Libraries\Psgc\CityMunController::getCityMunDatatable');
+    $routes->post('/libraries/citymun/action', 'Libraries\Psgc\CityMunController::actionInsertUpdate'); 
+    $routes->post('/libraries/citymun/status', 'Libraries\Psgc\CityMunController::actionUpdateStatus');
+    $routes->get('/libraries/citymun/information', 'Libraries\Psgc\CityMunController::getInformation');
+    $routes->get('/libraries/citymun/citymun', 'Libraries\Psgc\CityMunController::getCitymun');
+        //City Municipality
+    $routes->get('/libraries/brgy/getbrgy', 'Libraries\Psgc\CityMunController::getCityMunDatatable');
 });
 
 
@@ -93,8 +105,8 @@ $routes->group('', ['filter' => 'AuthCheck'], function($routes){
 
 $routes->post('test/check', 'Test::check');
 //$routes->post('test/check', 'Test::check');
-$routes->get('/hacker', function(){
-    echo "Hacker ko";
+$routes->get('/hacker/(:any)', function($segment){
+    echo $segment;
 });
 
 //Authentications homepage
